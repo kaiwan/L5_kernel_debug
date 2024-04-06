@@ -1,0 +1,61 @@
+[24685.407141] BUG: kernel NULL pointer dereference, address: 0000000000000040
+[24685.545685] #PF: supervisor write access in kernel mode
+[24685.546158] #PF: error_code(0x0002) - not-present page
+[24685.546585] PGD 0 P4D 0 
+[24685.546803] Oops: 0002 [#1] PREEMPT SMP NOPTI
+[24685.547168] CPU: 1 PID: 437638 Comm: insmod Tainted: P     U     OE     5.19.0-50-generic #50-Ubuntu
+[24685.547916] Hardware name: Dell Inc. Precision 7550/01PXFR, BIOS 1.2.11 06/17/2020
+[24685.548598] RIP: 0010:oops2_init+0x3f/0x1000 [oops_simple]
+[24685.549074] Code: 89 e5 e8 24 14 d3 f9 85 c0 74 18 ba 29 00 00 00 48 c7 c6 b0 b0 05 c1 48 c7 c7 68 b0 05 c1 e8 d9 11 42 fa 48 8b 05 c1 23 01 00 <48> c7 40 40 cd ab 00 00 31 c0 5d 31 d2 31 f6 31 ff c3 cc cc cc cc
+[24685.550683] RSP: 0018:ffffaaebd190fc68 EFLAGS: 00010246
+[24685.551122] RAX: 0000000000000000 RBX: 0000000000000000 RCX: 0000000000000000
+[24685.551784] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+[24685.552409] RBP: ffffaaebd190fc68 R08: 0000000000000000 R09: 0000000000000000
+[24685.553001] R10: 0000000000000000 R11: 0000000000000000 R12: ffffffffc104a000
+[24685.553587] R13: ffff91228088e730 R14: ffffffffc105c098 R15: ffffffffc105c080
+[24685.554226] FS:  00007faf6450fc40(0000) GS:ffff91296d440000(0000) knlGS:0000000000000000
+[24685.554890] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[24685.555366] CR2: 0000000000000040 CR3: 000000010d6b8005 CR4: 00000000007726e0
+[24685.555953] PKRU: 55555554
+[24685.556185] Call Trace:
+[24685.556395]  <TASK>
+[24685.556579]  do_one_initcall+0x46/0x230
+[24685.556907]  ? kmem_cache_alloc_trace+0x1a6/0x330
+[24685.557302]  do_init_module+0x52/0x220
+[24685.557621]  load_module+0xb56/0xd40
+[24685.558017]  ? kernel_read_file+0x245/0x2a0
+[24685.558368]  __do_sys_finit_module+0xcc/0x150
+[24685.558733]  ? __do_sys_finit_module+0xcc/0x150
+[24685.559112]  __x64_sys_finit_module+0x18/0x30
+[24685.559476]  do_syscall_64+0x59/0x90
+[24685.559779]  ? exit_to_user_mode_prepare+0x3b/0xd0
+[24685.560178]  ? syscall_exit_to_user_mode+0x2a/0x50
+[24685.560580]  ? do_syscall_64+0x69/0x90
+[24685.560900]  entry_SYSCALL_64_after_hwframe+0x63/0xcd
+[24685.561329] RIP: 0033:0x7faf63d1ea3d
+[24685.561686] Code: 5b 41 5c c3 66 0f 1f 84 00 00 00 00 00 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d c3 a3 0f 00 f7 d8 64 89 01 48
+[24685.563527] RSP: 002b:00007ffca3194258 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[24685.564150] RAX: ffffffffffffffda RBX: 0000561be8ca87f0 RCX: 00007faf63d1ea3d
+[24685.564737] RDX: 0000000000000000 RSI: 0000561be8261cd2 RDI: 0000000000000003
+[24685.565348] RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+[24685.565981] R10: 0000000000000003 R11: 0000000000000246 R12: 0000561be8261cd2
+[24685.566568] R13: 0000561be8cabbd0 R14: 0000561be8260888 R15: 0000561be8ca8900
+[24685.567156]  </TASK>
+[24685.567345] Modules linked in: oops_simple(OE+) tls rfcomm xt_conntrack nft_chain_nat xt_MASQUERADE nf_nat nf_conntrack_netlink nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 xfrm_user xfrm_algo xt_addrtype nft_compat nf_tables libcrc32c nfnetlink br_netfilter bridge stp llc ccm snd_ctl_led snd_hda_codec_realtek snd_hda_codec_generic vboxnetadp(OE) vboxnetflt(OE) vboxdrv(OE) cmac algif_hash algif_skcipher af_alg bnep nvidia_uvm(POE) nvidia_drm(POE) nvidia_modeset(POE) overlay dell_rbtn snd_sof_pci_intel_cnl intel_tcc_cooling snd_sof_intel_hda_common soundwire_intel soundwire_generic_allocation soundwire_cadence snd_sof_intel_hda x86_pkg_temp_thermal intel_powerclamp snd_sof_pci snd_sof_xtensa_dsp dell_laptop nvidia(POE) coretemp snd_sof snd_sof_utils snd_soc_hdac_hda snd_hda_ext_core snd_soc_acpi_intel_match snd_soc_acpi soundwire_bus snd_soc_core iwlmvm snd_compress ac97_bus snd_hda_codec_hdmi snd_pcm_dmaengine mac80211 snd_hda_intel snd_intel_dspcfg snd_intel_sdw_acpi snd_hda_codec
+[24685.567377]  snd_hda_core kvm_intel mei_hdcp mei_pxp intel_rapl_msr snd_hwdep binfmt_misc snd_pcm dell_wmi libarc4 i915 kvm snd_seq_midi snd_seq_midi_event crct10dif_pclmul drm_buddy btusb snd_rawmidi ghash_clmulni_intel ledtrig_audio ttm btrtl aesni_intel uvcvideo drm_display_helper btbcm videobuf2_vmalloc crypto_simd btintel videobuf2_memops cec cryptd videobuf2_v4l2 dell_smm_hwmon dell_smbios snd_seq processor_thermal_device_pci_legacy btmtk iwlwifi rapl rc_core videobuf2_common dcdbas processor_thermal_device snd_seq_device nls_iso8859_1 input_leds intel_cstate bluetooth dell_wmi_sysman snd_timer spi_nor drm_kms_helper serio_raw processor_thermal_rfim videodev i2c_algo_bit mei_me firmware_attributes_class wmi_bmof intel_wmi_thunderbolt dell_wmi_descriptor ecdh_generic fb_sys_fops processor_thermal_mbox mtd mxm_wmi joydev ee1004 mc ecc cfg80211 hid_multitouch mei snd processor_thermal_rapl syscopyarea sysfillrect soundcore sysimgblt intel_rapl_common intel_soc_dts_iosf
+[24685.575405]  intel_pch_thermal mac_hid int3403_thermal int340x_thermal_zone intel_hid int3400_thermal acpi_pad acpi_thermal_rel sparse_keymap sch_fq_codel msr parport_pc ppdev lp parport ramoops pstore_blk reed_solomon pstore_zone drm efi_pstore ip_tables x_tables autofs4 usbhid hid_sensor_custom hid_sensor_hub intel_ishtp_hid hid_generic rtsx_pci_sdmmc crc32_pclmul psmouse e1000e i2c_i801 spi_intel_pci intel_lpss_pci nvme ucsi_acpi rtsx_pci spi_intel i2c_smbus intel_ish_ipc xhci_pci i2c_hid_acpi intel_lpss thunderbolt typec_ucsi nvme_core i2c_hid intel_ishtp idma64 xhci_pci_renesas typec hid wmi video pinctrl_cannonlake
+[24685.587619] CR2: 0000000000000040
+[24685.587900] ---[ end trace 0000000000000000 ]---
+[24685.606261] RIP: 0010:oops2_init+0x3f/0x1000 [oops_simple]
+[24685.606856] Code: 89 e5 e8 24 14 d3 f9 85 c0 74 18 ba 29 00 00 00 48 c7 c6 b0 b0 05 c1 48 c7 c7 68 b0 05 c1 e8 d9 11 42 fa 48 8b 05 c1 23 01 00 <48> c7 40 40 cd ab 00 00 31 c0 5d 31 d2 31 f6 31 ff c3 cc cc cc cc
+[24685.608449] RSP: 0018:ffffaaebd190fc68 EFLAGS: 00010246
+[24685.608884] RAX: 0000000000000000 RBX: 0000000000000000 RCX: 0000000000000000
+[24685.609534] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+[24685.610188] RBP: ffffaaebd190fc68 R08: 0000000000000000 R09: 0000000000000000
+[24685.610775] R10: 0000000000000000 R11: 0000000000000000 R12: ffffffffc104a000
+[24685.611372] R13: ffff91228088e730 R14: ffffffffc105c098 R15: ffffffffc105c080
+[24685.611966] FS:  00007faf6450fc40(0000) GS:ffff91296d440000(0000) knlGS:0000000000000000
+[24685.612771] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[24685.613337] CR2: 0000000000000040 CR3: 000000010d6b8005 CR4: 00000000007726e0
+[24685.614000] PKRU: 55555554
+
