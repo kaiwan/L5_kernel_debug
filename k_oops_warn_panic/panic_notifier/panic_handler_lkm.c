@@ -69,8 +69,8 @@ void pnc_register_panic_notifier(void)
 	/*
 	 * err = notifier_chain_register(&panic_notifier_list, &k_panic_notifier_block);
 	 * Fails with:
-        error: implicit declaration of function ‘notifier_chain_register’ [-Werror=implicit-function-declaration]
-     * atomic_notifier_chain_register() is a simple wrapper over it but is 
+	 * error: implicit declaration of function ‘notifier_chain_register’ [-Werror=implicit-function-declaration]
+	 * atomic_notifier_chain_register() is a simple wrapper over it but is 
 	 *  EXPORT_SYMBOL_GPL ! thus giving us access via an LKM if we're GPL.
 	 */ 
 }
