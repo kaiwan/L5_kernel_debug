@@ -1,0 +1,631 @@
+CPU 1 is empty
+CPU 2 is empty
+CPU 3 is empty
+CPU 4 is empty
+CPU 5 is empty
+CPU 7 is empty
+CPU 8 is empty
+CPU 9 is empty
+CPU 10 is empty
+CPU 11 is empty
+cpus=12
+   hello-21528   6.... 12154.365892: sys_exit:             NR 1 = 1
+   hello-21528   6.... 12154.365893: sys_exit_write:       0x1
+   hello-21528   6.... 12154.365894: sys_enter:            NR 59 (7ffe66f7f873, 7ffe66f7ed80, 7ffe66f7ed90, 0, 3, 23)
+   hello-21528   6.... 12154.365894: sys_enter_execve:     filename: 0x7ffe66f7f873, argv: 0x7ffe66f7ed80, envp: 0x7ffe66f7ed90
+   hello-21528   6.... 12154.365894: kmem_cache_alloc:     (getname_flags+0x4f) call_site=getname_flags ptr=0xffffa05be73bc000 bytes_req=4096 bytes_alloc=4096 gfp_flags=GFP_KERNEL
+   hello-21528   6.... 12154.365895: kmalloc:              (__do_execve_file.isra.0+0xf4) call_site=__do_execve_file.isra.0 ptr=0xffffa05923365200 bytes_req=392 bytes_alloc=512 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   6.... 12154.365896: kmem_cache_alloc:     (prepare_creds+0x26) call_site=prepare_creds ptr=0xffffa05af92af840 bytes_req=168 bytes_alloc=192 gfp_flags=GFP_KERNEL
+   hello-21528   6.... 12154.365896: kmalloc:              (security_prepare_creds+0xb9) call_site=security_prepare_creds ptr=0xffffa05bbf51ce40 bytes_req=40 bytes_alloc=64 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   6.... 12154.365896: kmem_cache_alloc:     (__alloc_file+0x28) call_site=__alloc_file ptr=0xffffa05b80b66000 bytes_req=256 bytes_alloc=256 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   6.... 12154.365896: kmem_cache_alloc:     (security_file_alloc+0x29) call_site=security_file_alloc ptr=0xffffa05bc70f23c0 bytes_req=24 bytes_alloc=24 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   6.... 12154.365898: open_exec:            [FAILED TO PARSE] filename=./hello
+   hello-21528   6d... 12154.365899: sched_waking:         comm=migration/6 pid=47 prio=0 target_cpu=006
+   hello-21528   6dN.. 12154.365900: sched_wakeup:         migration/6:47 [0] success=1 CPU:006
+   hello-21528   6dN.. 12154.365901: rcu_utilization:      Start context switch
+   hello-21528   6dN.. 12154.365901: rcu_utilization:      End context switch
+   hello-21528   6dN.. 12154.365901: sched_stat_runtime:   comm=trace-cmd pid=21528 runtime=153622 [ns] vruntime=118319168586 [ns]
+   hello-21528   6d... 12154.365902: sched_switch:         trace-cmd:21528 [120] R ==> migration/6:47 [0]
+  <idle>-0       0d... 12154.365909: sched_switch:         swapper/0:0 [120] R ==> trace-cmd:21528 [120]
+  <idle>-0       0d... 12154.365910: tlb_flush:            pages=-1 reason=flush on task switch (0)
+  <idle>-0       0d... 12154.365911: write_msr:            c0000100, value 7f5c22147740
+   hello-21528   0.... 12154.365911: kmem_cache_alloc:     (mm_alloc+0x1a) call_site=mm_alloc ptr=0xffffa05bc4bfb300 bytes_req=1040 bytes_alloc=1088 gfp_flags=GFP_KERNEL
+   hello-21528   0d... 12154.365912: mm_page_alloc_zone_locked: page=0x57deb6 pfn=5758646 order=1 migratetype=0 percpu_refill=0
+   hello-21528   0.... 12154.365913: mm_page_alloc:        page=0x57deb6 pfn=5758646 order=1 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.365914: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940f70 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365928: mm_page_alloc:        page=0x7ffe0e pfn=8388110 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.365928: mm_page_alloc:        page=0x534842 pfn=5457986 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.365929: mm_page_alloc:        page=0x57dceb pfn=5758187 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.365929: kmem_cache_alloc:     (__anon_vma_prepare+0x33) call_site=__anon_vma_prepare ptr=0xffffa05a34b50ec0 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365930: kmem_cache_alloc:     (__anon_vma_prepare+0x108) call_site=__anon_vma_prepare ptr=0xffffa05b809f4948 bytes_req=80 bytes_alloc=88 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365931: mm_page_alloc:        page=0x422cdf pfn=4336863 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0.... 12154.365935: kmalloc:              (load_elf_binary+0x41) call_site=load_elf_binary ptr=0xffffa058fdc02280 bytes_req=128 bytes_alloc=128 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365935: kmalloc:              (load_elf_phdrs+0x56) call_site=load_elf_phdrs ptr=0xffffa05b80a73c00 bytes_req=728 bytes_alloc=1024 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365936: kmalloc:              (load_elf_binary+0x20b) call_site=load_elf_binary ptr=0xffffa057afe55be0 bytes_req=28 bytes_alloc=32 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365936: kmem_cache_alloc:     (getname_kernel+0x2a) call_site=getname_kernel ptr=0xffffa05bbd9fc000 bytes_req=4096 bytes_alloc=4096 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365937: kmem_cache_alloc:     (__alloc_file+0x28) call_site=__alloc_file ptr=0xffffa058fcce4f00 bytes_req=256 bytes_alloc=256 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   0.... 12154.365937: kmem_cache_alloc:     (security_file_alloc+0x29) call_site=security_file_alloc ptr=0xffffa057afd28468 bytes_req=24 bytes_alloc=24 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   0.... 12154.365940: open_exec:            [FAILED TO PARSE] filename=/lib64/ld-linux-x86-64.so.2
+   hello-21528   0.... 12154.365941: kmem_cache_free:      (putname+0x4a) call_site=putname ptr=0xffffa05bbd9fc000
+   hello-21528   0.... 12154.365941: kfree:                (load_elf_binary+0x27b) call_site=load_elf_binary ptr=0xffffa057afe55be0
+   hello-21528   0.... 12154.365941: kmalloc:              (load_elf_phdrs+0x56) call_site=load_elf_phdrs ptr=0xffffa05b80a76c00 bytes_req=616 bytes_alloc=1024 gfp_flags=GFP_KERNEL
+   hello-21528   0d... 12154.365943: tlb_flush:            pages=-1 reason=flush on task switch (0)
+   hello-21528   0d... 12154.365944: mm_lru_insertion:     page=0xfffff22f5b0bf600 pfn=7090136 lru=3 flags= f   B
+   hello-21528   0d... 12154.365944: mm_lru_insertion:     page=0xfffff22f5928a880 pfn=6595234 lru=3 flags= f   B
+   hello-21528   0d... 12154.365945: mm_lru_insertion:     page=0xfffff22f57495f80 pfn=6104446 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.365945: mm_lru_insertion:     page=0xfffff22f5aafbf80 pfn=6995710 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.365945: mm_lru_insertion:     page=0xfffff22f508b37c0 pfn=4336863 lru=1 flags=Ma b  
+   hello-21528   0.... 12154.365948: mm_page_alloc:        page=0x86510f pfn=8802575 order=0 migratetype=0 gfp_flags=GFP_NOWAIT|__GFP_NOWARN
+   hello-21528   0.... 12154.365960: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98740
+   hello-21528   0.... 12154.365960: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a5d8
+   hello-21528   0.... 12154.365960: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98700
+   hello-21528   0.... 12154.365961: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98100
+   hello-21528   0.... 12154.365961: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614aec8
+   hello-21528   0.... 12154.365961: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98500
+   hello-21528   0.... 12154.365961: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98400
+   hello-21528   0.... 12154.365961: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a3c8
+   hello-21528   0.... 12154.365961: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05bd8e987c0
+   hello-21528   0.... 12154.365962: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05bd8e989c0
+   hello-21528   0.... 12154.365962: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a420
+   hello-21528   0.... 12154.365962: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98080
+   hello-21528   0.... 12154.365962: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98f00
+   hello-21528   0.... 12154.365962: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614ab58
+   hello-21528   0.... 12154.365962: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98a80
+   hello-21528   0.... 12154.365963: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98800
+   hello-21528   0.... 12154.365963: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a108
+   hello-21528   0.... 12154.365963: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05bd8e984c0
+   hello-21528   0.... 12154.365963: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98fc0
+   hello-21528   0.... 12154.365963: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a478
+   hello-21528   0.... 12154.365963: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98000
+   hello-21528   0.... 12154.365963: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05bd8e98940
+   hello-21528   0.... 12154.365963: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614ab00
+   hello-21528   0.... 12154.365964: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa059f45bddc0
+   hello-21528   0.... 12154.365964: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a04a76d00
+   hello-21528   0.... 12154.365964: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a1b8
+   hello-21528   0.... 12154.365964: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a04a763c0
+   hello-21528   0.... 12154.365964: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a04a76a00
+   hello-21528   0.... 12154.365964: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614af78
+   hello-21528   0.... 12154.365964: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a04a76fc0
+   hello-21528   0.... 12154.365965: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a04a76a80
+   hello-21528   0.... 12154.365965: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a840
+   hello-21528   0.... 12154.365965: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a04a76000
+   hello-21528   0.... 12154.365965: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a04a76040
+   hello-21528   0.... 12154.365965: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a318
+   hello-21528   0.... 12154.365965: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a04a76280
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a04a76780
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614adc0
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a04a76d40
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a04a769c0
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614af20
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a04a764c0
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a04a76b00
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa0595614a738
+   hello-21528   0.... 12154.365966: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a04a76240
+   hello-21528   0.... 12154.365967: tlb_flush:            pages=-1 reason= (4)
+   hello-21528   0.... 12154.365967: write_msr:            830, value 2000008fb
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x867202 pfn=8811010 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x867203 pfn=8811011 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x57cf8e pfn=5754766 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x862d56 pfn=8793430 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x862d57 pfn=8793431 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x57de61 pfn=5758561 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x57de60 pfn=5758560 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x57dd2e pfn=5758254 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x57dd2f pfn=5758255 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x8659b1 pfn=8804785 order=0
+   hello-21528   0.... 12154.365973: mm_page_free:         page=0x8659b0 pfn=8804784 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x867202 pfn=8811010 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x867203 pfn=8811011 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x57cf8e pfn=5754766 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x862d56 pfn=8793430 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x862d57 pfn=8793431 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x57de61 pfn=5758561 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x57de60 pfn=5758560 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x57dd2e pfn=5758254 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x57dd2f pfn=5758255 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x8659b1 pfn=8804785 order=0
+   hello-21528   0d... 12154.365974: mm_page_free_batched: page=0x8659b0 pfn=8804784 order=0
+   hello-21528   0.... 12154.365974: mm_page_free:         page=0x86510f pfn=8802575 order=0
+   hello-21528   0.... 12154.365975: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05ac0286750
+   hello-21528   0.... 12154.365975: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa0599cfefba0
+   hello-21528   0.... 12154.365975: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05a6483dba0
+   hello-21528   0.... 12154.365975: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05a6483c820
+   hello-21528   0.... 12154.365975: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05a6483c680
+   hello-21528   0.... 12154.365975: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa0594b5fe680
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49e10
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49520
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd491e0
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd492b0
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49c70
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49110
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49ad0
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd480d0
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd48d00
+   hello-21528   0.... 12154.365976: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd48f70
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49ba0
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49380
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd48820
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49ee0
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd484e0
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd485b0
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd481a0
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd49930
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd48a90
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd48410
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd48dd0
+   hello-21528   0.... 12154.365977: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd495f0
+   hello-21528   0.... 12154.365978: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd496c0
+   hello-21528   0.... 12154.365978: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa058fcd48270
+   hello-21528   0.... 12154.365978: x86_fpu_regs_deactivated: x86/fpu: 0xffffa05a4a0d43c0 load: 1 xfeatures: 202 xcomp_bv: 800000000000021f
+   hello-21528   0.... 12154.365979: x86_fpu_dropped:      x86/fpu: 0xffffa05a4a0d43c0 load: 1 xfeatures: 202 xcomp_bv: 800000000000021f
+   hello-21528   0.... 12154.365983: x86_fpu_init_state:   x86/fpu: 0xffffa05a4a0d43c0 load: 1 xfeatures: 0 xcomp_bv: 800000000000021f
+   hello-21528   0.... 12154.365983: x86_fpu_regs_activated: x86/fpu: 0xffffa05a4a0d43c0 load: 1 xfeatures: 0 xcomp_bv: 800000000000021f
+   hello-21528   0.... 12154.365985: task_rename:          pid=21528 oldcomm=trace-cmd newcomm=hello oom_score_adj=0
+   hello-21528   0d... 12154.365987: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0.... 12154.365988: mm_page_alloc:        page=0x86510f pfn=8802575 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.365988: mm_page_alloc:        page=0x8659b0 pfn=8804784 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0d... 12154.365989: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0d... 12154.365989: tlb_flush:            pages=-1 reason=local mm shootdown (3)
+   hello-21528   0.... 12154.365989: mm_page_free:         page=0x534842 pfn=5457986 order=0
+   hello-21528   0.... 12154.365989: mm_page_free:         page=0x57dceb pfn=5758187 order=0
+   hello-21528   0d... 12154.365989: mm_page_free_batched: page=0x534842 pfn=5457986 order=0
+   hello-21528   0d... 12154.365989: mm_page_free_batched: page=0x57dceb pfn=5758187 order=0
+   hello-21528   0.... 12154.365991: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940680 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365993: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4940d00 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365994: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940d00
+   hello-21528   0.... 12154.365994: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940d00 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365995: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940c30 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365995: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940dd0 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0d... 12154.365996: page_fault_kernel:    address=0x562f8f3af010s ip=__clear_user error_code=0x2
+   hello-21528   0.... 12154.365996: mm_page_alloc:        page=0x57dceb pfn=5758187 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.365997: mm_page_alloc:        page=0x534842 pfn=5457986 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.365997: kmem_cache_alloc:     (__anon_vma_prepare+0x33) call_site=__anon_vma_prepare ptr=0xffffa05a34b50880 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365997: kmem_cache_alloc:     (__anon_vma_prepare+0x108) call_site=__anon_vma_prepare ptr=0xffffa05b809f4e18 bytes_req=80 bytes_alloc=88 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.365998: mm_page_alloc:        page=0x4ebe7d pfn=5160573 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0.... 12154.365998: mm_page_alloc:        page=0x8659b1 pfn=8804785 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.365999: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4941ba0 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366001: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4941450 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0d... 12154.366004: mm_lru_insertion:     page=0xfffff22f53af9f40 pfn=5160573 lru=1 flags=Ma b  
+   hello-21528   0.... 12154.366004: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941450
+   hello-21528   0.... 12154.366005: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4941450 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366005: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940270 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366006: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4941ee0 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0d... 12154.366008: page_fault_kernel:    address=0x7f3d63da4ff8s ip=__clear_user error_code=0x2
+   hello-21528   0.... 12154.366008: mm_page_alloc:        page=0x57dd2f pfn=5758255 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.366009: mm_page_alloc:        page=0x57dd2e pfn=5758254 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.366009: kmem_cache_alloc:     (__anon_vma_prepare+0x33) call_site=__anon_vma_prepare ptr=0xffffa05a34b50c40 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366009: kmem_cache_alloc:     (__anon_vma_prepare+0x108) call_site=__anon_vma_prepare ptr=0xffffa05b809f4058 bytes_req=80 bytes_alloc=88 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366009: mm_page_alloc:        page=0x59a311 pfn=5874449 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0.... 12154.366010: mm_page_alloc:        page=0x57de60 pfn=5758560 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.366011: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4941930 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366011: kfree:                (load_elf_binary+0xc8f) call_site=load_elf_binary ptr=0xffffa05b80a76c00
+   hello-21528   0.... 12154.366011: kfree:                (load_elf_binary+0xc97) call_site=load_elf_binary ptr=0xffffa05b80a73c00
+   hello-21528   0.... 12154.366012: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be49404e0 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366013: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be49412b0 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0d... 12154.366013: page_fault_kernel:    address=0x7fff433da2a9s ip=copy_user_generic_unrolled error_code=0x3
+   hello-21528   0.... 12154.366014: get_random_bytes:     nbytes 16 caller get_random_bytes
+   hello-21528   0.... 12154.366016: kfree:                (load_elf_binary+0x1c5) call_site=load_elf_binary ptr=0xffffa058fdc02280
+   hello-21528   0.... 12154.366017: sched_process_exec:   filename=./hello pid=21528 old_pid=21528
+   hello-21528   0.... 12154.366017: kfree:                (free_bprm+0x79) call_site=free_bprm ptr=0xffffa05923365200
+   hello-21528   0.... 12154.366017: kfree:                (__do_execve_file.isra.0+0x784) call_site=__do_execve_file.isra.0 ptr=(nil)
+   hello-21528   0.... 12154.366017: kmem_cache_free:      (putname+0x4a) call_site=putname ptr=0xffffa05be73bc000
+   hello-21528   0.... 12154.366018: sys_exit:             NR 59 = 0
+   hello-21528   0.... 12154.366018: sys_exit_execve:      0x0
+   hello-21528   0.... 12154.366018: kfree:                (kvfree+0x33) call_site=kvfree ptr=(nil)
+   hello-21528   0.... 12154.366018: kmem_cache_free:      (seq_release+0x2a) call_site=seq_release ptr=0xffffa05b80bbed00
+   hello-21528   0.... 12154.366019: kmem_cache_free:      (security_file_free+0x54) call_site=security_file_free ptr=0xffffa05bc70f2270
+   hello-21528   0d... 12154.366019: page_fault_user:      address=0x7f3d63d77100s ip=0x7f3d63d77100s error_code=0x14
+   hello-21528   0d... 12154.366022: page_fault_user:      address=0x7f3d63da35e0s ip=0x7f3d63d77e18s error_code=0x6
+   hello-21528   0.... 12154.366022: mm_page_alloc:        page=0x407fdb pfn=4227035 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0d... 12154.366023: page_fault_user:      address=0x7f3d63d76b00s ip=0x7f3d63d78128s error_code=0x4
+   hello-21528   0d... 12154.366024: page_fault_user:      address=0x7f3d63d92660s ip=0x7f3d63d92660s error_code=0x14
+   hello-21528   0d... 12154.366026: page_fault_user:      address=0x7f3d63da5138s ip=0x7f3d63d92697s error_code=0x6
+   hello-21528   0.... 12154.366026: kmem_cache_alloc:     (__anon_vma_prepare+0x33) call_site=__anon_vma_prepare ptr=0xffffa05a34b50780 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366026: kmem_cache_alloc:     (__anon_vma_prepare+0x108) call_site=__anon_vma_prepare ptr=0xffffa05b809f42c0 bytes_req=80 bytes_alloc=88 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366027: mm_page_alloc:        page=0x4e9e60 pfn=5152352 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0d... 12154.366027: page_fault_user:      address=0x7fff433d9fd8s ip=0x7f3d63d926d2s error_code=0x6
+   hello-21528   0.... 12154.366028: mm_page_alloc:        page=0x636035 pfn=6512693 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0d... 12154.366028: page_fault_user:      address=0x7f3d63d9a8b4s ip=0x7f3d63d9277as error_code=0x4
+   hello-21528   0d... 12154.366030: page_fault_user:      address=0x7f3d63d8ffb0s ip=0x7f3d63d8ffb0s error_code=0x14
+   hello-21528   0.... 12154.366032: sys_enter:            NR 12 (0, 7f3d63d9be13, 53, 7f3d63d9be13, 7f3d63da3e78, 1a)
+   hello-21528   0.... 12154.366033: sys_enter_brk:        brk: 0x00000000
+   hello-21528   0.... 12154.366033: sys_exit:             NR 12 = 94762281680896
+   hello-21528   0.... 12154.366033: sys_exit_brk:         0x562f90234000
+   hello-21528   0.... 12154.366035: sys_enter:            NR 158 (3001, 7fff433d9fe0, 7f3d63d92230, d, 3, 8b)
+   hello-21528   0.... 12154.366035: sys_enter_arch_prctl: option: 0x00003001, arg2: 0x7fff433d9fe0
+   hello-21528   0.... 12154.366035: sys_exit:             NR 158 = -22
+   hello-21528   0.... 12154.366035: sys_exit_arch_prctl:  0xffffffffffffffea
+   hello-21528   0d... 12154.366036: page_fault_user:      address=0x562f8f3ab040s ip=0x7f3d63d78df4s error_code=0x4
+   hello-21528   0d... 12154.366038: page_fault_user:      address=0x562f8f3aedc8s ip=0x7f3d63d78f1cs error_code=0x4
+   hello-21528   0d... 12154.366038: page_fault_user:      address=0x562f8f3aeea0s ip=0x7f3d63d78fa9s error_code=0x7
+   hello-21528   0.... 12154.366039: mm_page_alloc:        page=0x72fcfa pfn=7535866 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0d... 12154.366040: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0d... 12154.366041: page_fault_user:      address=0x7fff433e0020s ip=0x7f3d63d79110s error_code=0x4
+   hello-21528   0.... 12154.366044: sys_enter:            NR 21 (7f3d63d9e9d0, 4, 7f3d63d76270, 8, 0, 0)
+   hello-21528   0.... 12154.366044: sys_enter_access:     filename: 0x7f3d63d9e9d0, mode: 0x00000004
+   hello-21528   0.... 12154.366045: kmem_cache_alloc:     (prepare_creds+0x26) call_site=prepare_creds ptr=0xffffa05a04a2da80 bytes_req=168 bytes_alloc=192 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366045: kmalloc:              (security_prepare_creds+0xb9) call_site=security_prepare_creds ptr=0xffffa05924589140 bytes_req=40 bytes_alloc=64 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.366045: kmem_cache_alloc:     (getname_flags+0x4f) call_site=getname_flags ptr=0xffffa05bbd9fc000 bytes_req=4096 bytes_alloc=4096 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366046: kmem_cache_free:      (putname+0x4a) call_site=putname ptr=0xffffa05bbd9fc000
+   hello-21528   0.... 12154.366047: kfree:                (security_cred_free+0x43) call_site=security_cred_free ptr=(nil)
+   hello-21528   0.... 12154.366047: kfree:                (security_cred_free+0x4d) call_site=security_cred_free ptr=0xffffa05924589140
+   hello-21528   0.... 12154.366047: kmem_cache_free:      (put_cred_rcu+0x88) call_site=put_cred_rcu ptr=0xffffa05a04a2da80
+   hello-21528   0.... 12154.366047: sys_exit:             NR 21 = -2
+   hello-21528   0.... 12154.366047: sys_exit_access:      0xfffffffffffffffe
+   hello-21528   0.... 12154.366049: sys_enter:            NR 257 (ffffff9c, 7f3d63d9bb80, 80000, 0, 80000, 7f3d63d9bb80)
+   hello-21528   0.... 12154.366049: sys_enter_openat:     dfd: 0xffffff9c, filename: 0x7f3d63d9bb80, flags: 0x00080000, mode: 0x00000000
+   hello-21528   0.... 12154.366049: kmem_cache_alloc:     (getname_flags+0x4f) call_site=getname_flags ptr=0xffffa05bbd9fc000 bytes_req=4096 bytes_alloc=4096 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366050: kmem_cache_alloc:     (__alloc_file+0x28) call_site=__alloc_file ptr=0xffffa058fcce4200 bytes_req=256 bytes_alloc=256 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   0.... 12154.366050: kmem_cache_alloc:     (security_file_alloc+0x29) call_site=security_file_alloc ptr=0xffffa057afd28930 bytes_req=24 bytes_alloc=24 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   0.... 12154.366051: do_sys_open:          [FAILED TO PARSE] filename=/etc/ld.so.cache flags=557056 mode=0
+   hello-21528   0.... 12154.366051: kmem_cache_free:      (putname+0x4a) call_site=putname ptr=0xffffa05bbd9fc000
+   hello-21528   0.... 12154.366051: sys_exit:             NR 257 = 3
+   hello-21528   0.... 12154.366051: sys_exit_openat:      0x3
+   hello-21528   0.... 12154.366051: sys_enter:            NR 5 (3, 7fff433d91e0, 7fff433d91e0, 0, 1, 7f3d63d9bb80)
+   hello-21528   0.... 12154.366051: sys_enter_newfstat:   fd: 0x00000003, statbuf: 0x7fff433d91e0
+   hello-21528   0.... 12154.366052: sys_exit:             NR 5 = 0
+   hello-21528   0.... 12154.366052: sys_exit_newfstat:    0x0
+   hello-21528   0.... 12154.366052: sys_enter:            NR 9 (0, 19ad2, 1, 2, 3, 0)
+   hello-21528   0.... 12154.366052: sys_enter_mmap:       addr: 0x00000000, len: 0x00019ad2, prot: 0x00000001, flags: 0x00000002, fd: 0x00000003, off: 0x00000000
+   hello-21528   0.... 12154.366053: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4941c70 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366053: sys_exit:             NR 9 = 139901644685312
+   hello-21528   0.... 12154.366053: sys_exit_mmap:        0x7f3d63d5c000
+   hello-21528   0.... 12154.366054: sys_enter:            NR 3 (3, 19ad2, 1, 2, 3, 0)
+   hello-21528   0.... 12154.366054: sys_enter_close:      fd: 0x00000003
+   hello-21528   0.... 12154.366054: sys_exit:             NR 3 = 0
+   hello-21528   0.... 12154.366054: sys_exit_close:       0x0
+   hello-21528   0d... 12154.366054: page_fault_user:      address=0x7f3d63d5c008s ip=0x7f3d63d8fb78s error_code=0x4
+   hello-21528   0d... 12154.366057: page_fault_user:      address=0x7f3d63d6cbe9s ip=0x7f3d63d8f597s error_code=0x4
+   hello-21528   0d... 12154.366058: page_fault_user:      address=0x7f3d63d7146fs ip=0x7f3d63d8f597s error_code=0x4
+   hello-21528   0.... 12154.366060: sys_enter:            NR 257 (ffffff9c, 7f3d63da5e10, 80000, 0, 80000, 7f3d63da5e10)
+   hello-21528   0.... 12154.366060: sys_enter_openat:     dfd: 0xffffff9c, filename: 0x7f3d63da5e10, flags: 0x00080000, mode: 0x00000000
+   hello-21528   0.... 12154.366060: kmem_cache_alloc:     (getname_flags+0x4f) call_site=getname_flags ptr=0xffffa05bbd9fc000 bytes_req=4096 bytes_alloc=4096 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366060: kmem_cache_alloc:     (__alloc_file+0x28) call_site=__alloc_file ptr=0xffffa058fcce4700 bytes_req=256 bytes_alloc=256 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   0.... 12154.366060: kmem_cache_alloc:     (security_file_alloc+0x29) call_site=security_file_alloc ptr=0xffffa057afd282d0 bytes_req=24 bytes_alloc=24 gfp_flags=GFP_KERNEL|__GFP_ZERO
+   hello-21528   0.... 12154.366062: do_sys_open:          [FAILED TO PARSE] filename=/lib/x86_64-linux-gnu/libc.so.6 flags=557056 mode=0
+   hello-21528   0.... 12154.366062: kmem_cache_free:      (putname+0x4a) call_site=putname ptr=0xffffa05bbd9fc000
+   hello-21528   0.... 12154.366062: sys_exit:             NR 257 = 3
+   hello-21528   0.... 12154.366062: sys_exit_openat:      0x3
+   hello-21528   0.... 12154.366062: sys_enter:            NR 0 (3, 7fff433d9388, 340, 0, 80000, 7f3d63da5e10)
+   hello-21528   0.... 12154.366062: sys_enter_read:       fd: 0x00000003, buf: 0x7fff433d9388, count: 0x00000340
+   hello-21528   0.... 12154.366064: sys_exit:             NR 0 = 832
+   hello-21528   0.... 12154.366064: sys_exit_read:        0x340
+   hello-21528   0d... 12154.366064: page_fault_user:      address=0x7fff433d8f98s ip=0x7f3d63d7e8bes error_code=0x6
+   hello-21528   0.... 12154.366065: mm_page_alloc:        page=0x701e31 pfn=7347761 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0.... 12154.366065: sys_enter:            NR 17 (3, 7fff433d8fa0, 310, 40, 7fff433d8fa0, 7f3d63da5e10)
+   hello-21528   0.... 12154.366065: sys_enter_pread64:    fd: 0x00000003, buf: 0x7fff433d8fa0, count: 0x00000310, pos: 0x00000040
+   hello-21528   0.... 12154.366065: sys_exit:             NR 17 = 784
+   hello-21528   0.... 12154.366066: sys_exit_pread64:     0x310
+   hello-21528   0.... 12154.366066: sys_enter:            NR 17 (3, 7fff433d8f70, 20, 350, 7fff433d8fa0, 0)
+   hello-21528   0.... 12154.366066: sys_enter_pread64:    fd: 0x00000003, buf: 0x7fff433d8f70, count: 0x00000020, pos: 0x00000350
+   hello-21528   0.... 12154.366066: sys_exit:             NR 17 = 32
+   hello-21528   0.... 12154.366066: sys_exit_pread64:     0x20
+   hello-21528   0.... 12154.366066: sys_enter:            NR 17 (3, 7fff433d8f20, 44, 370, 7fff433d8fa0, 0)
+   hello-21528   0.... 12154.366066: sys_enter_pread64:    fd: 0x00000003, buf: 0x7fff433d8f20, count: 0x00000044, pos: 0x00000370
+   hello-21528   0.... 12154.366067: sys_exit:             NR 17 = 68
+   hello-21528   0.... 12154.366067: sys_exit_pread64:     0x44
+   hello-21528   0.... 12154.366067: sys_enter:            NR 5 (3, 7fff433d9230, 7fff433d9230, 370, 1, 7f3d63da5190)
+   hello-21528   0.... 12154.366067: sys_enter_newfstat:   fd: 0x00000003, statbuf: 0x7fff433d9230
+   hello-21528   0.... 12154.366067: sys_exit:             NR 5 = 0
+   hello-21528   0.... 12154.366067: sys_exit_newfstat:    0x0
+   hello-21528   0.... 12154.366068: sys_enter:            NR 9 (0, 2000, 3, 22, ffffffff, 0)
+   hello-21528   0.... 12154.366068: sys_enter_mmap:       addr: 0x00000000, len: 0x00002000, prot: 0x00000003, flags: 0x00000022, fd: 0xffffffff, off: 0x00000000
+   hello-21528   0.... 12154.366068: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4941040 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366069: sys_exit:             NR 9 = 139901644677120
+   hello-21528   0.... 12154.366069: sys_exit_mmap:        0x7f3d63d5a000
+   hello-21528   0d... 12154.366069: page_fault_user:      address=0x7f3d63d5a028s ip=0x7f3d63d8328as error_code=0x6
+   hello-21528   0.... 12154.366069: kmem_cache_alloc:     (__anon_vma_prepare+0x33) call_site=__anon_vma_prepare ptr=0xffffa05a34b50e40 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366069: kmem_cache_alloc:     (__anon_vma_prepare+0x108) call_site=__anon_vma_prepare ptr=0xffffa05b809f4d10 bytes_req=80 bytes_alloc=88 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366070: mm_page_alloc:        page=0x7c249b pfn=8135835 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0.... 12154.366070: sys_enter:            NR 17 (3, 7fff433d8e80, 310, 40, ffff, 7f3d63d5a480)
+   hello-21528   0.... 12154.366070: sys_enter_pread64:    fd: 0x00000003, buf: 0x7fff433d8e80, count: 0x00000310, pos: 0x00000040
+   hello-21528   0.... 12154.366071: sys_exit:             NR 17 = 784
+   hello-21528   0.... 12154.366071: sys_exit_pread64:     0x310
+   hello-21528   0.... 12154.366071: sys_enter:            NR 17 (3, 7fff433d8b60, 20, 350, 3, 350)
+   hello-21528   0.... 12154.366071: sys_enter_pread64:    fd: 0x00000003, buf: 0x7fff433d8b60, count: 0x00000020, pos: 0x00000350
+   hello-21528   0.... 12154.366071: sys_exit:             NR 17 = 32
+   hello-21528   0.... 12154.366071: sys_exit_pread64:     0x20
+   hello-21528   0.... 12154.366072: sys_enter:            NR 17 (3, 7fff433d8b40, 44, 370, 3, 370)
+   hello-21528   0.... 12154.366072: sys_enter_pread64:    fd: 0x00000003, buf: 0x7fff433d8b40, count: 0x00000044, pos: 0x00000370
+   hello-21528   0.... 12154.366072: sys_exit:             NR 17 = 68
+   hello-21528   0.... 12154.366072: sys_exit_pread64:     0x44
+   hello-21528   0.... 12154.366072: sys_enter:            NR 9 (0, 1f14d8, 1, 802, 3, 0)
+   hello-21528   0.... 12154.366072: sys_enter_mmap:       addr: 0x00000000, len: 0x001f14d8, prot: 0x00000001, flags: 0x00000802, fd: 0x00000003, off: 0x00000000
+   hello-21528   0.... 12154.366072: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940b60 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366074: sys_exit:             NR 9 = 139901642637312
+   hello-21528   0.... 12154.366074: sys_exit_mmap:        0x7f3d63b68000
+   hello-21528   0.... 12154.366074: sys_enter:            NR 10 (7f3d63b8d000, 1c3000, 0, 802, 3, 0)
+   hello-21528   0.... 12154.366075: sys_enter_mprotect:   start: 0x7f3d63b8d000, len: 0x001c3000, prot: 0x00000000
+   hello-21528   0.... 12154.366075: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4941380 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366077: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4941a00 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366079: sys_exit:             NR 10 = 0
+   hello-21528   0.... 12154.366079: sys_exit_mprotect:    0x0
+   hello-21528   0.... 12154.366080: sys_enter:            NR 9 (7f3d63b8d000, 178000, 5, 812, 3, 25000)
+   hello-21528   0.... 12154.366080: sys_enter_mmap:       addr: 0x7f3d63b8d000, len: 0x00178000, prot: 0x00000005, flags: 0x00000812, fd: 0x00000003, off: 0x00025000
+   hello-21528   0.... 12154.366080: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4940ea0 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0d... 12154.366082: mm_lru_insertion:     page=0xfffff22f5668c440 pfn=5874449 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366082: mm_lru_insertion:     page=0xfffff22f501ff6c0 pfn=4227035 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366082: mm_lru_insertion:     page=0xfffff22f53a79800 pfn=5152352 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366082: mm_lru_insertion:     page=0xfffff22f58d80d40 pfn=6512693 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366082: mm_lru_insertion:     page=0xfffff22f5cbf3e80 pfn=7535866 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366082: mm_lru_insertion:     page=0xfffff22f5c078c40 pfn=7347761 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366082: mm_lru_insertion:     page=0xfffff22f5f0926c0 pfn=8135835 lru=1 flags=Ma b  
+   hello-21528   0.... 12154.366083: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940ea0
+   hello-21528   0.... 12154.366084: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940ea0 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366084: sys_exit:             NR 9 = 139901642788864
+   hello-21528   0.... 12154.366084: sys_exit_mmap:        0x7f3d63b8d000
+   hello-21528   0.... 12154.366084: sys_enter:            NR 9 (7f3d63d05000, 4a000, 1, 812, 3, 19d000)
+   hello-21528   0.... 12154.366084: sys_enter_mmap:       addr: 0x7f3d63d05000, len: 0x0004a000, prot: 0x00000001, flags: 0x00000812, fd: 0x00000003, off: 0x0019d000
+   hello-21528   0.... 12154.366084: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4941860 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366085: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941860
+   hello-21528   0.... 12154.366085: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4941860 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366086: sys_exit:             NR 9 = 139901644328960
+   hello-21528   0.... 12154.366086: sys_exit_mmap:        0x7f3d63d05000
+   hello-21528   0.... 12154.366086: sys_enter:            NR 9 (7f3d63d50000, 6000, 3, 812, 3, 1e7000)
+   hello-21528   0.... 12154.366086: sys_enter_mmap:       addr: 0x7f3d63d50000, len: 0x00006000, prot: 0x00000003, flags: 0x00000812, fd: 0x00000003, off: 0x001e7000
+   hello-21528   0.... 12154.366086: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4940410 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366087: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940410
+   hello-21528   0.... 12154.366088: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4940410 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366088: sys_exit:             NR 9 = 139901644636160
+   hello-21528   0.... 12154.366088: sys_exit_mmap:        0x7f3d63d50000
+   hello-21528   0d... 12154.366088: page_fault_user:      address=0x7f3d63d55610s ip=0x7f3d63d99533s error_code=0x6
+   hello-21528   0.... 12154.366089: kmem_cache_alloc:     (__anon_vma_prepare+0x33) call_site=__anon_vma_prepare ptr=0xffffa05a34b50a40 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366089: kmem_cache_alloc:     (__anon_vma_prepare+0x108) call_site=__anon_vma_prepare ptr=0xffffa05b809f4420 bytes_req=80 bytes_alloc=88 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366089: mm_page_alloc:        page=0x61598e pfn=6379918 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0.... 12154.366090: sys_enter:            NR 9 (7f3d63d56000, 34d8, 3, 32, ffffffff, 0)
+   hello-21528   0.... 12154.366090: sys_enter_mmap:       addr: 0x7f3d63d56000, len: 0x000034d8, prot: 0x00000003, flags: 0x00000032, fd: 0xffffffff, off: 0x00000000
+   hello-21528   0d... 12154.366091: mm_lru_insertion:     page=0xfffff22f58566380 pfn=6379918 lru=1 flags=Ma b  
+   hello-21528   0.... 12154.366091: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941a00
+   hello-21528   0.... 12154.366092: sys_exit:             NR 9 = 139901644660736
+   hello-21528   0.... 12154.366092: sys_exit_mmap:        0x7f3d63d56000
+   hello-21528   0d... 12154.366092: page_fault_user:      address=0x7f3d63d52b80s ip=0x7f3d63d7d6f0s error_code=0x4
+   hello-21528   0d... 12154.366093: page_fault_user:      address=0x7f3d63d52bd8s ip=0x7f3d63d7d7b2s error_code=0x7
+   hello-21528   0.... 12154.366094: mm_page_alloc:        page=0x404563 pfn=4212067 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0d... 12154.366095: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0.... 12154.366095: sys_enter:            NR 3 (3, 29, 0, 7f3d63b68000, effffef5, 70000022)
+   hello-21528   0.... 12154.366095: sys_enter_close:      fd: 0x00000003
+   hello-21528   0.... 12154.366096: sys_exit:             NR 3 = 0
+   hello-21528   0.... 12154.366096: sys_exit_close:       0x0
+   hello-21528   0d... 12154.366096: page_fault_user:      address=0x7f3d63b6b8a0s ip=0x7f3d63d830b4s error_code=0x4
+   hello-21528   0.... 12154.366096: mm_page_alloc:        page=0x57de61 pfn=5758561 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0d... 12154.366098: page_fault_user:      address=0x7f3d63b83246s ip=0x7f3d63d98b77s error_code=0x4
+   hello-21528   0d... 12154.366103: page_fault_user:      address=0x7f3d63d5b540s ip=0x7f3d63d8a6f1s error_code=0x6
+   hello-21528   0.... 12154.366103: mm_page_alloc:        page=0x722dd0 pfn=7482832 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0.... 12154.366103: sys_enter:            NR 158 (1002, 7f3d63d5b540, ffff80c29c2a41a0, 40, 90, 1)
+   hello-21528   0.... 12154.366103: sys_enter_arch_prctl: option: 0x00001002, arg2: 0x7f3d63d5b540
+   hello-21528   0.... 12154.366104: write_msr:            c0000100, value 7f3d63d5b540
+   hello-21528   0.... 12154.366104: sys_exit:             NR 158 = 0
+   hello-21528   0.... 12154.366104: sys_exit_arch_prctl:  0x0
+   hello-21528   0d... 12154.366105: page_fault_user:      address=0x7f3d63d53008s ip=0x7f3d63d83ab2s error_code=0x7
+   hello-21528   0.... 12154.366105: mm_page_alloc:        page=0x184f60 pfn=1593184 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0d... 12154.366106: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0d... 12154.366106: page_fault_user:      address=0x7f3d63d50600s ip=0x7f3d63d84304s error_code=0x7
+   hello-21528   0.... 12154.366107: mm_page_alloc:        page=0x5fe0d0 pfn=6283472 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0d... 12154.366107: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0d... 12154.366108: page_fault_user:      address=0x7f3d63d51000s ip=0x7f3d63d84304s error_code=0x7
+   hello-21528   0.... 12154.366108: mm_page_alloc:        page=0x715b70 pfn=7428976 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0d... 12154.366109: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0d... 12154.366110: page_fault_user:      address=0x7f3d63d543f0s ip=0x7f3d63d84304s error_code=0x7
+   hello-21528   0.... 12154.366110: mm_page_alloc:        page=0x42321c pfn=4338204 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE
+   hello-21528   0d... 12154.366111: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0d... 12154.366112: page_fault_user:      address=0x7f3d63b7fe54s ip=0x7f3d63d820ebs error_code=0x4
+   hello-21528   0d... 12154.366126: page_fault_user:      address=0x7f3d63c0b600s ip=0x7f3d63c0b600s error_code=0x14
+   hello-21528   0d... 12154.366128: page_fault_user:      address=0x7f3d63c27e60s ip=0x7f3d63c27e60s error_code=0x14
+   hello-21528   0d... 12154.366130: page_fault_user:      address=0x7f3d63c13d20s ip=0x7f3d63c13d20s error_code=0x14
+   hello-21528   0.... 12154.366131: sys_enter:            NR 10 (7f3d63d50000, 3000, 1, 7f3d63da3600, 7f3d63cf6a60, 7f3d63d76670)
+   hello-21528   0.... 12154.366131: sys_enter_mprotect:   start: 0x7f3d63d50000, len: 0x00003000, prot: 0x00000001
+   hello-21528   0.... 12154.366131: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4941a00 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366132: kmem_cache_alloc:     (anon_vma_clone+0x64) call_site=anon_vma_clone ptr=0xffffa05a34b508c0 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_NOWAIT|__GFP_NOWARN
+   hello-21528   0d... 12154.366133: tlb_flush:            pages=3 reason=local mm shootdown (3)
+   hello-21528   0.... 12154.366133: sys_exit:             NR 10 = 0
+   hello-21528   0.... 12154.366133: sys_exit_mprotect:    0x0
+   hello-21528   0.... 12154.366134: sys_enter:            NR 10 (562f8f3ae000, 1000, 1, 562f8f3aef48, 0, f)
+   hello-21528   0.... 12154.366134: sys_enter_mprotect:   start: 0x562f8f3ae000, len: 0x00001000, prot: 0x00000001
+   hello-21528   0.... 12154.366135: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4940820 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366135: kmem_cache_alloc:     (anon_vma_clone+0x64) call_site=anon_vma_clone ptr=0xffffa05a34b50cc0 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_NOWAIT|__GFP_NOWARN
+   hello-21528   0d... 12154.366135: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0.... 12154.366135: sys_exit:             NR 10 = 0
+   hello-21528   0.... 12154.366135: sys_exit_mprotect:    0x0
+   hello-21528   0.... 12154.366137: sys_enter:            NR 10 (7f3d63da3000, 1000, 1, 7f3d63da3f68, 0, 7f3d63b70790)
+   hello-21528   0.... 12154.366137: sys_enter_mprotect:   start: 0x7f3d63da3000, len: 0x00001000, prot: 0x00000001
+   hello-21528   0.... 12154.366137: kmem_cache_alloc:     (vm_area_dup+0x1e) call_site=vm_area_dup ptr=0xffffa05be4941e10 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366137: kmem_cache_alloc:     (anon_vma_clone+0x64) call_site=anon_vma_clone ptr=0xffffa05a34b50c80 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_NOWAIT|__GFP_NOWARN
+   hello-21528   0d... 12154.366139: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0.... 12154.366139: sys_exit:             NR 10 = 0
+   hello-21528   0.... 12154.366139: sys_exit_mprotect:    0x0
+   hello-21528   0.... 12154.366139: sys_enter:            NR 11 (7f3d63d5c000, 19ad2, 1cb700000000, 7f3d63da3f68, 0, 7f3d63b70790)
+   hello-21528   0.... 12154.366139: sys_enter_munmap:     addr: 0x7f3d63d5c000, len: 0x00019ad2
+   hello-21528   0d... 12154.366140: mm_lru_insertion:     page=0xfffff22f501158c0 pfn=4212067 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366140: mm_lru_insertion:     page=0xfffff22f5c8b7400 pfn=7482832 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366140: mm_lru_insertion:     page=0xfffff22f4613d800 pfn=1593184 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366140: mm_lru_insertion:     page=0xfffff22f57f83400 pfn=6283472 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366141: mm_lru_insertion:     page=0xfffff22f5c56dc00 pfn=7428976 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366141: mm_lru_insertion:     page=0xfffff22f508c8700 pfn=4338204 lru=1 flags=Ma b  
+   hello-21528   0.... 12154.366142: mm_page_alloc:        page=0x862d57 pfn=8793431 order=0 migratetype=0 gfp_flags=GFP_NOWAIT|__GFP_NOWARN
+   hello-21528   0d... 12154.366144: tlb_flush:            pages=26 reason=local mm shootdown (3)
+   hello-21528   0.... 12154.366144: mm_page_free:         page=0x862d57 pfn=8793431 order=0
+   hello-21528   0.... 12154.366145: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941c70
+   hello-21528   0.... 12154.366145: sys_exit:             NR 11 = 0
+   hello-21528   0.... 12154.366145: sys_exit_munmap:      0x0
+   hello-21528   0.... 12154.366146: kmem_cache_free:      (security_file_free+0x54) call_site=security_file_free ptr=0xffffa057afd28930
+   hello-21528   0d... 12154.366146: page_fault_user:      address=0x7f3d63b8ef30s ip=0x7f3d63b8ef30s error_code=0x14
+   hello-21528   0d... 12154.366148: page_fault_user:      address=0x7f3d63d58e78s ip=0x7f3d63b8ef60s error_code=0x6
+   hello-21528   0.... 12154.366148: mm_page_alloc:        page=0x6f7d9a pfn=7306650 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0d... 12154.366149: page_fault_user:      address=0x7f3d63d572e0s ip=0x7f3d63b8ef6ds error_code=0x6
+   hello-21528   0.... 12154.366150: mm_page_alloc:        page=0x59fec8 pfn=5897928 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0d... 12154.366150: page_fault_user:      address=0x7f3d63c8a0e0s ip=0x7f3d63c8a0e0s error_code=0x14
+   hello-21528   0d... 12154.366152: page_fault_user:      address=0x7f3d63cf3490s ip=0x7f3d63cf3490s error_code=0x14
+   hello-21528   0d... 12154.366153: page_fault_user:      address=0x7f3d63b9f460s ip=0x7f3d63b9f460s error_code=0x14
+   hello-21528   0d... 12154.366155: page_fault_user:      address=0x7f3d63d1a8d0s ip=0x7f3d63c2747bs error_code=0x4
+   hello-21528   0d... 12154.366157: page_fault_user:      address=0x7f3d63d59198s ip=0x7f3d63b8eb5es error_code=0x6
+   hello-21528   0.... 12154.366158: mm_page_alloc:        page=0x7b838a pfn=8094602 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0d... 12154.366158: page_fault_user:      address=0x562f8f3ac060s ip=0x562f8f3ac060s error_code=0x14
+   hello-21528   0d... 12154.366159: page_fault_user:      address=0x7f3d63bb1f60s ip=0x7f3d63bb1f60s error_code=0x14
+   hello-21528   0d... 12154.366161: page_fault_user:      address=0x7f3d63bade00s ip=0x7f3d63bade00s error_code=0x14
+   hello-21528   0d... 12154.366162: page_fault_user:      address=0x7f3d63bef5a0s ip=0x7f3d63bef5a0s error_code=0x14
+   hello-21528   0d... 12154.366163: page_fault_user:      address=0x562f8f3ad004s ip=0x7f3d63cf3675s error_code=0x4
+   hello-21528   0d... 12154.366164: page_fault_user:      address=0x7f3d63d564c8s ip=0x7f3d63bef5dds error_code=0x4
+   hello-21528   0d... 12154.366164: page_fault_user:      address=0x7f3d63d564c0s ip=0x7f3d63bef5fcs error_code=0x7
+   hello-21528   0.... 12154.366165: mm_page_alloc:        page=0x42284b pfn=4335691 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0d... 12154.366165: tlb_flush:            pages=1 reason=local mm shootdown (3)
+   hello-21528   0d... 12154.366166: page_fault_user:      address=0x7f3d63bfa750s ip=0x7f3d63bfa750s error_code=0x14
+   hello-21528   0d... 12154.366167: page_fault_user:      address=0x7f3d63c78670s ip=0x7f3d63c78670s error_code=0x14
+   hello-21528   0.... 12154.366168: sys_enter:            NR 5 (1, 7fff433d9e40, 7fff433d9e40, b, 1, 7f3d63d87d50)
+   hello-21528   0.... 12154.366168: sys_enter_newfstat:   fd: 0x00000001, statbuf: 0x7fff433d9e40
+   hello-21528   0.... 12154.366169: sys_exit:             NR 5 = 0
+   hello-21528   0.... 12154.366169: sys_exit_newfstat:    0x0
+   hello-21528   0d... 12154.366169: page_fault_user:      address=0x7f3d63cca400s ip=0x7f3d63cca400s error_code=0x14
+   hello-21528   0.... 12154.366189: sys_enter:            NR 12 (0, 21000, 2b0, 7f3d63d53be0, 7f3d63d53be0, 7f3d63b6f548)
+   hello-21528   0.... 12154.366189: sys_enter_brk:        brk: 0x00000000
+   hello-21528   0.... 12154.366189: sys_exit:             NR 12 = 94762281680896
+   hello-21528   0.... 12154.366189: sys_exit_brk:         0x562f90234000
+   hello-21528   0.... 12154.366189: sys_enter:            NR 12 (562f90255000, 21000, 7f3d63d57300, 7f3d63d53be0, 7f3d63d53be0, 7f3d63b6f548)
+   hello-21528   0.... 12154.366189: sys_enter_brk:        brk: 0x562f90255000
+   hello-21528   0.... 12154.366190: kmem_cache_alloc:     (vm_area_alloc+0x1e) call_site=vm_area_alloc ptr=0xffffa05be4941c70 bytes_req=208 bytes_alloc=208 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366190: sys_exit:             NR 12 = 94762281816064
+   hello-21528   0.... 12154.366190: sys_exit_brk:         0x562f90255000
+   hello-21528   0d... 12154.366190: page_fault_user:      address=0x562f90234008s ip=0x7f3d63c0291bs error_code=0x6
+   hello-21528   0.... 12154.366191: mm_page_alloc:        page=0x862d57 pfn=8793431 order=0 migratetype=0 gfp_flags=GFP_KERNEL_ACCOUNT|__GFP_ZERO
+   hello-21528   0.... 12154.366191: kmem_cache_alloc:     (__anon_vma_prepare+0x33) call_site=__anon_vma_prepare ptr=0xffffa05a34b50b40 bytes_req=64 bytes_alloc=64 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366191: kmem_cache_alloc:     (__anon_vma_prepare+0x108) call_site=__anon_vma_prepare ptr=0xffffa05b809f40b0 bytes_req=80 bytes_alloc=88 gfp_flags=GFP_KERNEL
+   hello-21528   0.... 12154.366192: mm_page_alloc:        page=0x59ed05 pfn=5893381 order=0 migratetype=1 gfp_flags=GFP_HIGHUSER_MOVABLE|__GFP_ZERO
+   hello-21528   0.... 12154.366192: sys_enter:            NR 1 (1, 562f902342a0, d, 7f3d63d53be0, 0, 7c)
+   hello-21528   0.... 12154.366193: sys_enter_write:      fd: 0x00000001, buf: 0x562f902342a0, count: 0x0000000d
+   hello-21528   0d... 12154.366196: workqueue_queue_work: work struct=0xffffa05ab6a05808 function=flush_to_ldisc workqueue=0xffffa05be9c0d400 req_cpu=8192 cpu=4294967295
+   hello-21528   0d... 12154.366196: workqueue_activate_work: work struct 0xffffa05ab6a05808
+   hello-21528   0d... 12154.366196: sched_waking:         comm=kworker/u24:0 pid=19607 prio=120 target_cpu=005
+   hello-21528   0d... 12154.366198: sched_wake_idle_without_ipi: cpu=5
+   hello-21528   0d... 12154.366198: sched_wakeup:         kworker/u24:0:19607 [120] success=1 CPU:005
+   hello-21528   0.... 12154.366199: sys_exit:             NR 1 = 13
+   hello-21528   0.... 12154.366199: sys_exit_write:       0xd
+   hello-21528   0d... 12154.366200: page_fault_user:      address=0x7f3d63c4e290s ip=0x7f3d63c4e290s error_code=0x14
+   hello-21528   0.... 12154.366202: sys_enter:            NR 231 (0, 3c, 0, 2, e7, ffffffffffffff80)
+   hello-21528   0.... 12154.366202: sys_enter_exit_group: error_code: 0x00000000
+   hello-21528   0d... 12154.366204: mm_lru_insertion:     page=0xfffff22f5bdf6680 pfn=7306650 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366204: mm_lru_insertion:     page=0xfffff22f567fb200 pfn=5897928 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366204: mm_lru_insertion:     page=0xfffff22f5ee0e280 pfn=8094602 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366204: mm_lru_insertion:     page=0xfffff22f508a12c0 pfn=4335691 lru=1 flags=Ma b  
+   hello-21528   0d... 12154.366204: mm_lru_insertion:     page=0xfffff22f567b4140 pfn=5893381 lru=1 flags=Ma b  
+   hello-21528   0.... 12154.366205: mm_page_alloc:        page=0x862d56 pfn=8793430 order=0 migratetype=0 gfp_flags=GFP_NOWAIT|__GFP_NOWARN
+   hello-21528   0.... 12154.366215: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a34b50880
+   hello-21528   0.... 12154.366215: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa05b809f4e18
+   hello-21528   0.... 12154.366215: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a34b50cc0
+   hello-21528   0.... 12154.366216: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa05b809f40b0
+   hello-21528   0.... 12154.366216: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a34b50b40
+   hello-21528   0.... 12154.366216: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a34b50a40
+   hello-21528   0.... 12154.366216: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa05b809f4420
+   hello-21528   0.... 12154.366216: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a34b508c0
+   hello-21528   0.... 12154.366216: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa05b809f4d10
+   hello-21528   0.... 12154.366217: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a34b50e40
+   hello-21528   0.... 12154.366217: kmem_cache_free:      (unlink_anon_vmas+0xc5) call_site=unlink_anon_vmas ptr=0xffffa05a34b50c40
+   hello-21528   0.... 12154.366217: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa05b809f4058
+   hello-21528   0.... 12154.366217: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a34b50c80
+   hello-21528   0.... 12154.366217: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa05b809f42c0
+   hello-21528   0.... 12154.366217: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a34b50780
+   hello-21528   0.... 12154.366217: kmem_cache_free:      (__put_anon_vma+0x32) call_site=__put_anon_vma ptr=0xffffa05b809f4948
+   hello-21528   0.... 12154.366217: kmem_cache_free:      (unlink_anon_vmas+0x147) call_site=unlink_anon_vmas ptr=0xffffa05a34b50ec0
+   hello-21528   0d... 12154.366218: tlb_flush:            pages=0 reason=flush on task switch (0)
+   hello-21528   0.... 12154.366219: mm_page_free:         page=0x59ed05 pfn=5893381 order=0
+   hello-21528   0.... 12154.366219: mm_page_free:         page=0x4ebe7d pfn=5160573 order=0
+   hello-21528   0.... 12154.366219: mm_page_free:         page=0x72fcfa pfn=7535866 order=0
+   hello-21528   0d... 12154.366219: mm_page_free_batched: page=0x59ed05 pfn=5893381 order=0
+   hello-21528   0d... 12154.366219: mm_page_free_batched: page=0x4ebe7d pfn=5160573 order=0
+   hello-21528   0d... 12154.366219: mm_page_free_batched: page=0x72fcfa pfn=7535866 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x7ffe0e pfn=8388110 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x86510f pfn=8802575 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x8659b0 pfn=8804784 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x57dd2f pfn=5758255 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x57dd2e pfn=5758254 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x57de60 pfn=5758560 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x57de61 pfn=5758561 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x57dceb pfn=5758187 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x534842 pfn=5457986 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x862d57 pfn=8793431 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x8659b1 pfn=8804785 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x422cdf pfn=4336863 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x636035 pfn=6512693 order=0
+   hello-21528   0.... 12154.366223: mm_page_free:         page=0x701e31 pfn=7347761 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x4e9e60 pfn=5152352 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x59a311 pfn=5874449 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x407fdb pfn=4227035 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x722dd0 pfn=7482832 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x7c249b pfn=8135835 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x7b838a pfn=8094602 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x6f7d9a pfn=7306650 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x59fec8 pfn=5897928 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x42284b pfn=4335691 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x61598e pfn=6379918 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x42321c pfn=4338204 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x184f60 pfn=1593184 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x404563 pfn=4212067 order=0
+   hello-21528   0.... 12154.366224: mm_page_free:         page=0x715b70 pfn=7428976 order=0
+   hello-21528   0.... 12154.366225: mm_page_free:         page=0x5fe0d0 pfn=6283472 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x7ffe0e pfn=8388110 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x86510f pfn=8802575 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x8659b0 pfn=8804784 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x57dd2f pfn=5758255 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x57dd2e pfn=5758254 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x57de60 pfn=5758560 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x57de61 pfn=5758561 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x57dceb pfn=5758187 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x534842 pfn=5457986 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x862d57 pfn=8793431 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x8659b1 pfn=8804785 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x422cdf pfn=4336863 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x636035 pfn=6512693 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x701e31 pfn=7347761 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x4e9e60 pfn=5152352 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x59a311 pfn=5874449 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x407fdb pfn=4227035 order=0
+   hello-21528   0d... 12154.366225: mm_page_free_batched: page=0x722dd0 pfn=7482832 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x7c249b pfn=8135835 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x7b838a pfn=8094602 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x6f7d9a pfn=7306650 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x59fec8 pfn=5897928 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x42284b pfn=4335691 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x61598e pfn=6379918 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x42321c pfn=4338204 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x184f60 pfn=1593184 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x404563 pfn=4212067 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x715b70 pfn=7428976 order=0
+   hello-21528   0d... 12154.366226: mm_page_free_batched: page=0x5fe0d0 pfn=6283472 order=0
+   hello-21528   0.... 12154.366226: mm_page_free:         page=0x862d56 pfn=8793430 order=0
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940680
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940d00
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940c30
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940dd0
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940820
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941c70
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941380
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940ea0
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941860
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940b60
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940410
+   hello-21528   0.... 12154.366227: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941a00
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941040
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941ba0
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941450
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940270
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941ee0
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941e10
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4941930
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be4940f70
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be49412b0
+   hello-21528   0.... 12154.366228: kmem_cache_free:      (vm_area_free+0x18) call_site=vm_area_free ptr=0xffffa05be49404e0
+   hello-21528   0.... 12154.366229: sched_process_exit:   comm=hello pid=21528 prio=120
+   hello-21528   0.... 12154.366230: kmem_cache_free:      (put_files_struct+0xa8) call_site=put_files_struct ptr=0xffffa0592322e3c0
+   hello-21528   0.... 12154.366230: kmem_cache_free:      (free_fs_struct+0x30) call_site=free_fs_struct ptr=0xffffa05bd8e983c0
+   hello-21528   0.... 12154.366230: kmem_cache_free:      (security_file_free+0x54) call_site=security_file_free ptr=0xffffa05bc70f23c0
+   hello-21528   0.... 12154.366231: kmem_cache_free:      (security_file_free+0x54) call_site=security_file_free ptr=0xffffa057afd28468
+   hello-21528   0.... 12154.366231: kmem_cache_free:      (security_file_free+0x54) call_site=security_file_free ptr=0xffffa057afd282d0
+   hello-21528   0.... 12154.366231: x86_fpu_regs_deactivated: x86/fpu: 0xffffa05a4a0d43c0 load: 0 xfeatures: 0 xcomp_bv: 800000000000021f
+   hello-21528   0.... 12154.366231: x86_fpu_dropped:      x86/fpu: 0xffffa05a4a0d43c0 load: 0 xfeatures: 0 xcomp_bv: 800000000000021f
+   hello-21528   0d... 12154.366232: sched_stat_runtime:   comm=hello pid=21528 runtime=323814 [ns] vruntime=77894849422 [ns]
+   hello-21528   0dN.. 12154.366234: signal_generate:      sig=17 errno=0 code=1 comm=trace-cmd pid=21514 grp=1 res=1
+   hello-21528   0dN.. 12154.366235: sched_waking:         comm=trace-cmd pid=21514 prio=120 target_cpu=006
+   hello-21528   0dN.. 12154.366236: sched_wake_idle_without_ipi: cpu=6
+   hello-21528   0dN.. 12154.366236: sched_wakeup:         trace-cmd:21514 [120] success=1 CPU:006
+   hello-21528   0dN.. 12154.366237: rcu_utilization:      Start context switch
+   hello-21528   0dN.. 12154.366237: rcu_utilization:      End context switch
+   hello-21528   0dN.. 12154.366238: sched_stat_runtime:   comm=hello pid=21528 runtime=5478 [ns] vruntime=1313475111148 [ns]
+   hello-21528   0d... 12154.366238: sched_switch:         hello:21528 [120] X ==> swapper/0:0 [120]
