@@ -1,0 +1,6 @@
+A quick netconsole demo session !
+
+A buggy module (running on a Fedora 38 VM) which abruptly and completely hangs the system!
+
+1. Setup netconsole on it as the sender system
+
