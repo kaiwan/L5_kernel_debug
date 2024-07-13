@@ -1,0 +1,50 @@
+#!/bin/bash
+name=$(basename $0)
+[[ $# -eq 0 ]] && {
+  echo "usage: ${name} ftrace-raw-file"
+  exit 1
+}
+
+die()
+{
+echo >&2 "FATAL: $*"
+exit 1
+}
+warn()
+{
+echo >&2 "WARNING: $*"
+}
+
+
+#--- 'main'
+printf "${name}: working ...\r"
+TRCFILE=/tmp/${name}_raw_ftrace
+TRCFILE2=/tmp/${name}_raw_ftrace_2
+\cp -f $1 ${TRCFILE} #2>/dev/null
+
+# preprocess
+sed -i '/^#/d' ${TRCFILE} # rm comment lines
+sed -i 's/^[ \t]*//' ${TRCFILE} # rm whitespace at beginning of each line
+# change (f.e.) '3)' to '3'
+cat ${TRCFILE} | awk -F')' '{printf "%d %s\n", $1, $2}' > ${TRCFILE2}
+
+MAXCPU=$(sort -t')' -k1n ${TRCFILE2} |tail -n1 |awk '{print $1}')
+[[ ${MAXCPU} =~ ^[0-9]+$ ]] || {
+  warn "couldn't fetch highest cpu# from raw ftrace, using $(nproc)-1 as max cpu"
+  let MAXCPU=$(nproc)-1
+}
+echo "(highest cpu # is ${MAXCPU})"
+#exit 0
+
+mkdir bycpu 2>/dev/null
+cpu=0
+while [[ ${cpu} -le ${MAXCPU} ]]
+do
+  filenm="bycpu/RAW_FTRC_CPU${cpu}"
+  grep "^${cpu} " ${TRCFILE2} > ${filenm}
+
+  #awk -v c=${cpu} '$1 == "$c)" {print $0}' ${TRCFILE} > ${filenm}
+  let cpu=cpu+1
+done
+echo "Done, report files are in bycpu/RAW_FTRC_CPU<#>"
+exit 0
