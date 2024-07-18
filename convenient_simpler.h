@@ -33,10 +33,10 @@
 #ifdef DEBUG
 #ifdef __KERNEL__
 #define MSG(string, args...) \
-		 printk(KERN_INFO "%s:%d : " string, __FUNCTION__, __LINE__, ##args)
+	pr_info("%s:%d : " string, __FUNCTION__, __LINE__, ##args)
 #else
 #define MSG(string, args...) \
-		fprintf(stderr, "%s:%d : " string, __FUNCTION__, __LINE__, ##args)
+	fprintf(stderr, "%s:%d : " string, __FUNCTION__, __LINE__, ##args)
 #endif
 
 #ifdef __KERNEL__
@@ -51,18 +51,18 @@
 
 #ifdef __KERNEL__
 #define QPDS do { \
-		 MSG("\n"); \
-		 dump_stack(); \
-	  } while(0)
+	MSG("\n"); \
+	dump_stack(); \
+} while(0)
 #define PRCS_CTX do { \
-		 if (!in_interrupt()) { \
-			MSG("prcs ctx: %s(%d)\n", current->comm, current->pid); \
-		 } \
-		 else { \
-			MSG("irq ctx\n"); \
-			PRINT_IRQCTX();   \
-		} \
-	  } while(0)
+	if (!in_interrupt()) { \
+		MSG("prcs ctx: %s(%d)\n", current->comm, current->pid); \
+	} \
+	else { \
+		MSG("irq ctx\n"); \
+		PRINT_IRQCTX();   \
+	} \
+} while(0)
 #endif
 
 #ifdef __KERNEL__
@@ -89,7 +89,7 @@ if (!(expr)) { \
 static inline void beep(int what)
 {
 #ifdef __KERNEL__
-	(void)printk(KERN_INFO "%c", (char)what);
+	(void)pr_info("%c", (char)what);
 #else
 	(void)printf("%c", (char)what);
 #endif
@@ -125,7 +125,7 @@ static inline void beep(int what)
 	if (!in_interrupt()) {	\
 		set_current_state (TASK_INTERRUPTIBLE); \
 		schedule_timeout (val * HZ); \
-	}	\
+	} \
 }
 #endif
 
