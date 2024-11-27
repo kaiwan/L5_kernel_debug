@@ -1,0 +1,62 @@
+#!/bin/bash
+# From https://www.linkedin.com/pulse/linux-kernel-how-use-ftrace-efficiently-function-tracer-austin-kim-vpkcc/
+# Austin Kim
+name=$(basename $0)
+die() {
+echo "FATAL: $@" ; exit 1
+}
+
+
+[[ $(id -u) -ne 0 ]] && die "needs root"
+[[ $# -ne 1 ]] && {
+   echo "Usage: ${name} func-to-trigger-ftrace-on"
+   exit 1
+}
+KFUNC_TRIGGER=$1
+
+echo 0 > /sys/kernel/debug/tracing/tracing_on
+sleep 1
+echo "tracing_off"
+
+echo 0 > /sys/kernel/debug/tracing/events/enable
+sleep 1
+echo "events disabled"
+
+# which func to trigger ftrace on
+echo ${KFUNC_TRIGGER} > /sys/kernel/debug/tracing/set_ftrace_filter
+#echo bcm2835_mmc_irq > /sys/kernel/debug/tracing/set_ftrace_filter
+sleep 1
+echo "set_ftrace_filter initialized"
+
+echo function > /sys/kernel/debug/tracing/current_tracer
+sleep 1
+echo "function tracer enabled"
+ 
+echo 1 > /sys/kernel/debug/tracing/events/printk/enable
+echo 1 > /sys/kernel/debug/tracing/events/irq/irq_handler_entry/enable
+echo 1 > /sys/kernel/debug/tracing/events/sched/sched_switch/enable
+echo 1 > /sys/kernel/debug/tracing/events/sched/sched_wakeup/enable
+sleep 1
+echo "events enabled"
+
+# show the relevant func's kernel stack trace
+echo 1 > /sys/kernel/debug/tracing/options/func_stack_trace
+echo 0 > /sys/kernel/debug/tracing/options/stacktrace
+echo 1 > /sys/kernel/debug/tracing/options/sym-offset
+echo "function stack trace enabled"
+
+echo 1 > /sys/kernel/debug/tracing/tracing_on
+echo "tracing_on"
+
+what_to_do_now_msg="
+Ftrace is now live tracing; it is triggered whenever the function ${KFUNC_TRIGGER} is invoked in any context.
+To stop tracing, run this as root:
+  echo 0 > /sys/kernel/debug/tracing/tracing_on
+To get the ftrace report into /tmp/ftrc_report.txt, do this:
+  cp /sys/kernel/debug/tracing/trace /tmp/ftrc_report.txt
+TIP:
+To see the essential portion of the report:
+ grep -B2 "^ =>" /tmp/ftrc_report.txt
+"
+echo "${what_to_do_now_msg}"
+exit 0
