@@ -181,7 +181,7 @@ static void oob_write_underflow(char **p, int sz)
 static void oob_write_overflow_dynmem(char **p, int sz)
 {
 	pr_info
-	    ("** Test case :: OOB write underflow dynamic-mem [func %s()] **\n",
+	    ("** Test case :: OOB write overflow dynamic-mem [func %s()] **\n",
 	     __func__);
 	pr_debug("*p = %p\n", (void *)*p);
 	memset(*p, 0xab, NUM + sz);

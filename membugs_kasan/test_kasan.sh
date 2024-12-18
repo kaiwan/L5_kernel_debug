@@ -91,5 +91,5 @@ ls -l ${KMOD}.ko
  exit 1
 }
 
-echo "sudo rmmod ${KMOD} 2>/dev/null ; sudo dmesg -C; sudo insmod ./${KMOD}.ko testcase=${1}; dmesg"
-sudo rmmod ${KMOD} 2>/dev/null ; sudo dmesg -C; sudo insmod ./${KMOD}.ko testcase=${1}; dmesg
+echo "sudo rmmod ${KMOD} 2>/dev/null ; sudo dmesg -C; sudo insmod ./${KMOD}.ko testcase=${1}; sudo dmesg"
+sudo rmmod ${KMOD} 2>/dev/null ; sudo dmesg -C; sudo insmod ./${KMOD}.ko testcase=${1}; sudo dmesg
