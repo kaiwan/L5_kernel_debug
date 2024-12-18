@@ -3,8 +3,20 @@
 # Austin Kim
 name=$(basename $0)
 die() {
-echo "FATAL: $@" ; exit 1
+ echo "FATAL: $@" 1>&2
+ exit 1
 }
+
+
+turnoff()
+{
+echo 0 > /sys/kernel/debug/tracing/tracing_on
+echo "turned tracing off"
+[[ -f ./reset_ftrace ]] && ./reset_ftrace
+echo "ftrace reset, bye"
+exit
+}
+trap 'turnoff' INT QUIT
 
 
 [[ $(id -u) -ne 0 ]] && die "needs root"
@@ -14,29 +26,32 @@ echo "FATAL: $@" ; exit 1
 }
 KFUNC_TRIGGER=$1
 
+[[ ! -f ./reset_ftrace ]] && echo "WARNING: the reset_ftrace script isn't found, can't reset when done"
+
+DELAY=.3
 echo 0 > /sys/kernel/debug/tracing/tracing_on
-sleep 1
+sleep ${DELAY}
 echo "tracing_off"
 
 echo 0 > /sys/kernel/debug/tracing/events/enable
-sleep 1
+sleep ${DELAY}
 echo "events disabled"
 
 # which func to trigger ftrace on
-echo ${KFUNC_TRIGGER} > /sys/kernel/debug/tracing/set_ftrace_filter
+echo ${KFUNC_TRIGGER} > /sys/kernel/debug/tracing/set_ftrace_filter || die "function specified - ${KFUNC_TRIGGER} - not present?"
 #echo bcm2835_mmc_irq > /sys/kernel/debug/tracing/set_ftrace_filter
-sleep 1
+sleep ${DELAY}
 echo "set_ftrace_filter initialized"
 
 echo function > /sys/kernel/debug/tracing/current_tracer
-sleep 1
+sleep ${DELAY}
 echo "function tracer enabled"
  
 echo 1 > /sys/kernel/debug/tracing/events/printk/enable
 echo 1 > /sys/kernel/debug/tracing/events/irq/irq_handler_entry/enable
 echo 1 > /sys/kernel/debug/tracing/events/sched/sched_switch/enable
 echo 1 > /sys/kernel/debug/tracing/events/sched/sched_wakeup/enable
-sleep 1
+sleep ${DELAY}
 echo "events enabled"
 
 # show the relevant func's kernel stack trace
@@ -49,14 +64,21 @@ echo 1 > /sys/kernel/debug/tracing/tracing_on
 echo "tracing_on"
 
 what_to_do_now_msg="
+-----------------------------------------------------------------------
 Ftrace is now live tracing; it is triggered whenever the function ${KFUNC_TRIGGER} is invoked in any context.
+-----------------------------------------------------------------------
 To stop tracing, run this as root:
   echo 0 > /sys/kernel/debug/tracing/tracing_on
+-----------------------------------------------------------------------
 To get the ftrace report into /tmp/ftrc_report.txt, do this:
   cp /sys/kernel/debug/tracing/trace /tmp/ftrc_report.txt
+After that, do run the reset_ftrace script
+-----------------------------------------------------------------------
 TIP:
 To see the essential portion of the report:
- grep -B2 "^ =>" /tmp/ftrc_report.txt
+ grep -B2 \"^ =>\" /tmp/ftrc_report.txt
+-----------------------------------------------------------------------
 "
 echo "${what_to_do_now_msg}"
+#turnoff
 exit 0
