@@ -94,15 +94,14 @@ Logging all trace data for ${DURATION_SHOW_TRACE} now ...
 select_run_toplevel_ev2trace()
 {
   SELECTED_TOPLEVEL_ITEM=${menu_arr_sorted[${SELECTED}]}
-  echo "Selected item #${SELECTED} is \"${menu_arr_sorted[${SELECTED}]}\"
-Logging all trace data for ${DURATION_SHOW_TRACE} now ...
-"
+  echo "Selected item #${SELECTED} is \"${menu_arr_sorted[${SELECTED}]}\""
 
   [[ ${SELECT_LEVEL2_EVENT} -eq 1 ]] && {
      select_run_level2_event
      stat=$?
      [[ ${stat} -ne 0 ]] && return
   }
+  echo "Logging all trace data for ${DURATION_SHOW_TRACE} now ..."
 
   # Do it! top-level event
   # All trace data is sent to stderr
