@@ -22,10 +22,17 @@ ROOTDISK_UUID=$(\grep -o "root=UUID=.*" /proc/cmdline |awk '{print $1}')
 [[ -z "${ROOTDISK_UUID}" ]] && {
   echo "${name}: Root disk UUID not obtained, aborting" ; exit 1
 }
-sudo kexec -p /boot/vmlinuz-$(uname -r) --initrd /boot/initrd.img-$(uname -r) \
- --append "irqpoll nr_cpus=1 reset_devices ${ROOTDISK_UUID} 3"
+
+CMD="sudo kexec -p /boot/vmlinuz-$(uname -r) --initrd /boot/initrd.img-$(uname -r) --append \"irqpoll nr_cpus=1 reset_devices ${ROOTDISK_UUID} 3\""
+echo "${CMD}"
+eval "${CMD}"
 [[ $? -ne 0 ]] && {
   echo "${name}: kexec failed, aborting" ; exit 1
-} || {
+}
+
+stat=$(cat /sys/kernel/kexec_crash_loaded)
+[[ ${stat} -eq 1 ]] && {
   echo "${name}: kexec success" ; exit 0
+} || {
+  echo "${name}: kexec failed?" ; exit 1
 }
