@@ -1,0 +1,1706 @@
+
+crash 8.0.0
+Copyright (C) 2002-2021  Red Hat, Inc.
+Copyright (C) 2004, 2005, 2006, 2010  IBM Corporation
+Copyright (C) 1999-2006  Hewlett-Packard Co
+Copyright (C) 2005, 2006, 2011, 2012  Fujitsu Limited
+Copyright (C) 2006, 2007  VA Linux Systems Japan K.K.
+Copyright (C) 2005, 2011, 2020-2021  NEC Corporation
+Copyright (C) 1999, 2002, 2007  Silicon Graphics, Inc.
+Copyright (C) 1999, 2000, 2001, 2002  Mission Critical Linux, Inc.
+Copyright (C) 2015, 2021  VMware, Inc.
+This program is free software, covered by the GNU General Public License,
+and you are welcome to change it and/or distribute copies of it under
+certain conditions.  Enter "help copying" to see the conditions.
+This program has absolutely no warranty.  Enter "help warranty" for details.
+ 
+NOTE: stdin: not a tty
+
+GNU gdb (GDB) 10.2
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-pc-linux-gnu".
+Type "show configuration" for configuration details.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+
+WARNING: kernel version inconsistency between vmlinux and dumpfile
+
+please wait... (gathering kmem slab cache data)                                                please wait... (gathering module symbol data)                                              please wait... (gathering task table data)                                           please wait... (determining panic task)                                              KERNEL: /home/trg/kernels/linux-6.8.12/vmlinux  [TAINTED]
+    DUMPFILE: /home/trg/kdump_labhangpnc.img
+        CPUS: 6
+        DATE: Thu Dec 19 18:17:59 IST 2024
+      UPTIME: 00:02:21
+LOAD AVERAGE: 0.47, 0.15, 0.05
+       TASKS: 549
+    NODENAME: trg-VirtualBox
+     RELEASE: 6.8.12-kdump
+     VERSION: #2 SMP PREEMPT_DYNAMIC Thu Dec 19 18:13:40 IST 2024
+     MACHINE: x86_64  (2591 Mhz)
+      MEMORY: 2 GB
+       PANIC: "Oops: 0003 [#1] PREEMPT SMP PTI" (check log for details)
+         PID: 2541
+     COMMAND: "insmod"
+        TASK: ffff8a643c1e5180  [THREAD_INFO: ffff8a643c1e5180]
+         CPU: 2
+       STATE: TASK_RUNNING (PANIC)
+
+crash: unable to open {dumpfile.img -or- /proc/kcore} < crash_getinfo > report.txt
+=== System Info ===
+--- sys ---
+      KERNEL: /home/trg/kernels/linux-6.8.12/vmlinux  [TAINTED]
+    DUMPFILE: /home/trg/kdump_labhangpnc.img
+        CPUS: 6
+        DATE: Thu Dec 19 18:17:59 IST 2024
+      UPTIME: 00:02:21
+LOAD AVERAGE: 0.47, 0.15, 0.05
+       TASKS: 549
+    NODENAME: trg-VirtualBox
+     RELEASE: 6.8.12-kdump
+     VERSION: #2 SMP PREEMPT_DYNAMIC Thu Dec 19 18:13:40 IST 2024
+     MACHINE: x86_64  (2591 Mhz)
+      MEMORY: 2 GB
+       PANIC: "Oops: 0003 [#1] PREEMPT SMP PTI" (check log for details)
+--- log ---
+[    0.000000] Linux version 6.8.12-kdump (trg@trg-VirtualBox) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #2 SMP PREEMPT_DYNAMIC Thu Dec 19 18:13:40 IST 2024
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-6.8.12-kdump root=UUID=9991f24e-9a3c-4eb1-ad96-9b9295546456 ro crashkernel=256M console=tty1
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000007ffeffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000007fff0000-0x000000007fffffff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] SMBIOS 2.5 present.
+[    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000001] kvm-clock: using sched offset of 13797179768 cycles
+[    0.000004] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000006] tsc: Detected 2591.998 MHz processor
+[    0.000530] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000533] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000537] last_pfn = 0x7fff0 max_arch_pfn = 0x400000000
+[    0.000590] MTRR map: 4 entries (3 fixed + 1 variable; max 35), built from 16 variable MTRRs
+[    0.000593] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.011783] found SMP MP-table at [mem 0x0009fbf0-0x0009fbff]
+[    0.011887] RAMDISK: [mem 0x35471000-0x36a2ffff]
+[    0.011893] ACPI: Early table checksum verification disabled
+[    0.011896] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[    0.011900] ACPI: XSDT 0x000000007FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[    0.011905] ACPI: FACP 0x000000007FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[    0.011910] ACPI: DSDT 0x000000007FFF0630 002353 (v02 VBOX   VBOXBIOS 00000002 INTL 20230628)
+[    0.011914] ACPI: FACS 0x000000007FFF0200 000040
+[    0.011916] ACPI: FACS 0x000000007FFF0200 000040
+[    0.011919] ACPI: APIC 0x000000007FFF0240 00007C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[    0.011922] ACPI: SSDT 0x000000007FFF02C0 00036C (v01 VBOX   VBOXCPUT 00000002 INTL 20230628)
+[    0.011925] ACPI: Reserving FACP table memory at [mem 0x7fff00f0-0x7fff01e3]
+[    0.011926] ACPI: Reserving DSDT table memory at [mem 0x7fff0630-0x7fff2982]
+[    0.011927] ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+[    0.011927] ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+[    0.011928] ACPI: Reserving APIC table memory at [mem 0x7fff0240-0x7fff02bb]
+[    0.011928] ACPI: Reserving SSDT table memory at [mem 0x7fff02c0-0x7fff062b]
+[    0.012069] No NUMA configuration found
+[    0.012070] Faking a node at [mem 0x0000000000000000-0x000000007ffeffff]
+[    0.012076] NODE_DATA(0) allocated [mem 0x7ffc5000-0x7ffeffff]
+[    0.012283] crashkernel reserved: 0x000000006f000000 - 0x000000007f000000 (256 MB)
+[    0.012292] Zone ranges:
+[    0.012293]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.012294]   DMA32    [mem 0x0000000001000000-0x000000007ffeffff]
+[    0.012296]   Normal   empty
+[    0.012296]   Device   empty
+[    0.012297] Movable zone start for each node
+[    0.012299] Early memory node ranges
+[    0.012299]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.012300]   node   0: [mem 0x0000000000100000-0x000000007ffeffff]
+[    0.012302] Initmem setup node 0 [mem 0x0000000000001000-0x000000007ffeffff]
+[    0.012447] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.012463] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.016101] On node 0, zone DMA32: 16 pages in unavailable ranges
+[    0.016401] ACPI: PM-Timer IO Port: 0x4008
+[    0.016446] IOAPIC[0]: apic_id 6, version 32, address 0xfec00000, GSI 0-23
+[    0.016450] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.016451] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.016456] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.016457] smpboot: Allowing 6 CPUs, 0 hotplug CPUs
+[    0.016471] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.016473] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.016474] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.016474] PM: hibernation: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.016475] [mem 0x80000000-0xfebfffff] available for PCI devices
+[    0.016476] Booting paravirtualized kernel on KVM
+[    0.016478] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.016483] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:6 nr_cpu_ids:6 nr_node_ids:1
+[    0.016847] percpu: Embedded 86 pages/cpu s229376 r8192 d114688 u524288
+[    0.016851] pcpu-alloc: s229376 r8192 d114688 u524288 alloc=1*2097152
+[    0.016853] pcpu-alloc: [0] 0 1 2 3 [0] 4 5 - - 
+[    0.016869] kvm-guest: PV spinlocks enabled
+[    0.016871] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.016876] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.8.12-kdump root=UUID=9991f24e-9a3c-4eb1-ad96-9b9295546456 ro crashkernel=256M console=tty1
+[    0.016924] Unknown kernel command line parameters "BOOT_IMAGE=/boot/vmlinuz-6.8.12-kdump", will be passed to user space.
+[    0.016941] random: crng init done
+[    0.017063] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.017191] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.017303] Fallback order for Node 0: 0 
+[    0.017305] Built 1 zonelists, mobility grouping on.  Total pages: 515824
+[    0.017306] Policy zone: DMA32
+[    0.017310] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.020692] Memory: 1726040K/2096696K available (20480K kernel code, 3215K rwdata, 12572K rodata, 4620K init, 4280K bss, 370396K reserved, 0K cma-reserved)
+[    0.021387] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
+[    0.021396] Kernel/User page tables isolation: enabled
+[    0.021418] ftrace: allocating 53101 entries in 208 pages
+[    0.028784] ftrace: allocated 208 pages with 3 groups
+[    0.029476] Dynamic Preempt: voluntary
+[    0.029531] rcu: Preemptible hierarchical RCU implementation.
+[    0.029532] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=6.
+[    0.029533] 	Trampoline variant of Tasks RCU enabled.
+[    0.029534] 	Rude variant of Tasks RCU enabled.
+[    0.029534] 	Tracing variant of Tasks RCU enabled.
+[    0.029534] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.029535] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=6
+[    0.031920] NR_IRQS: 524544, nr_irqs: 472, preallocated irqs: 16
+[    0.032151] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.038320] Console: colour VGA+ 80x25
+[    0.038322] printk: legacy console [tty1] enabled
+[    0.058097] ACPI: Core revision 20230628
+[    0.058351] APIC: Switch to symmetric I/O mode setup
+[    0.058673] x2apic enabled
+[    0.059025] APIC: Switched APIC routing to: physical x2apic
+[    0.060007] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.060217] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x255cb518234, max_idle_ns: 440795279333 ns
+[    0.060492] Calibrating delay loop (skipped) preset value.. 5183.99 BogoMIPS (lpj=2591998)
+[    0.060820] Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[    0.060972] Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0, 1GB 4
+[    0.061187] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.061424] Spectre V2 : Mitigation: Retpolines
+[    0.061489] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.061489] Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+[    0.061489] RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+[    0.061489] RETBleed: Vulnerable
+[    0.061489] Speculative Store Bypass: Vulnerable
+[    0.061489] MDS: Mitigation: Clear CPU buffers
+[    0.061489] MMIO Stale Data: Mitigation: Clear CPU buffers
+[    0.061489] SRBDS: Unknown: Dependent on hypervisor status
+[    0.061489] GDS: Unknown: Dependent on hypervisor status
+[    0.061489] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.061489] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.061489] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.061489] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.061489] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    0.073664] Freeing SMP alternatives memory: 44K
+[    0.073891] pid_max: default: 32768 minimum: 301
+[    0.074079] LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,integrity
+[    0.074505] landlock: Up and running.
+[    0.074634] Yama: becoming mindful.
+[    0.074782] AppArmor: AppArmor initialized
+[    0.074968] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.075219] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.183647] APIC calibration not consistent with PM-Timer: 102ms instead of 100ms
+[    0.183948] APIC delta adjusted to PM-Timer: 6311043 (6446502)
+[    0.184156] smpboot: CPU0: Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz (family: 0x6, model: 0xa5, stepping: 0x2)
+[    0.184489] RCU Tasks: Setting shift to 3 and lim to 1 rcu_task_cb_adjust=1.
+[    0.184489] RCU Tasks Rude: Setting shift to 3 and lim to 1 rcu_task_cb_adjust=1.
+[    0.184489] RCU Tasks Trace: Setting shift to 3 and lim to 1 rcu_task_cb_adjust=1.
+[    0.184499] Performance Events: unsupported p6 CPU model 165 no PMU driver, software events only.
+[    0.184829] signal: max sigframe size: 1776
+[    0.185033] rcu: Hierarchical SRCU implementation.
+[    0.185178] rcu: 	Max phase no-delay instances is 400.
+[    0.185652] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.185862] smp: Bringing up secondary CPUs ...
+[    0.186118] smpboot: x86: Booting SMP configuration:
+[    0.186281] .... node  #0, CPUs:      #1 #2 #3 #4 #5
+[    0.193581] smp: Brought up 1 node, 6 CPUs
+[    0.193935] smpboot: Max logical packages: 1
+[    0.194491] smpboot: Total of 6 processors activated (31103.97 BogoMIPS)
+[    0.195612] devtmpfs: initialized
+[    0.195653] x86/mm: Memory block size: 128MB
+[    0.196863] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.196863] futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+[    0.197532] pinctrl core: initialized pinctrl subsystem
+[    0.197809] PM: RTC time: 12:45:38, date: 2024-12-19
+[    0.198553] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.199681] DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+[    0.199906] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.200165] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.200503] audit: initializing netlink subsys (disabled)
+[    0.200693] audit: type=2000 audit(1734612352.150:1): state=initialized audit_enabled=0 res=1
+[    0.200693] thermal_sys: Registered thermal governor 'fair_share'
+[    0.200768] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.200951] thermal_sys: Registered thermal governor 'step_wise'
+[    0.201126] thermal_sys: Registered thermal governor 'user_space'
+[    0.201491] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.201675] EISA bus registered
+[    0.201998] cpuidle: using governor ladder
+[    0.202142] cpuidle: using governor menu
+[    0.202319] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.202572] PCI: Using configuration type 1 for base access
+[    0.202876] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    0.222591] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.222865] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.223354] ACPI: Added _OSI(Module Device)
+[    0.223491] ACPI: Added _OSI(Processor Device)
+[    0.223639] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.223801] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.225929] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.227237] ACPI: _OSC evaluation for CPUs failed, trying _PDC
+[    0.227510] ACPI: Interpreter enabled
+[    0.227646] ACPI: PM: (supports S0 S5)
+[    0.227775] ACPI: Using IOAPIC for interrupt routing
+[    0.228191] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.228447] PCI: Using E820 reservations for host bridge windows
+[    0.228489] ACPI: Enabled 2 GPEs in block 00 to 07
+[    0.233527] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.233719] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+[    0.233969] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.234489] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+[    0.234489] PCI host bridge to bus 0000:00
+[    0.234489] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.234489] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.234489] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.234489] pci_bus 0000:00: root bus resource [mem 0x80000000-0xfdffffff window]
+[    0.234489] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.235511] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+[    0.236124] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+[    0.237996] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a conventional PCI endpoint
+[    0.237996] pci 0000:00:01.1: BAR 4 [io  0xd000-0xd00f]
+[    0.238049] pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+[    0.238308] pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+[    0.238489] pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+[    0.238489] pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+[    0.238620] pci 0000:00:02.0: [15ad:0405] type 00 class 0x030000 conventional PCI endpoint
+[    0.240515] pci 0000:00:02.0: BAR 0 [io  0xd010-0xd01f]
+[    0.241687] pci 0000:00:02.0: BAR 1 [mem 0xe0000000-0xe0ffffff pref]
+[    0.242747] pci 0000:00:02.0: BAR 2 [mem 0xf0000000-0xf01fffff]
+[    0.249805] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.250575] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000 conventional PCI endpoint
+[    0.251489] pci 0000:00:03.0: BAR 0 [mem 0xf0200000-0xf021ffff]
+[    0.253534] pci 0000:00:03.0: BAR 2 [io  0xd020-0xd027]
+[    0.256809] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000 conventional PCI endpoint
+[    0.257576] pci 0000:00:04.0: BAR 0 [io  0xd040-0xd05f]
+[    0.257576] pci 0000:00:04.0: BAR 1 [mem 0xf0400000-0xf07fffff]
+[    0.258471] pci 0000:00:04.0: BAR 2 [mem 0xf0800000-0xf0803fff pref]
+[    0.262831] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100 conventional PCI endpoint
+[    0.263569] pci 0000:00:05.0: BAR 0 [io  0xd100-0xd1ff]
+[    0.263816] pci 0000:00:05.0: BAR 1 [io  0xd200-0xd23f]
+[    0.264668] pci 0000:00:06.0: [106b:003f] type 00 class 0x0c0310 conventional PCI endpoint
+[    0.265574] pci 0000:00:06.0: BAR 0 [mem 0xf0804000-0xf0804fff]
+[    0.271489] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+[    0.271489] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+[    0.271501] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+[    0.273552] pci 0000:00:08.0: [8086:100e] type 00 class 0x020000 conventional PCI endpoint
+[    0.274542] pci 0000:00:08.0: BAR 0 [mem 0xf0820000-0xf083ffff]
+[    0.276511] pci 0000:00:08.0: BAR 2 [io  0xd240-0xd247]
+[    0.279489] pci 0000:00:0b.0: [8086:265c] type 00 class 0x0c0320 conventional PCI endpoint
+[    0.280536] pci 0000:00:0b.0: BAR 0 [mem 0xf0840000-0xf0840fff]
+[    0.286077] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601 conventional PCI endpoint
+[    0.286575] pci 0000:00:0d.0: BAR 0 [io  0xd248-0xd24f]
+[    0.287580] pci 0000:00:0d.0: BAR 1 [io  0xd250-0xd253]
+[    0.289502] pci 0000:00:0d.0: BAR 2 [io  0xd258-0xd25f]
+[    0.290547] pci 0000:00:0d.0: BAR 3 [io  0xd260-0xd263]
+[    0.291539] pci 0000:00:0d.0: BAR 4 [io  0xd270-0xd27f]
+[    0.292553] pci 0000:00:0d.0: BAR 5 [mem 0xf0842000-0xf0843fff]
+[    0.298066] ACPI: PCI: Interrupt link LNKA configured for IRQ 11
+[    0.298489] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    0.298563] ACPI: PCI: Interrupt link LNKC configured for IRQ 9
+[    0.298808] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    0.299513] iommu: Default domain type: Translated
+[    0.299653] iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.300009] SCSI subsystem initialized
+[    0.300171] libata version 3.00 loaded.
+[    0.300171] ACPI: bus type USB registered
+[    0.300171] usbcore: registered new interface driver usbfs
+[    0.300171] usbcore: registered new interface driver hub
+[    0.300171] usbcore: registered new device driver usb
+[    0.300211] pps_core: LinuxPPS API ver. 1 registered
+[    0.300373] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.300489] PTP clock support registered
+[    0.300523] EDAC MC: Ver: 3.0.0
+[    0.301653] NetLabel: Initializing
+[    0.301782] NetLabel:  domain hash size = 128
+[    0.301929] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.302116] NetLabel:  unlabeled traffic allowed by default
+[    0.302503] mctp: management component transport protocol core
+[    0.302687] NET: Registered PF_MCTP protocol family
+[    0.302893] PCI: Using ACPI for IRQ routing
+[    0.303028] PCI: pci_cache_line_size set to 64 bytes
+[    0.303532] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.303535] e820: reserve RAM buffer [mem 0x7fff0000-0x7fffffff]
+[    0.303552] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    0.303675] pci 0000:00:02.0: vgaarb: bridge control possible
+[    0.303837] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.304108] vgaarb: loaded
+[    0.304577] clocksource: Switched to clocksource kvm-clock
+[    0.304914] VFS: Disk quotas dquot_6.6.0
+[    0.305061] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.305553] AppArmor: AppArmor Filesystem Enabled
+[    0.305716] pnp: PnP ACPI init
+[    0.306560] pnp: PnP ACPI: found 3 devices
+[    0.314256] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.314634] NET: Registered PF_INET protocol family
+[    0.314897] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.315249] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.315249] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.315249] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.315249] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.315249] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.315249] MPTCP token hash table entries: 2048 (order: 3, 49152 bytes, linear)
+[    0.315249] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.315249] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.315249] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.315249] NET: Registered PF_XDP protocol family
+[    0.315249] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.315249] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.315249] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.315249] pci_bus 0000:00: resource 7 [mem 0x80000000-0xfdffffff window]
+[    0.318678] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.320717] PCI: CLS 0 bytes, default 64
+[    0.320921] Unpacking initramfs...
+[    0.324825] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x255cb518234, max_idle_ns: 440795279333 ns
+[    0.325518] clocksource: Switched to clocksource tsc
+[    0.325793] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[    0.326424] Initialise system trusted keyrings
+[    0.326573] Key type blacklist registered
+[    0.326843] workingset: timestamp_bits=36 max_order=19 bucket_order=0
+[    0.327095] zbud: loaded
+[    0.327500] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.327817] fuse: init (API version 7.39)
+[    0.328179] integrity: Platform Keyring initialized
+[    0.328347] integrity: Machine keyring initialized
+[    0.337778] Key type asymmetric registered
+[    0.337923] Asymmetric key parser 'x509' registered
+[    0.338346] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    0.340301] io scheduler mq-deadline registered
+[    0.384654] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    0.385262] ACPI: AC: AC Adapter [AC] (on-line)
+[    0.385492] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.385785] ACPI: button: Power Button [PWRF]
+[    0.386028] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[    0.386127] Freeing initrd memory: 22268K
+[    0.386236] ACPI: button: Sleep Button [SLPF]
+[    0.387951] ACPI: battery: Slot [BAT0] (battery present)
+[    0.388158] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    0.409095] 00:02: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    0.412355] Linux agpgart interface v0.103
+[    0.412569] ACPI: bus type drm_connector registered
+[    0.414914] loop: module loaded
+[    0.415299] ata_piix 0000:00:01.1: version 2.13
+[    0.415795] scsi host0: ata_piix
+[    0.416070] scsi host1: ata_piix
+[    0.416286] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14 lpm-pol 0
+[    0.416515] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15 lpm-pol 0
+[    0.416830] tun: Universal TUN/TAP device driver, 1.6
+[    0.417024] PPP generic driver version 2.4.2
+[    0.417687] ohci-pci 0000:00:06.0: OHCI PCI host controller
+[    0.417851] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 1
+[    0.418111] ohci-pci 0000:00:06.0: irq 22, io mem 0xf0804000
+[    0.552333] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 6.08
+[    0.552333] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.552333] usb usb1: Product: OHCI PCI host controller
+[    0.552333] usb usb1: Manufacturer: Linux 6.8.12-kdump ohci_hcd
+[    0.552333] usb usb1: SerialNumber: 0000:00:06.0
+[    0.557472] hub 1-0:1.0: USB hub found
+[    0.558113] hub 1-0:1.0: 12 ports detected
+[    0.560002] ehci-pci 0000:00:0b.0: EHCI Host Controller
+[    0.560219] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[    0.560844] ehci-pci 0000:00:0b.0: new USB bus registered, assigned bus number 2
+[    0.563896] ehci-pci 0000:00:0b.0: irq 19, io mem 0xf0840000
+[    0.564267] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    0.565710] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    0.566867] mousedev: PS/2 mouse device common for all mice
+[    0.569429] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[    0.570982] rtc_cmos rtc_cmos: registered as rtc0
+[    0.572413] ehci-pci 0000:00:0b.0: USB 2.0 started, EHCI 1.00
+[    0.572765] rtc_cmos rtc_cmos: setting system clock to 2024-12-19T12:45:38 UTC (1734612338)
+[    0.573646] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.08
+[    0.574850] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+[    0.575573] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.576636] i2c_dev: i2c /dev entries driver
+[    0.577575] usb usb2: Product: EHCI Host Controller
+[    0.577577] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    0.577575] usb usb2: Manufacturer: Linux 6.8.12-kdump ehci_hcd
+[    0.577577] device-mapper: uevent: version 1.0.3
+[    0.577575] usb usb2: SerialNumber: 0000:00:0b.0
+[    0.582750] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+[    0.583793] hub 2-0:1.0: USB hub found
+[    0.584163] platform eisa.0: Probing EISA bus 0
+[    0.584603] hub 2-0:1.0: 12 ports detected
+[    0.584163] platform eisa.0: EISA: Cannot allocate resource for mainboard
+[    0.587749] platform eisa.0: Cannot allocate resource for EISA slot 1
+[    0.587928] ata2.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+[    0.588586] platform eisa.0: Cannot allocate resource for EISA slot 2
+[    0.589766] platform eisa.0: Cannot allocate resource for EISA slot 3
+[    0.590477] platform eisa.0: Cannot allocate resource for EISA slot 4
+[    0.591135] platform eisa.0: Cannot allocate resource for EISA slot 5
+[    0.591260] scsi 1:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+[    0.591402] platform eisa.0: Cannot allocate resource for EISA slot 6
+[    0.593243] platform eisa.0: Cannot allocate resource for EISA slot 7
+[    0.593531] platform eisa.0: Cannot allocate resource for EISA slot 8
+[    0.593531] platform eisa.0: EISA: Detected 0 cards
+[    0.594320] sr 1:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
+[    0.593531] intel_pstate: CPU model not supported
+[    0.595046] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    0.597050] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.598008] drop_monitor: Initializing network drop monitor service
+[    0.599597] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[    0.599799] sr 1:0:0:0: Attached scsi generic sg0 type 5
+[    0.600304] NET: Registered PF_INET6 protocol family
+[    0.618266] Segment Routing with IPv6
+[    0.618437] In-situ OAM (IOAM) with IPv6
+[    0.618594] NET: Registered PF_PACKET protocol family
+[    0.618855] Key type dns_resolver registered
+[    0.619594] IPI shorthand broadcast: enabled
+[    0.620863] sched_clock: Marking stable (592054865, 28152998)->(629124042, -8916179)
+[    0.621558] registered taskstats version 1
+[    0.622499] Loading compiled-in X.509 certificates
+[    0.623422] Loaded X.509 cert 'Build time autogenerated kernel key: b4d292fef5a2f6161d489ff799d88c4e161ca89c'
+[    0.626872] Key type .fscrypt registered
+[    0.627003] Key type fscrypt-provisioning registered
+[    0.639765] Key type encrypted registered
+[    0.639926] AppArmor: AppArmor sha256 policy hashing enabled
+[    0.640105] ima: No TPM chip found, activating TPM-bypass!
+[    0.640337] Loading compiled-in module X.509 certificates
+[    0.640861] Loaded X.509 cert 'Build time autogenerated kernel key: b4d292fef5a2f6161d489ff799d88c4e161ca89c'
+[    0.641132] ima: Allocated hash algorithm: sha256
+[    0.641355] ima: No architecture policies found
+[    0.641507] evm: Initialising EVM extended attributes:
+[    0.641659] evm: security.selinux
+[    0.641777] evm: security.SMACK64
+[    0.641894] evm: security.SMACK64EXEC
+[    0.642017] evm: security.SMACK64TRANSMUTE
+[    0.642148] evm: security.SMACK64MMAP
+[    0.642377] evm: security.apparmor
+[    0.642498] evm: security.ima
+[    0.642610] evm: security.capability
+[    0.642731] evm: HMAC attrs: 0x1
+[    0.643034] PM:   Magic number: 4:972:784
+[    0.645984] RAS: Correctable Errors collector initialized.
+[    0.646277] clk: Disabling unused clocks
+[    0.648621] Freeing unused decrypted memory: 2036K
+[    0.649398] Freeing unused kernel image (initmem) memory: 4620K
+[    0.649666] Write protecting the kernel read-only data: 34816k
+[    0.650398] Freeing unused kernel image (rodata/data gap) memory: 1764K
+[    0.692677] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    0.692863] x86/mm: Checking user space page tables
+[    0.734787] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    0.734982] Run /init as init process
+[    0.735109]   with arguments:
+[    0.735110]     /init
+[    0.735111]   with environment:
+[    0.735111]     HOME=/
+[    0.735112]     TERM=linux
+[    0.735112]     BOOT_IMAGE=/boot/vmlinuz-6.8.12-kdump
+[    0.791951] ahci 0000:00:0d.0: version 3.0
+[    0.792386] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+[    0.792647] ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+[    0.792881] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+[    0.794405] piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+[    0.794451] e1000: Intel(R) PRO/1000 Network Driver
+[    0.794834] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    0.795610] scsi host2: ahci
+[    0.795778] ata3: SATA max UDMA/133 abar m8192@0xf0842000 port 0xf0842100 irq 21 lpm-pol 0
+[    0.850244] usb 1-1: new full-speed USB device number 2 using ohci-pci
+[    1.038641] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+[    1.136589] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:e7:cc:91
+[    1.136805] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[    1.141820] ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    1.142081] ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[    1.142295] ata3.00: 209715200 sectors, multi 128: LBA48 NCQ (depth 32)
+[    1.142683] ata3.00: configured for UDMA/133
+[    1.142905] scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[    1.143412] sd 2:0:0:0: [sda] 209715200 512-byte logical blocks: (107 GB/100 GiB)
+[    1.143642] sd 2:0:0:0: [sda] Write Protect is off
+[    1.143787] sd 2:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    1.143794] sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.144127] sd 2:0:0:0: Attached scsi generic sg1 type 0
+[    1.144369] sd 2:0:0:0: [sda] Preferred minimum I/O size 512 bytes
+[    1.145600]  sda: sda1 sda2 sda3
+[    1.145819] sd 2:0:0:0: [sda] Attached SCSI disk
+[    1.339548] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021, bcdDevice= 1.00
+[    1.339825] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
+[    1.340032] usb 1-1: Product: USB Tablet
+[    1.340212] usb 1-1: Manufacturer: VirtualBox
+[    1.351198] hid: raw HID events driver (C) Jiri Kosina
+[    1.362769] usbcore: registered new interface driver usbhid
+[    1.362953] usbhid: USB HID core driver
+[    1.365880] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0001/input/input5
+[    1.366846] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+[    1.577166] e1000 0000:00:08.0 eth1: (PCI:33MHz:32-bit) 08:00:27:99:d1:cc
+[    1.578973] e1000 0000:00:08.0 eth1: Intel(R) PRO/1000 Network Connection
+[    1.589298] e1000 0000:00:08.0 enp0s8: renamed from eth1
+[    1.771262] e1000 0000:00:03.0 enp0s3: renamed from eth0
+[    1.804026] EXT4-fs (sda3): mounted filesystem 9991f24e-9a3c-4eb1-ad96-9b9295546456 ro with ordered data mode. Quota mode: none.
+[    1.844302] systemd[1]: Inserted module 'autofs4'
+[    1.857848] systemd[1]: systemd 249.11-0ubuntu3.12 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY -P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[    1.858684] systemd[1]: Detected virtualization oracle.
+[    1.858851] systemd[1]: Detected architecture x86-64.
+[    1.859667] systemd[1]: Hostname set to <trg-VirtualBox>.
+[    1.931263] block sda: the capability attribute has been deprecated.
+[    1.955949] systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+[    1.962736] systemd[1]: vboxadd-service.service: Service has no ExecStart=, ExecStop=, or SuccessAction=. Refusing.
+[    1.968246] systemd[1]: /lib/systemd/system/snapd.service:23: Unknown key name 'RestartMode' in section 'Service', ignoring.
+[    1.995784] systemd[1]: vboxadd-service.service: Cannot add dependency job, ignoring: Unit vboxadd-service.service has a bad unit file setting.
+[    1.996680] systemd[1]: Queued start job for default target Graphical Interface.
+[    2.023562] systemd[1]: Created slice Slice /system/modprobe.
+[    2.024328] systemd[1]: Created slice Slice /system/systemd-fsck.
+[    2.024900] systemd[1]: Created slice User and Session Slice.
+[    2.025354] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    2.025941] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[    2.026523] systemd[1]: Reached target User and Group Name Lookups.
+[    2.026907] systemd[1]: Reached target Remote File Systems.
+[    2.027314] systemd[1]: Reached target Slice Units.
+[    2.027646] systemd[1]: Reached target Mounting snaps.
+[    2.027994] systemd[1]: Reached target Local Verity Protected Volumes.
+[    2.028527] systemd[1]: Listening on Syslog Socket.
+[    2.028921] systemd[1]: Listening on fsck to fsckd communication Socket.
+[    2.029399] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[    2.030033] systemd[1]: Listening on Journal Audit Socket.
+[    2.030810] systemd[1]: Listening on Journal Socket (/dev/log).
+[    2.031370] systemd[1]: Listening on Journal Socket.
+[    2.031843] systemd[1]: Listening on udev Control Socket.
+[    2.032329] systemd[1]: Listening on udev Kernel Socket.
+[    2.033468] systemd[1]: Mounting Huge Pages File System...
+[    2.034538] systemd[1]: Mounting POSIX Message Queue File System...
+[    2.035638] systemd[1]: Mounting Kernel Debug File System...
+[    2.036959] systemd[1]: Mounting Kernel Trace File System...
+[    2.039218] systemd[1]: Starting Journal Service...
+[    2.040329] systemd[1]: Starting Set the console keyboard layout...
+[    2.041496] systemd[1]: Starting Create List of Static Device Nodes...
+[    2.043025] systemd[1]: Starting Load Kernel Module configfs...
+[    2.044749] systemd[1]: Starting Load Kernel Module drm...
+[    2.046027] systemd[1]: Starting Load Kernel Module efi_pstore...
+[    2.047547] systemd[1]: Starting Load Kernel Module fuse...
+[    2.048557] systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+[    2.050553] systemd[1]: Starting Load Kernel Modules...
+[    2.051977] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    2.053112] systemd[1]: Starting Coldplug All udev Devices...
+[    2.055132] systemd[1]: Mounted Huge Pages File System.
+[    2.056104] systemd[1]: Mounted POSIX Message Queue File System.
+[    2.056821] systemd[1]: Mounted Kernel Debug File System.
+[    2.057541] systemd[1]: Mounted Kernel Trace File System.
+[    2.059080] systemd[1]: Finished Create List of Static Device Nodes.
+[    2.060151] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[    2.060944] systemd[1]: Finished Load Kernel Module configfs.
+[    2.061939] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[    2.062578] systemd[1]: Finished Load Kernel Module drm.
+[    2.063515] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[    2.064195] systemd[1]: Finished Load Kernel Module efi_pstore.
+[    2.065375] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[    2.065980] EXT4-fs (sda3): re-mounted 9991f24e-9a3c-4eb1-ad96-9b9295546456 r/w. Quota mode: none.
+[    2.066321] systemd[1]: Finished Load Kernel Module fuse.
+[    2.067525] lp: driver loaded but no devices found
+[    2.068670] systemd[1]: Finished Remount Root and Kernel File Systems.
+[    2.069671] systemd[1]: Started Journal Service.
+[    2.071841] ppdev: user-space parallel port driver
+[    2.082434] Adding 6189052k swap on /swapfile.  Priority:-2 extents:10 across:6639612k 
+[    2.088759] systemd-journald[248]: Received client request to flush runtime journal.
+[    2.132714] loop0: detected capacity change from 0 to 8
+[    2.133876] loop1: detected capacity change from 0 to 152112
+[    2.134876] loop2: detected capacity change from 0 to 555496
+[    2.136785] loop3: detected capacity change from 0 to 1034424
+[    2.138161] loop4: detected capacity change from 0 to 187776
+[    2.139500] loop5: detected capacity change from 0 to 26472
+[    2.142013] loop6: detected capacity change from 0 to 79520
+[    2.143334] loop7: detected capacity change from 0 to 90720
+[    2.144600] loop8: detected capacity change from 0 to 1000
+[    2.160741] vmwgfx 0000:00:02.0: vgaarb: deactivate vga console
+[    2.161907] Console: switching to colour dummy device 80x25
+[    2.162425] vmwgfx 0000:00:02.0: [drm] FIFO at 0x00000000f0000000 size is 2048 kiB
+[    2.162437] vmwgfx 0000:00:02.0: [drm] VRAM at 0x00000000e0000000 size is 16384 kiB
+[    2.162444] vmwgfx 0000:00:02.0: [drm] Running on SVGA version 2.
+[    2.162450] vmwgfx 0000:00:02.0: [drm] Capabilities: rect copy, cursor, cursor bypass, cursor bypass 2, alpha cursor, extended fifo, pitchlock, irq mask, gmr, traces, gmr2, screen object 2, command buffers, 
+[    2.162455] vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+[    2.162457] vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+[    2.162459] vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+[    2.162462] vmwgfx 0000:00:02.0: [drm] DMA map mode: Caching DMA mappings.
+[    2.162506] vmwgfx 0000:00:02.0: [drm] Legacy memory limits: VRAM = 16384 kB, FIFO = 2048 kB, surface = 507904 kB
+[    2.162509] vmwgfx 0000:00:02.0: [drm] MOB limits: max mob size = 0 kB, max mob pages = 0
+[    2.162512] vmwgfx 0000:00:02.0: [drm] Max GMR ids is 8192
+[    2.162514] vmwgfx 0000:00:02.0: [drm] Max number of GMR pages is 1048576
+[    2.162516] vmwgfx 0000:00:02.0: [drm] Maximum display memory size is 16384 kiB
+[    2.162866] vmwgfx 0000:00:02.0: [drm] Screen Object display unit initialized
+[    2.163038] vmwgfx 0000:00:02.0: [drm] Fifo max 0x00200000 min 0x00001000 cap 0x00000355
+[    2.163162] vmwgfx 0000:00:02.0: [drm] Using command buffers with DMA pool.
+[    2.163173] vmwgfx 0000:00:02.0: [drm] Available shader model: Legacy.
+[    2.163724] [drm] Initialized vmwgfx 2.20.0 20211206 for 0000:00:02.0 on minor 0
+[    2.164150] fbcon: vmwgfxdrmfb (fb0) is primary device
+[    2.165606] Console: switching to colour frame buffer device 160x50
+[    2.168855] vmwgfx 0000:00:02.0: [drm] fb0: vmwgfxdrmfb frame buffer device
+[    2.271132] vboxguest: loading out-of-tree module taints kernel.
+[    2.271139] vboxguest: module verification failed: signature and/or required key missing - tainting kernel
+[    2.282001] Kernel module BTF mismatch detected, BTF debug info may be unavailable for some modules
+[    2.286862] vgdrvHeartbeatInit: Setting up heartbeat to trigger every 2000 milliseconds
+[    2.286955] Host supports full mouse state reporting, switching to extended mouse integration protocol
+[    2.302956] input: VirtualBox mouse integration as /devices/pci0000:00/0000:00:04.0/input/input6
+[    2.308689] ACPI: video: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[    2.309000] vboxguest: Successfully loaded version 7.1.4 r165100
+[    2.309016] vboxguest: misc device minor 122, IRQ 20, I/O port d040, MMIO at 00000000f0400000 (size 0x400000)
+[    2.309018] vboxguest: Successfully loaded version 7.1.4 r165100 (interface 0x00010004)
+[    2.314163] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input7
+[    2.317198] ------------[ cut here ]------------
+[    2.317202] WARNING: CPU: 1 PID: 304 at kernel/rcu/tree_plugin.h:734 rcu_sched_clock_irq+0x8b8/0x1100
+[    2.317217] Modules linked in: serio_raw(+) snd_seq_device(+) snd video wmi soundcore vboxguest(OE) sch_fq_codel vmwgfx drm_ttm_helper ttm msr parport_pc ppdev lp parport efi_pstore ip_tables x_tables autofs4 hid_generic usbhid hid psmouse e1000 ahci libahci i2c_piix4 pata_acpi
+[    2.317238] CPU: 1 PID: 304 Comm: systemd-udevd Tainted: G           OE      6.8.12-kdump #2
+[    2.317240] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[    2.317242] RIP: 0010:rcu_sched_clock_irq+0x8b8/0x1100
+[    2.317244] Code: 25 91 93 28 57 ff ff ff 7f e9 d2 fe ff ff c6 87 31 08 00 00 01 e9 54 f8 ff ff 8b 87 30 08 00 00 85 c0 0f 84 46 f8 ff ff eb a6 <0f> 0b e9 ee f7 ff ff 0f b6 05 c2 17 8e 02 84 c0 74 13 4c 89 95 70
+[    2.317246] RSP: 0000:ffff9aedc04e7d18 EFLAGS: 00010086
+[    2.317248] RAX: ffff8a6406ecd180 RBX: ffff8a647faa2580 RCX: 0000000000000000
+[    2.317249] RDX: 00000000ffffffff RSI: ffffffffaa523022 RDI: ffff8a6406ecd180
+[    2.317250] RBP: ffff9aedc04e7de0 R08: 0000000000000000 R09: 0000000000000000
+[    2.317252] R10: 0000000000000000 R11: 0000000000000000 R12: 0000000000000001
+[    2.317252] R13: 00000000886ff8b7 R14: ffff8a647faa5000 R15: ffff9aedc04e7f58
+[    2.317254] FS:  00007088868318c0(0000) GS:ffff8a647fa80000(0000) knlGS:0000000000000000
+[    2.317256] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    2.317257] CR2: 00005d82a0f46d98 CR3: 0000000002576003 CR4: 00000000000706f0
+[    2.317260] Call Trace:
+[    2.317262]  <TASK>
+[    2.317264]  ? show_regs+0x72/0x90
+[    2.317268]  ? rcu_sched_clock_irq+0x8b8/0x1100
+[    2.317270]  ? __warn+0x8d/0x160
+[    2.317274]  ? rcu_sched_clock_irq+0x8b8/0x1100
+[    2.317275]  ? report_bug+0x1bb/0x1d0
+[    2.317278]  ? handle_bug+0x46/0x90
+[    2.317281]  ? exc_invalid_op+0x19/0x80
+[    2.317282]  ? asm_exc_invalid_op+0x1b/0x20
+[    2.317285]  ? rcu_sched_clock_irq+0x8b8/0x1100
+[    2.317287]  ? raw_notifier_call_chain+0x16/0x30
+[    2.317289]  ? timekeeping_update+0xe4/0x140
+[    2.317291]  ? _raw_spin_unlock_irqrestore+0x11/0x60
+[    2.317292]  ? __cgroup_account_cputime_field+0x39/0x80
+[    2.317294]  ? account_user_time+0xa6/0xc0
+[    2.317297]  update_process_times+0x63/0xb0
+[    2.317299]  ? __pfx_tick_nohz_highres_handler+0x10/0x10
+[    2.317302]  tick_sched_handle+0x28/0x70
+[    2.317304]  ? __pfx_tick_nohz_highres_handler+0x10/0x10
+[    2.317306]  tick_nohz_highres_handler+0x7d/0xa0
+[    2.317308]  __hrtimer_run_queues+0x114/0x2b0
+[    2.317310]  hrtimer_interrupt+0x101/0x250
+[    2.317312]  ? syscall_exit_to_user_mode+0x80/0x260
+[    2.317314]  __sysvec_apic_timer_interrupt+0x53/0x150
+[    2.317316]  sysvec_apic_timer_interrupt+0x36/0xa0
+[    2.317317]  asm_sysvec_apic_timer_interrupt+0x1b/0x20
+[    2.317319] RIP: 0033:0x5d829f4ebc73
+[    2.317323] Code: 7c 24 08 00 0f 84 6a 07 00 00 4c 8b 44 24 28 31 c0 41 0f b6 10 4c 89 c1 84 d2 0f 84 47 01 00 00 0f 1f 80 00 00 00 00 8d 72 d0 <40> 80 fe 09 0f 86 13 01 00 00 8d 72 bf 40 80 fe 19 0f 86 06 01 00
+[    2.317324] RSP: 002b:00007fff7cd60070 EFLAGS: 00000206
+[    2.317325] RAX: 0000000000000001 RBX: 00007fff7cd600a8 RCX: 00005d82a0f7b311
+[    2.317326] RDX: 000000000000006c RSI: 000000000000003c RDI: 00005d82a0f7b6b0
+[    2.317327] RBP: 00005d82a0f7b460 R08: 00005d82a0f7b310 R09: 000000007fffffff
+[    2.317328] R10: 0000000000000000 R11: 7e1a0c466d643dfc R12: 00005d829f564fc0
+[    2.317329] R13: 00005d829f5697a0 R14: 00005d829f5653c4 R15: 00005d82a0f79700
+[    2.317331]  </TASK>
+[    2.317331] ---[ end trace 0000000000000000 ]---
+[    2.372665] RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 10737418240 ms ovfl timer
+[    2.378100] cryptd: max_cpu_qlen set to 1000
+[    2.401454] AVX2 version of gcm_enc/dec engaged.
+[    2.401643] AES CTR mode by8 optimization enabled
+[    2.507293] audit: type=1400 audit(1734612340.431:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="nvidia_modprobe" pid=389 comm="apparmor_parser"
+[    2.507307] audit: type=1400 audit(1734612340.431:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="nvidia_modprobe//kmod" pid=389 comm="apparmor_parser"
+[    2.507311] audit: type=1400 audit(1734612340.431:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="ubuntu_pro_apt_news" pid=391 comm="apparmor_parser"
+[    2.508963] audit: type=1400 audit(1734612340.433:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lsb_release" pid=388 comm="apparmor_parser"
+[    2.525767] audit: type=1400 audit(1734612340.447:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=390 comm="apparmor_parser"
+[    2.525780] audit: type=1400 audit(1734612340.447:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-helper" pid=390 comm="apparmor_parser"
+[    2.525785] audit: type=1400 audit(1734612340.447:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=390 comm="apparmor_parser"
+[    2.525788] audit: type=1400 audit(1734612340.447:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/{,usr/}sbin/dhclient" pid=390 comm="apparmor_parser"
+[    2.525790] audit: type=1400 audit(1734612340.448:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="tcpdump" pid=396 comm="apparmor_parser"
+[    2.733228] snd_intel8x0 0000:00:05.0: allow list rate for 1028:0177 is 48000
+[    4.817000] loop9: detected capacity change from 0 to 8
+[    4.858614] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    5.213735] kauditd_printk_skb: 43 callbacks suppressed
+[    5.213739] audit: type=1400 audit(1734612343.139:54): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=818 comm="apparmor_parser"
+[    5.227254] audit: type=1400 audit(1734612343.152:55): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=818 comm="apparmor_parser"
+[    5.462949] audit: type=1400 audit(1734612343.388:56): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/snapd/23258/usr/lib/snapd/snap-confine" pid=1154 comm="apparmor_parser"
+[    5.476303] audit: type=1400 audit(1734612343.402:57): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/snapd/23258/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=1154 comm="apparmor_parser"
+[    7.869108] ISO 9660 Extensions: Microsoft Joliet Level 3
+[    7.870522] ISO 9660 Extensions: RRIP_1991A
+[    7.977925] rfkill: input handler disabled
+[    8.020031] audit: type=1400 audit(1734612345.945:58): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.firefox" pid=1165 comm="apparmor_parser"
+[    8.076810] audit: type=1400 audit(1734612346.002:59): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.snap-store" pid=1163 comm="apparmor_parser"
+[    8.364230] audit: type=1400 audit(1734612346.289:60): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.snapd-desktop-integration" pid=1164 comm="apparmor_parser"
+[    8.372716] audit: type=1400 audit(1734612346.298:61): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.snap-store.hook.configure" pid=1638 comm="apparmor_parser"
+[    8.377294] audit: type=1400 audit(1734612346.300:62): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.snap-store.ubuntu-software-local-file" pid=1641 comm="apparmor_parser"
+[    8.377299] audit: type=1400 audit(1734612346.300:63): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.snap-store.snap-store" pid=1639 comm="apparmor_parser"
+[   14.730960] loop9: detected capacity change from 0 to 151288
+[  140.277496] hang_panic:hang_panic_init_module(): hang_panic delaying for 1s now..
+[  141.298539] hang_panic:hang_panic_init_module(): initialized
+[  141.298551] hang_panic:try_timeout(): In try_timeout()
+               PID 2541 running on processor # 2
+[  141.298558] hang_panic:try_timeout(): hang_panic setting up timer (1s) now..
+[  141.298562] hang_panic:try_timeout(): Arming the timer now!
+[  141.298986] BUG: unable to handle page fault for address: ffffffffa9e00f13
+[  141.298998] #PF: supervisor write access in kernel mode
+[  141.299004] #PF: error_code(0x0003) - permissions violation
+[  141.299009] PGD 5e837067 P4D 5e837067 PUD 5e838063 PMD 5d8001a1 
+[  141.299021] Oops: 0003 [#1] PREEMPT SMP PTI
+[  141.299031] CPU: 2 PID: 2541 Comm: insmod Kdump: loaded Tainted: G        W  OE      6.8.12-kdump #2
+[  141.299044] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[  141.299049] RIP: 0010:__run_timers.part.0+0x1a6/0x290
+[  141.299065] Code: 49 c7 47 08 00 00 00 00 48 85 c0 74 7c 4d 8b 26 4d 89 67 08 0f 1f 44 00 00 49 8b 04 24 49 8b 54 24 08 48 89 02 48 85 c0 74 04 <48> 89 50 08 48 b8 22 01 00 00 00 00 ad de 4d 8b 6c 24 18 49 c7 44
+[  141.299073] RSP: 0018:ffff9aedc013ced0 EFLAGS: 00010082
+[  141.299080] RAX: ffffffffa9e00f0b RBX: 00000000fffd94c1 RCX: 0000000000000000
+[  141.299086] RDX: ffff9aedc013cee0 RSI: 0000000000000000 RDI: 0000000000000000
+[  141.299091] RBP: ffff9aedc013cf58 R08: 0000000000000000 R09: ffff8a647fb225a8
+[  141.299095] R10: 0000000000000000 R11: 0000000000000000 R12: ffff9aedc2597a30
+[  141.299100] R13: 0000000000000002 R14: ffff9aedc013cee0 R15: ffff8a647fb22580
+[  141.299105] FS:  000070b90950fc40(0000) GS:ffff8a647fb00000(0000) knlGS:0000000000000000
+[  141.299112] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  141.299118] CR2: ffffffffa9e00f13 CR3: 0000000002f6a005 CR4: 00000000000706f0
+[  141.299132] Call Trace:
+[  141.299139]  <IRQ>
+[  141.299147]  ? show_regs+0x72/0x90
+[  141.299159]  ? __die+0x25/0x80
+[  141.299167]  ? asm_sysvec_x86_platform_ipi+0x3/0x20
+[  141.299182]  ? page_fault_oops+0x154/0x4b0
+[  141.299198]  ? search_bpf_extables+0x63/0xa0
+[  141.299211]  ? __run_timers.part.0+0x1a6/0x290
+[  141.299222]  ? search_exception_tables+0x67/0x80
+[  141.299238]  ? asm_sysvec_x86_platform_ipi+0x3/0x20
+[  141.299252]  ? kernelmode_fixup_or_oops.constprop.0+0x6b/0x90
+[  141.299267]  ? asm_sysvec_x86_platform_ipi+0x3/0x20
+[  141.299280]  ? __bad_area_nosemaphore+0x19b/0x270
+[  141.299293]  ? kvm_sched_clock_read+0x11/0x20
+[  141.299307]  ? asm_sysvec_x86_platform_ipi+0x3/0x20
+[  141.299318]  ? bad_area_nosemaphore+0x16/0x30
+[  141.299329]  ? do_kern_addr_fault+0x7b/0xa0
+[  141.299338]  ? asm_sysvec_x86_platform_ipi+0x3/0x20
+[  141.299348]  ? exc_page_fault+0x112/0x1b0
+[  141.299358]  ? asm_exc_page_fault+0x27/0x30
+[  141.299370]  ? asm_sysvec_apic_timer_interrupt+0x1b/0x20
+[  141.299383]  ? __run_timers.part.0+0x1a6/0x290
+[  141.299397]  ? asm_sysvec_apic_timer_interrupt+0x1b/0x20
+[  141.299409]  ? __pfx_read_tsc+0x10/0x10
+[  141.299421]  ? ktime_get+0x42/0xb0
+[  141.299432]  ? native_apic_msr_write+0x46/0x70
+[  141.299447]  ? lapic_next_event+0x15/0x30
+[  141.299466]  run_timer_softirq+0x2a/0x60
+[  141.299479]  handle_softirqs+0xcd/0x2b0
+[  141.299493]  __irq_exit_rcu+0xcb/0xf0
+[  141.299505]  irq_exit_rcu+0xe/0x20
+[  141.299516]  sysvec_apic_timer_interrupt+0x8e/0xa0
+[  141.299528]  </IRQ>
+[  141.299534]  <TASK>
+[  141.299540]  asm_sysvec_apic_timer_interrupt+0x1b/0x20
+[  141.299554] RIP: 0010:queue_work_on+0x38/0x70
+[  141.299567] Code: d0 48 89 e5 53 9c 58 0f 1f 40 00 48 89 c3 fa 0f 1f 44 00 00 f0 49 0f ba 28 00 73 2f 45 31 c9 80 e7 02 74 06 fb 0f 1f 44 00 00 <48> 8b 5d f8 44 89 c8 c9 31 d2 31 c9 31 f6 31 ff 45 31 c0 45 31 c9
+[  141.299577] RSP: 0018:ffff9aedc2597ae0 EFLAGS: 00000202
+[  141.299589] RAX: 0000000000000000 RBX: 0000000000000202 RCX: 0000000000000000
+[  141.299597] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+[  141.299604] RBP: ffff9aedc2597ae8 R08: 0000000000000000 R09: 0000000000000001
+[  141.299612] R10: 0000000000000000 R11: 0000000000000000 R12: ffffffffc07e7040
+[  141.299620] R13: ffff8a6407d75da0 R14: 0000000000000000 R15: ffff9aedc013cee0
+[  141.299641]  do_init_module+0x220/0x2a0
+[  141.299655]  load_module+0x20e6/0x21a0
+[  141.299714]  init_module_from_file+0x9a/0x100
+[  141.299729]  ? init_module_from_file+0x9a/0x100
+[  141.299750]  idempotent_init_module+0x184/0x240
+[  141.299768]  __x64_sys_finit_module+0x64/0xd0
+[  141.299783]  x64_sys_call+0x1c4c/0x2660
+[  141.299795]  do_syscall_64+0x80/0x170
+[  141.299812]  ? syscall_exit_to_user_mode+0x80/0x260
+[  141.299827]  ? do_syscall_64+0x8c/0x170
+[  141.299838]  ? do_user_addr_fault+0x35b/0x670
+[  141.299851]  ? irqentry_exit_to_user_mode+0x75/0x250
+[  141.299865]  ? irqentry_exit+0x43/0x50
+[  141.299877]  ? exc_page_fault+0x95/0x1b0
+[  141.299889]  entry_SYSCALL_64_after_hwframe+0x78/0x80
+[  141.299903] RIP: 0033:0x70b908d1e88d
+[  141.299925] Code: 5b 41 5c c3 66 0f 1f 84 00 00 00 00 00 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 73 b5 0f 00 f7 d8 64 89 01 48
+[  141.299935] RSP: 002b:00007ffe91e9b3d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[  141.299958] RAX: ffffffffffffffda RBX: 000059f8edab57f0 RCX: 000070b908d1e88d
+[  141.299965] RDX: 0000000000000000 RSI: 000059f8ecf49cd2 RDI: 0000000000000003
+[  141.299972] RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+[  141.299977] R10: 0000000000000003 R11: 0000000000000246 R12: 000059f8ecf49cd2
+[  141.299983] R13: 000059f8edab5780 R14: 000059f8ecf48888 R15: 000059f8edab5900
+[  141.299996]  </TASK>
+[  141.300001] Modules linked in: hang_panic(OE) isofs intel_rapl_msr intel_rapl_common intel_uncore_frequency_common intel_pmc_core binfmt_misc snd_intel8x0 intel_vsec pmt_telemetry pmt_class snd_ac97_codec crct10dif_pclmul crc32_pclmul nls_iso8859_1 polyval_clmulni polyval_generic ghash_clmulni_intel sha256_ssse3 ac97_bus snd_pcm sha1_ssse3 aesni_intel crypto_simd cryptd rapl snd_seq joydev input_leds snd_timer serio_raw snd_seq_device snd video wmi soundcore vboxguest(OE) sch_fq_codel vmwgfx drm_ttm_helper ttm msr parport_pc ppdev lp parport efi_pstore ip_tables x_tables autofs4 hid_generic usbhid hid psmouse e1000 ahci libahci i2c_piix4 pata_acpi
+[  141.300213] CR2: ffffffffa9e00f13
+--- ps ---
+   PID    PPID  CPU       TASK        ST  %MEM     VSZ    RSS  COMM
+      0      0   0  ffffffffaae0f340  RU   0.0       0      0  [swapper/0]
+      0      0   1  ffff8a6401848000  RU   0.0       0      0  [swapper/1]
+      0      0   2  ffff8a640184a8c0  RU   0.0       0      0  [swapper/2]
+      0      0   3  ffff8a640185d180  RU   0.0       0      0  [swapper/3]
+>     0      0   4  ffff8a6401858000  RU   0.0       0      0  [swapper/4]
+      0      0   5  ffff8a640185a8c0  RU   0.0       0      0  [swapper/5]
+      1      0   5  ffff8a6401380000  IN   0.6  167948  13396  systemd
+      2      0   3  ffff8a64013828c0  IN   0.0       0      0  [kthreadd]
+      3      2   0  ffff8a6401385180  IN   0.0       0      0  [pool_workqueue_]
+      4      2   0  ffff8a640139a8c0  ID   0.0       0      0  [kworker/R-rcu_g]
+      5      2   0  ffff8a640139d180  ID   0.0       0      0  [kworker/R-rcu_p]
+      6      2   0  ffff8a6401398000  ID   0.0       0      0  [kworker/R-slub_]
+      7      2   0  ffff8a6401825180  ID   0.0       0      0  [kworker/R-netns]
+      8      2   0  ffff8a6401820000  ID   0.0       0      0  [kworker/0:0]
+      9      2   0  ffff8a64018228c0  ID   0.0       0      0  [kworker/0:1]
+     10      2   0  ffff8a6401828000  ID   0.0       0      0  [kworker/0:0H]
+     11      2   0  ffff8a640182a8c0  ID   0.0       0      0  [kworker/u12:0]
+     12      2   0  ffff8a640182d180  ID   0.0       0      0  [kworker/R-mm_pe]
+     13      2   0  ffff8a64018328c0  ID   0.0       0      0  [rcu_tasks_kthre]
+     14      2   0  ffff8a6401835180  ID   0.0       0      0  [rcu_tasks_rude_]
+     15      2   0  ffff8a6401830000  ID   0.0       0      0  [rcu_tasks_trace]
+     16      2   0  ffff8a640183d180  IN   0.0       0      0  [ksoftirqd/0]
+     17      2   2  ffff8a6401838000  WA   0.0       0      0  [rcu_preempt]
+     18      2   0  ffff8a640183a8c0  IN   0.0       0      0  [migration/0]
+     19      2   0  ffff8a640184d180  IN   0.0       0      0  [idle_inject/0]
+     20      2   0  ffff8a6401860000  IN   0.0       0      0  [cpuhp/0]
+     21      2   1  ffff8a64018628c0  IN   0.0       0      0  [cpuhp/1]
+     22      2   1  ffff8a6401865180  IN   0.0       0      0  [idle_inject/1]
+     23      2   1  ffff8a640186a8c0  IN   0.0       0      0  [migration/1]
+     24      2   1  ffff8a640186d180  IN   0.0       0      0  [ksoftirqd/1]
+     25      2   1  ffff8a6401868000  ID   0.0       0      0  [kworker/1:0]
+     26      2   1  ffff8a640187a8c0  ID   0.0       0      0  [kworker/1:0H]
+     27      2   2  ffff8a640187d180  IN   0.0       0      0  [cpuhp/2]
+     28      2   2  ffff8a6401878000  IN   0.0       0      0  [idle_inject/2]
+     29      2   2  ffff8a640188a8c0  IN   0.0       0      0  [migration/2]
+     30      2   2  ffff8a640188d180  IN   0.0       0      0  [ksoftirqd/2]
+     31      2   2  ffff8a6401888000  ID   0.0       0      0  [kworker/2:0]
+     32      2   2  ffff8a640198a8c0  ID   0.0       0      0  [kworker/2:0H]
+     33      2   3  ffff8a640198d180  IN   0.0       0      0  [cpuhp/3]
+     34      2   3  ffff8a6401988000  IN   0.0       0      0  [idle_inject/3]
+     35      2   3  ffff8a6401995180  IN   0.0       0      0  [migration/3]
+     36      2   3  ffff8a6401990000  IN   0.0       0      0  [ksoftirqd/3]
+     37      2   3  ffff8a64019928c0  ID   0.0       0      0  [kworker/3:0]
+     38      2   3  ffff8a640199a8c0  ID   0.0       0      0  [kworker/3:0H]
+     39      2   4  ffff8a640199d180  IN   0.0       0      0  [cpuhp/4]
+     40      2   4  ffff8a6401998000  IN   0.0       0      0  [idle_inject/4]
+     41      2   4  ffff8a64019a5180  IN   0.0       0      0  [migration/4]
+     42      2   4  ffff8a64019a0000  IN   0.0       0      0  [ksoftirqd/4]
+     43      2   4  ffff8a64019a28c0  ID   0.0       0      0  [kworker/4:0]
+     44      2   4  ffff8a64019b0000  ID   0.0       0      0  [kworker/4:0H]
+     45      2   5  ffff8a64019b28c0  IN   0.0       0      0  [cpuhp/5]
+     46      2   5  ffff8a64019b5180  IN   0.0       0      0  [idle_inject/5]
+     47      2   5  ffff8a64019bd180  IN   0.0       0      0  [migration/5]
+     48      2   5  ffff8a64019b8000  IN   0.0       0      0  [ksoftirqd/5]
+     49      2   5  ffff8a64019ba8c0  ID   0.0       0      0  [kworker/5:0]
+     50      2   5  ffff8a64019c5180  ID   0.0       0      0  [kworker/5:0H]
+     51      2   0  ffff8a64019c0000  ID   0.0       0      0  [kworker/u13:0]
+     52      2   1  ffff8a64019c28c0  ID   0.0       0      0  [kworker/u14:0]
+     53      2   2  ffff8a64019d28c0  ID   0.0       0      0  [kworker/u15:0]
+     54      2   3  ffff8a64019d5180  ID   0.0       0      0  [kworker/u16:0]
+     55      2   4  ffff8a64019d0000  ID   0.0       0      0  [kworker/u17:0]
+     56      2   5  ffff8a64019dd180  ID   0.0       0      0  [kworker/u18:0]
+     57      2   0  ffff8a64019d8000  IN   0.0       0      0  [kdevtmpfs]
+     58      2   3  ffff8a64019da8c0  ID   0.0       0      0  [kworker/R-inet_]
+     59      2   0  ffff8a6401b028c0  ID   0.0       0      0  [kworker/u13:1]
+     60      2   3  ffff8a6401b05180  IN   0.0       0      0  [kauditd]
+     61      2   1  ffff8a6401b00000  IN   0.0       0      0  [khungtaskd]
+     62      2   1  ffff8a640222d180  IN   0.0       0      0  [oom_reaper]
+     63      2   4  ffff8a6402228000  ID   0.0       0      0  [kworker/u18:1]
+     64      2   3  ffff8a640222a8c0  ID   0.0       0      0  [kworker/R-write]
+     65      2   3  ffff8a640224a8c0  IN   0.0       0      0  [kcompactd0]
+     66      2   1  ffff8a640224d180  IN   0.0       0      0  [ksmd]
+     67      2   5  ffff8a6402248000  ID   0.0       0      0  [kworker/5:1]
+     68      2   4  ffff8a6402258000  IN   0.0       0      0  [khugepaged]
+     69      2   1  ffff8a640225a8c0  ID   0.0       0      0  [kworker/R-kinte]
+     70      2   2  ffff8a640225d180  ID   0.0       0      0  [kworker/R-kbloc]
+     71      2   1  ffff8a640234a8c0  IN   0.0       0      0  [irq/9-acpi]
+     72      2   2  ffff8a640234d180  ID   0.0       0      0  [kworker/R-tpm_d]
+     73      2   0  ffff8a6402348000  ID   0.0       0      0  [kworker/R-ata_s]
+     74      2   4  ffff8a64023e5180  ID   0.0       0      0  [kworker/R-md]
+     75      2   1  ffff8a64023e0000  ID   0.0       0      0  [kworker/R-md_bi]
+     76      2   3  ffff8a64023e28c0  ID   0.0       0      0  [kworker/R-edac-]
+     77      2   2  ffff8a64023ea8c0  ID   0.0       0      0  [kworker/R-devfr]
+     78      2   0  ffff8a64023ed180  IN   0.0       0      0  [watchdogd]
+     79      2   4  ffff8a64023e8000  ID   0.0       0      0  [kworker/4:1]
+     80      2   5  ffff8a64025628c0  ID   0.0       0      0  [kworker/5:1H]
+     81      2   4  ffff8a6402565180  IN   0.0       0      0  [kswapd0]
+     82      2   1  ffff8a6402560000  IN   0.0       0      0  [ecryptfs-kthrea]
+     83      2   2  ffff8a64027d0000  ID   0.0       0      0  [kworker/R-kthro]
+     84      2   3  ffff8a64027d28c0  ID   0.0       0      0  [kworker/R-acpi_]
+     85      2   0  ffff8a64027d5180  ID   0.0       0      0  [kworker/u13:2]
+     86      2   2  ffff8a64027dd180  RU   0.0       0      0  [kworker/2:1]
+     87      2   1  ffff8a64027d8000  IN   0.0       0      0  [scsi_eh_0]
+     88      2   3  ffff8a64027da8c0  ID   0.0       0      0  [kworker/R-scsi_]
+     89      2   4  ffff8a6405fe28c0  IN   0.0       0      0  [scsi_eh_1]
+     90      2   1  ffff8a6405fe5180  ID   0.0       0      0  [kworker/R-scsi_]
+     91      2   0  ffff8a6405fe0000  ID   0.0       0      0  [kworker/u13:3]
+     92      2   2  ffff8a6405ff28c0  ID   0.0       0      0  [kworker/u15:1]
+     93      2   2  ffff8a6405ff5180  ID   0.0       0      0  [kworker/R-mld]
+     94      2   3  ffff8a6405ff0000  ID   0.0       0      0  [kworker/u16:1]
+     95      2   3  ffff8a6406400000  ID   0.0       0      0  [kworker/3:1H]
+     96      2   1  ffff8a64064028c0  ID   0.0       0      0  [kworker/R-ipv6_]
+     97      2   3  ffff8a6406405180  ID   0.0       0      0  [kworker/3:1]
+    104      2   4  ffff8a64066a0000  ID   0.0       0      0  [kworker/R-kstrp]
+    105      2   1  ffff8a64066ad180  ID   0.0       0      0  [kworker/1:1]
+    107      2   0  ffff8a64066aa8c0  ID   0.0       0      0  [kworker/u19:0]
+    108      2   4  ffff8a64066b0000  ID   0.0       0      0  [kworker/u20:0]
+    109      2   2  ffff8a64066b28c0  ID   0.0       0      0  [kworker/u21:0]
+    110      2   0  ffff8a64066b5180  ID   0.0       0      0  [kworker/u22:0]
+    111      2   4  ffff8a64066bd180  ID   0.0       0      0  [kworker/u23:0]
+    112      2   1  ffff8a64066b8000  ID   0.0       0      0  [kworker/u24:0]
+    113      2   2  ffff8a64066ba8c0  ID   0.0       0      0  [kworker/u25:0]
+    117      2   4  ffff8a64066c0000  ID   0.0       0      0  [kworker/u17:1]
+    127      2   2  ffff8a64066d5180  ID   0.0       0      0  [kworker/R-charg]
+    128      2   2  ffff8a64066d0000  ID   0.0       0      0  [kworker/2:2]
+    150      2   4  ffff8a6406fad180  ID   0.0       0      0  [kworker/4:1H]
+    151      2   0  ffff8a64066d28c0  ID   0.0       0      0  [kworker/0:1H]
+    166      2   2  ffff8a6406faa8c0  ID   0.0       0      0  [kworker/2:1H]
+    167      2   1  ffff8a6406fa8000  ID   0.0       0      0  [kworker/1:1H]
+    169      2   5  ffff8a6406fc28c0  ID   0.0       0      0  [kworker/5:2]
+    170      2   2  ffff8a6406fc5180  IN   0.0       0      0  [scsi_eh_2]
+    171      2   1  ffff8a6406fc0000  ID   0.0       0      0  [kworker/R-scsi_]
+    172      2   2  ffff8a6406fca8c0  ID   0.0       0      0  [kworker/u15:2]
+    174      2   5  ffff8a6406fcd180  ID   0.0       0      0  [kworker/u14:1]
+    183      2   4  ffff8a6406fc8000  ID   0.0       0      0  [kworker/4:2]
+    184      2   2  ffff8a64082c0000  ID   0.0       0      0  [kworker/2:3]
+    186      2   3  ffff8a64082c28c0  ID   0.0       0      0  [kworker/u16:2]
+    206      2   3  ffff8a64082c5180  IN   0.0       0      0  [jbd2/sda3-8]
+    207      2   0  ffff8a64082f5180  ID   0.0       0      0  [kworker/R-ext4-]
+    212      2   4  ffff8a6403845180  ID   0.0       0      0  [kworker/u17:2]
+    220      2   0  ffff8a6403840000  ID   0.0       0      0  [kworker/0:2]
+    248      1   3  ffff8a64086e5180  IN   0.9   48144  19660  systemd-journal
+    261      2   1  ffff8a64066a5180  ID   0.0       0      0  [kworker/1:2]
+    269      2   0  ffff8a6406f528c0  ID   0.0       0      0  [kworker/0:3]
+    270      2   0  ffff8a6406f50000  ID   0.0       0      0  [kworker/0:4]
+    271      2   0  ffff8a64066428c0  ID   0.0       0      0  [kworker/0:5]
+    272      2   0  ffff8a6406645180  ID   0.0       0      0  [kworker/0:6]
+    275      2   0  ffff8a6406640000  ID   0.0       0      0  [kworker/0:7]
+    283      2   5  ffff8a6406f5a8c0  ID   0.0       0      0  [kworker/u18:2]
+    285      2   2  ffff8a6406f58000  ID   0.0       0      0  [kworker/u12:1]
+    294      1   4  ffff8a64070228c0  IN   0.3   23728   7132  systemd-udevd
+    295      2   3  ffff8a6406f5d180  ID   0.0       0      0  [kworker/u18:3]
+    296      2   4  ffff8a6406f4a8c0  IN   0.0       0      0  [irq/18-vmwgfx]
+    297      2   2  ffff8a6406f48000  ID   0.0       0      0  [kworker/R-ttm]
+    299      2   5  ffff8a6406f4d180  ID   0.0       0      0  [kworker/5:3]
+    318      2   1  ffff8a64043528c0  ID   0.0       0      0  [kworker/R-iprt-]
+    351      2   1  ffff8a6406660000  ID   0.0       0      0  [kworker/R-crypt]
+    355      2   2  ffff8a64066628c0  ID   0.0       0      0  [kworker/u15:3]
+    356      2   1  ffff8a6406665180  ID   0.0       0      0  [kworker/u14:2]
+    383      2   3  ffff8a64085228c0  ID   0.0       0      0  [kworker/3:2]
+    400      1   3  ffff8a64066a28c0  IN   0.3   14836   6884  systemd-oomd
+    405      1   3  ffff8a6404a0d180  IN   0.7   25664  14020  systemd-resolve
+    408      1   2  ffff8a640701a8c0  IN   0.4   89388   7448  systemd-timesyn
+    461      1   0  ffff8a6407018000  IN   0.4   89388   7448  sd-resolve
+    599      1   2  ffff8a64049dd180  IN   0.4  248636   7888  accounts-daemon
+    600      1   3  ffff8a64144328c0  IN   0.1    2816   2076  acpid
+    603      1   5  ffff8a64053b0000  IN   0.2    7576   4200  avahi-daemon
+    605      1   5  ffff8a6412458000  IN   0.1   18152   3044  cron
+    607      1   4  ffff8a641245d180  IN   0.3   10780   6380  dbus-daemon
+    608      1   4  ffff8a64053b28c0  IN   0.9  269708  18812  NetworkManager
+    611      1   2  ffff8a6414430000  IN   0.4  248636   7888  gmain
+    617      1   2  ffff8a64086e28c0  IN   0.4  248636   7888  gdbus
+    619      1   0  ffff8a64086e0000  IN   0.2   82700   4036  irqbalance
+    626      1   5  ffff8a6407ff28c0  IN   1.0   49744  21576  networkd-dispat
+    632      1   5  ffff8a6404355180  IN   0.9  269708  18812  gmain
+    633      1   0  ffff8a640701d180  IN   0.5  236936  10060  polkitd
+    636      1   1  ffff8a64166e5180  IN   0.2   82700   4036  gmain
+    638      1   3  ffff8a641245a8c0  IN   0.9  269708  18812  gdbus
+    640      1   3  ffff8a6410cbd180  IN   0.5  236936  10060  gmain
+    643      1   3  ffff8a64081f0000  IN   0.4  248752   7604  power-profiles-
+    644      1   0  ffff8a6404a0a8c0  IN   0.5  236936  10060  gdbus
+    649      1   1  ffff8a64081f28c0  IN   0.3  222404   6088  rsyslogd
+    654      1   5  ffff8a64066c28c0  IN   1.8 1616984  38036  snapd
+    655      1   1  ffff8a64166f5180  IN   0.3  245036   7056  switcheroo-cont
+    656      1   5  ffff8a64066c5180  IN   0.4   23644   8188  systemd-logind
+    657      1   3  ffff8a6416435180  IN   1.8 1616984  38036  snapd
+    658      1   2  ffff8a6416430000  IN   1.8 1616984  38036  snapd
+    659      1   1  ffff8a64166ed180  IN   1.8 1616984  38036  snapd
+    660      1   0  ffff8a6410cb8000  IN   1.8 1616984  38036  snapd
+    661      1   2  ffff8a64086e8000  IN   1.8 1616984  38036  snapd
+    666      1   4  ffff8a64166ea8c0  IN   0.7  392992  13724  udisksd
+    668      1   2  ffff8a6410cba8c0  IN   0.4  248752   7604  gmain
+    670      1   2  ffff8a6408525180  IN   0.4  248752   7604  gdbus
+    672      1   3  ffff8a64166e28c0  IN   0.3   16504   6620  wpa_supplicant
+    675      1   4  ffff8a64081f5180  IN   0.3  245036   7056  gmain
+    677      1   1  ffff8a641445d180  IN   0.3  245036   7056  gdbus
+    678      1   2  ffff8a64164628c0  IN   0.7  392992  13724  gmain
+    682      1   1  ffff8a64082f0000  IN   0.7  392992  13724  gdbus
+    685      2   1  ffff8a64146ba8c0  ID   0.0       0      0  [kworker/1:3]
+    687    603   5  ffff8a641244d180  IN   0.1    7444   1436  avahi-daemon
+    688      1   3  ffff8a64146c0000  IN   0.3  222404   6088  in:imuxsock
+    689      1   1  ffff8a64146c28c0  IN   0.3  222404   6088  in:imklog
+>   691      1   1  ffff8a6414460000  RU   0.3  222404   6088  rs:main Q:Reg
+    697      1   5  ffff8a6415e4d180  IN   1.8 1616984  38036  snapd
+    729      1   4  ffff8a64166e0000  IN   0.7  392992  13724  probing-thread
+    731      1   4  ffff8a6415e65180  IN   1.8 1616984  38036  snapd
+    744      1   4  ffff8a6415e60000  IN   1.8 1616984  38036  snapd
+    746      1   0  ffff8a64054e28c0  IN   0.6  317980  12664  ModemManager
+    760      1   5  ffff8a64146c5180  IN   0.7   81672  13988  cupsd
+    779      1   4  ffff8a6415e628c0  IN   0.6  317980  12664  gmain
+    780      1   4  ffff8a6407030000  IN   0.7  392992  13724  cleanup
+    784      1   2  ffff8a64146bd180  IN   0.6  317980  12664  gdbus
+    785      1   0  ffff8a64146b8000  IN   1.8 1616984  38036  snapd
+    786      1   1  ffff8a6415e828c0  IN   1.8 1616984  38036  snapd
+    788      1   4  ffff8a6416468000  IN   1.2  126768  24160  unattended-upgr
+    793    760   1  ffff8a64144628c0  IN   0.3   16288   6756  dbus
+    794    760   0  ffff8a641244a8c0  IN   0.3   16288   6816  dbus
+    822      1   5  ffff8a64166128c0  IN   1.2  126768  24160  gmain
+   1147      2   4  ffff8a64148628c0  ID   0.0       0      0  [kworker/4:3]
+   1152      1   4  ffff8a641ad68000  IN   0.4  249880   9216  gdm3
+   1155      1   1  ffff8a641ad2a8c0  IN   0.4  249880   9216  gmain
+   1156      1   1  ffff8a641ad2d180  IN   0.4  249880   9216  gdbus
+   1158   1152   0  ffff8a6414860000  IN   0.5  179100  10516  gdm-session-wor
+   1159   1152   0  ffff8a6416615180  IN   0.5  179100  10516  gmain
+   1161   1152   0  ffff8a64082f28c0  IN   0.5  179100  10516  gdbus
+   1167      1   2  ffff8a6416710000  IN   0.5   17872  10552  systemd
+   1168   1167   1  ffff8a641ad40000  IN   0.3  104520   5828  (sd-pam)
+   1174   1167   4  ffff8a641ad45180  IN   0.3   48224   6700  pipewire
+   1175   1167   5  ffff8a641660a8c0  IN   0.3   32112   6760  pipewire-media-
+   1176   1167   4  ffff8a641660d180  IN   1.4 1433192  29136  pulseaudio
+   1177   1167   0  ffff8a641ad6a8c0  IN   0.6   39000  11884  snapd-desktop-i
+   1186      1   4  ffff8a6412438000  IN   0.3  249524   7088  gnome-keyring-d
+   1187      1   1  ffff8a641ae1a8c0  IN   0.2  154004   3440  rtkit-daemon
+   1188      1   3  ffff8a641243a8c0  IN   0.3  249524   7088  gmain
+   1189      1   0  ffff8a641243d180  IN   0.3  249524   7088  gdbus
+   1199      1   2  ffff8a641ad428c0  IN   0.2  154004   3440  rtkit-daemon
+   1200      1   4  ffff8a64146fd180  IN   0.2  154004   3440  rtkit-daemon
+   1201   1158   2  ffff8a6407035180  IN   0.3  171048   6132  gdm-wayland-ses
+   1202   1158   1  ffff8a641ae18000  IN   0.3  171048   6132  gmain
+   1203   1167   4  ffff8a64146f8000  IN   0.3   10212   6540  dbus-daemon
+   1204   1167   3  ffff8a64070328c0  IN   0.3   32112   6760  pipewire-media-
+   1205   1158   1  ffff8a641ae1d180  IN   0.3  171048   6132  gdbus
+   1206   1167   4  ffff8a6415e7a8c0  IN   0.3   48224   6700  pipewire
+   1207   1201   3  ffff8a64146fa8c0  IN   0.8  231700  15872  gnome-session-b
+   1219   1167   2  ffff8a641af05180  IN   1.4 1433192  29136  alsa-sink-Intel
+   1226   1167   5  ffff8a641af0d180  IN   1.4 1433192  29136  alsa-source-Int
+   1242   1201   3  ffff8a641adc8000  IN   0.8  231700  15872  gmain
+   1243   1201   1  ffff8a641adcd180  IN   0.8  231700  15872  gdbus
+   1244   1167   1  ffff8a641af15180  IN   1.4 1433192  29136  snapd-glib
+   1249   1167   3  ffff8a6414868000  IN   0.3  100568   5728  gnome-session-c
+   1254      1   3  ffff8a6415e78000  IN   0.3  249524   7088  timer
+   1255   1167   0  ffff8a641ad3d180  IN   0.3  100568   5728  gmain
+   1259   1167   5  ffff8a641adad180  IN   0.4  249304   8312  gvfsd
+   1262   1167   1  ffff8a641afe0000  IN   0.4  249304   8312  gmain
+   1263   1167   5  ffff8a641afe28c0  IN   0.4  249304   8312  gdbus
+   1266   1167   4  ffff8a6415e7d180  IN   0.3  380896   6968  gvfsd-fuse
+   1267   1167   2  ffff8a641adaa8c0  IN   0.8  601512  17696  gnome-session-b
+   1269   1167   4  ffff8a641af00000  IN   0.3  380896   6968  gvfsd-fuse
+   1270   1167   4  ffff8a641ada8000  IN   0.3  380896   6968  gvfsd-fuse
+   1271   1167   4  ffff8a641adca8c0  IN   0.3  380896   6968  gmain
+   1272   1167   4  ffff8a641af10000  IN   0.3  380896   6968  gdbus
+   1273   1167   1  ffff8a641af028c0  IN   0.3  380896   6968  gvfs-fuse-sub
+   1274   1167   0  ffff8a641ed5d180  IN   0.8  601512  17696  gmain
+   1275   1167   1  ffff8a641ed58000  IN   0.8  601512  17696  gdbus
+   1277   1167   1  ffff8a641af08000  IN   0.8  601512  17696  dconf worker
+   1288   1267   5  ffff8a641ed6a8c0  IN   0.4  309584   8000  at-spi-bus-laun
+   1290   1267   2  ffff8a641ad20000  IN   0.4  309584   8000  gmain
+   1291   1267   0  ffff8a641ad25180  IN   0.4  309584   8000  dconf worker
+   1293   1267   0  ffff8a641ed628c0  IN   0.4  309584   8000  gdbus
+   1297      2   1  ffff8a641ad38000  ID   0.0       0      0  [kworker/u14:3]
+   1298   1167   4  ffff8a641ed728c0  IN  16.2 5509112 338700  gnome-shell
+   1299   1288   4  ffff8a641ed68000  IN   0.2    8432   4644  dbus-daemon
+   1303   1167   3  ffff8a641ed75180  IN  16.2 5509112 338700  gmain
+   1305   1167   3  ffff8a641af0a8c0  IN  16.2 5509112 338700  gdbus
+   1306   1167   2  ffff8a641af128c0  IN  16.2 5509112 338700  dconf worker
+   1307   1167   0  ffff8a641ed7a8c0  IN  16.2 5509112 338700  llvmpipe-0
+   1308   1167   5  ffff8a641ed7d180  IN  16.2 5509112 338700  llvmpipe-1
+   1309   1167   3  ffff8a641ed78000  IN  16.2 5509112 338700  llvmpipe-2
+   1310   1167   2  ffff8a641ed85180  IN  16.2 5509112 338700  llvmpipe-3
+   1311   1167   4  ffff8a641ed80000  IN  16.2 5509112 338700  llvmpipe-4
+   1312   1167   1  ffff8a641ed828c0  IN  16.2 5509112 338700  llvmpipe-5
+   1313   1167   0  ffff8a641ed8a8c0  IN  16.2 5509112 338700  gnome-shell
+   1314   1167   1  ffff8a641ed8d180  IN  16.2 5509112 338700  gnome-shell
+   1315   1167   0  ffff8a641ed88000  IN  16.2 5509112 338700  gnome-shell
+   1316   1167   1  ffff8a6425cba8c0  IN  16.2 5509112 338700  gnome-shell
+   1317   1167   1  ffff8a6425cbd180  IN  16.2 5509112 338700  gnome-shell
+   1318   1167   0  ffff8a6425cb8000  IN  16.2 5509112 338700  gnome-shell
+   1319   1167   2  ffff8a6425cc0000  IN  16.2 5509112 338700  gnome-s:disk$0
+   1321   1167   0  ffff8a6425cc5180  IN  16.2 5509112 338700  gnome-shell
+   1323   1167   1  ffff8a641ed5a8c0  IN  16.2 5509112 338700  JS Helper
+   1324   1167   3  ffff8a64049da8c0  IN  16.2 5509112 338700  JS Helper
+   1325   1167   1  ffff8a6415c3d180  IN  16.2 5509112 338700  JS Helper
+   1326   1167   2  ffff8a6415c38000  IN  16.2 5509112 338700  JS Helper
+   1327   1167   3  ffff8a6415c3a8c0  IN  16.2 5509112 338700  JS Helper
+   1328   1167   3  ffff8a6404a08000  IN  16.2 5509112 338700  JS Helper
+   1329   1167   1  ffff8a641ad228c0  IN   0.3  244808   6344  xdg-permission-
+   1331   1167   2  ffff8a641aeb28c0  IN   0.9  582764  18476  gnome-shell-cal
+   1332   1167   0  ffff8a641ed6d180  IN   0.3  244808   6344  gmain
+   1334   1167   1  ffff8a641aeb5180  IN   0.3  244808   6344  gdbus
+   1335   1167   1  ffff8a641aeba8c0  IN   0.9  582764  18476  gmain
+   1337   1167   4  ffff8a641486a8c0  IN   0.9  582764  18476  gdbus
+   1338   1167   1  ffff8a641aeb8000  IN   0.9  582764  18476  dconf worker
+   1339   1167   0  ffff8a641aec28c0  IN   0.9  582764  18476  gnome-shell-cal
+   1340   1167   4  ffff8a641486d180  IN   1.2  400816  25800  evolution-sourc
+   1341   1167   1  ffff8a641aec5180  IN   1.2  400816  25800  gmain
+   1342   1167   1  ffff8a641aec0000  IN   1.2  400816  25800  dconf worker
+   1343   1167   4  ffff8a64054e0000  IN   1.2  400816  25800  gdbus
+   1344      1   3  ffff8a6425c1a8c0  IN   0.4  251000   9008  upowerd
+   1347   1167   3  ffff8a641affa8c0  IN   2.0  596624  42312  goa-daemon
+   1349      1   2  ffff8a641ad3a8c0  IN   0.4  251000   9008  gmain
+   1350      1   0  ffff8a6412435180  IN   0.4  251000   9008  gdbus
+   1354   1167   5  ffff8a64124328c0  IN   0.9  582764  18476  pool-gnome-shel
+   1355   1167   4  ffff8a642c9ba8c0  IN   2.0  596624  42312  gmain
+   1357   1167   4  ffff8a641ed428c0  IN   1.5  849108  31256  evolution-calen
+   1358   1167   3  ffff8a642c9c28c0  IN   2.0  596624  42312  gdbus
+   1359   1167   5  ffff8a642c9c5180  IN   2.0  596624  42312  dconf worker
+   1361   1167   4  ffff8a6415e4a8c0  IN   0.7  347060  15452  goa-identity-se
+   1363   1167   2  ffff8a642c9ca8c0  IN   1.5  849108  31256  gmain
+   1364   1167   4  ffff8a642c9cd180  IN   1.5  849108  31256  gdbus
+   1365   1167   1  ffff8a641ed40000  IN   0.5  398276  11376  gvfs-udisks2-vo
+   1366   1167   1  ffff8a641ed3d180  IN   0.7  347060  15452  gmain
+   1368   1167   4  ffff8a642c9d5180  IN   0.7  347060  15452  gdbus
+   1369   1167   0  ffff8a641ad6d180  IN   0.5  398276  11376  gmain
+   1370   1167   0  ffff8a641ad78000  IN   0.5  398276  11376  gdbus
+   1375   1167   0  ffff8a641ec00000  IN   0.5  398276  11376  dconf worker
+   1376   1167   0  ffff8a641ad7d180  IN   1.5  849108  31256  dconf worker
+   1377   1167   0  ffff8a641ad80000  IN   1.5  849108  31256  evolution-calen
+   1379   1167   5  ffff8a641ed45180  IN   0.4  323868   8320  gvfs-afc-volume
+   1380   1167   2  ffff8a641ad828c0  IN   1.5  849108  31256  pool-evolution-
+   1382   1167   4  ffff8a642c9d0000  IN   1.5  849108  31256  pool-evolution-
+   1383   1167   5  ffff8a6425cc8000  IN   1.5  849108  31256  evolution-calen
+   1384   1167   2  ffff8a642c9d28c0  IN   0.3  156840   5828  dconf-service
+   1385   1167   0  ffff8a642c9da8c0  IN   1.4  680884  28916  evolution-addre
+   1386   1167   2  ffff8a6425cca8c0  IN   0.4  323868   8320  gvfs-afc-volume
+   1387   1167   0  ffff8a6425ccd180  IN   0.4  323868   8320  gmain
+   1389   1167   0  ffff8a641ed3a8c0  IN   0.3  156840   5828  gmain
+   1390   1167   3  ffff8a642c9dd180  IN   0.4  323868   8320  gdbus
+   1392   1167   0  ffff8a6425cd0000  IN   1.5  849108  31256  pool-evolution-
+   1393   1167   4  ffff8a6425cd28c0  IN   0.3  156840   5828  gdbus
+   1394   1167   2  ffff8a642c9d8000  IN   0.3  245292   6912  gvfs-goa-volume
+   1395   1167   0  ffff8a641ec08000  IN   1.4  680884  28916  gmain
+   1396   1167   0  ffff8a641ec0a8c0  IN   1.4  680884  28916  gdbus
+   1398   1167   4  ffff8a641ec15180  IN   1.4  680884  28916  dconf worker
+   1399   1167   4  ffff8a641ec10000  IN   1.4  680884  28916  evolution-addre
+   1400   1167   4  ffff8a6425cd5180  IN   0.3  245292   6912  gmain
+   1401   1167   0  ffff8a642c9e28c0  IN   0.3  245292   6912  gdbus
+   1404   1167   4  ffff8a641ad85180  IN   0.3  245116   6800  gvfs-mtp-volume
+   1405   1167   0  ffff8a642c9e0000  IN   1.4  680884  28916  pool-evolution-
+   1406   1167   0  ffff8a642caa8000  IN   0.3  245116   6800  gmain
+   1408   1167   0  ffff8a642c9ea8c0  IN   0.3  245116   6800  gdbus
+   1409   1167   2  ffff8a642caad180  IN   0.3  246072   7296  gvfs-gphoto2-vo
+   1413   1167   4  ffff8a641ec128c0  IN   0.3  246072   7296  gmain
+   1415   1167   2  ffff8a642cabd180  IN   0.3  246072   7296  gdbus
+   1416      1   1  ffff8a642c9e8000  IN   1.0  306884  20760  packagekitd
+   1417      1   4  ffff8a6425cd8000  IN   1.0  306884  20760  gmain
+   1418      1   0  ffff8a6425cda8c0  IN   1.0  306884  20760  gdbus
+   1423   1259   4  ffff8a6425c1d180  IN   0.4  323396   9360  gvfsd-trash
+   1424   1259   4  ffff8a6425ce28c0  IN   0.4  323396   9360  gmain
+   1425   1259   4  ffff8a6425ce8000  IN   0.4  323396   9360  gdbus
+   1433   1167   2  ffff8a642cb228c0  IN   1.3 2739236  27808  gjs
+   1435   1167   5  ffff8a642cb2d180  IN   0.4  162688   7556  at-spi2-registr
+   1438   1167   3  ffff8a641ad8a8c0  IN   0.4  162688   7556  gmain
+   1439   1167   1  ffff8a641ad8d180  IN   0.4  162688   7556  gdbus
+   1440   1167   1  ffff8a642cb28000  IN   1.3 2739236  27808  gmain
+   1441   1167   4  ffff8a642cac0000  IN   1.3 2739236  27808  gdbus
+   1443   1167   4  ffff8a6438088000  IN   1.3 2739236  27808  JS Helper
+   1444   1167   3  ffff8a643808a8c0  IN   1.3 2739236  27808  JS Helper
+   1445   1167   4  ffff8a643808d180  IN   1.3 2739236  27808  JS Helper
+   1446   1167   0  ffff8a64380928c0  IN   1.3 2739236  27808  JS Helper
+   1447   1167   4  ffff8a6438095180  IN   1.3 2739236  27808  JS Helper
+   1448   1167   5  ffff8a6438090000  IN   1.3 2739236  27808  JS Helper
+   1451   1167   5  ffff8a642cac8000  IN   0.1    2892   1756  sh
+   1452   1167   3  ffff8a642caca8c0  IN   0.3  319040   7068  gsd-a11y-settin
+   1453   1167   1  ffff8a6438110000  IN   1.2  607132  26024  gsd-color
+   1455   1167   5  ffff8a64381128c0  IN   0.8  384084  16444  gsd-datetime
+   1457   1167   2  ffff8a6438115180  IN   0.4  320544   8216  gsd-housekeepin
+   1459   1451   4  ffff8a643809a8c0  IN   0.6  323964  12292  ibus-daemon
+   1460   1167   3  ffff8a641aeb0000  IN   0.3  319040   7068  gmain
+   1461   1167   1  ffff8a643809d180  IN   0.4  320544   8216  gmain
+   1463   1167   1  ffff8a64380a5180  IN   1.1  349196  22148  gsd-keyboard
+   1465   1167   3  ffff8a64380a0000  IN   1.3  872768  27068  gsd-media-keys
+   1466   1167   4  ffff8a6438098000  IN   1.2  459164  26084  gsd-power
+   1468   1167   2  ffff8a641ed4d180  IN   0.3  319040   7068  gdbus
+   1471   1167   4  ffff8a64380b8000  IN   0.5  258516  11456  gsd-print-notif
+   1474   1167   3  ffff8a64380bd180  IN   0.4  320544   8216  gdbus
+   1475   1167   3  ffff8a64399a8000  IN   1.1  349196  22148  gmain
+   1476   1167   0  ffff8a6438118000  IN   0.8  384084  16444  gmain
+   1479   1167   3  ffff8a64399ad180  IN   1.1  349196  22148  dconf worker
+   1480   1167   1  ffff8a64380ba8c0  IN   0.3  466516   7004  gsd-rfkill
+   1481   1167   3  ffff8a64399b28c0  IN   0.3  244948   6588  gsd-screensaver
+   1482   1167   2  ffff8a642cb5a8c0  IN   1.2  607132  26024  gmain
+   1484   1167   3  ffff8a64399b5180  IN   0.5  474564  10868  gsd-sharing
+   1485   1167   3  ffff8a641ed48000  IN   1.3  872768  27068  gmain
+   1486   1167   3  ffff8a64399b0000  IN   0.5  258516  11456  gmain
+   1488   1167   3  ffff8a641ed55180  IN   1.3  872768  27068  dconf worker
+   1490   1167   5  ffff8a64399bd180  IN   0.3  244948   6588  gmain
+   1492   1167   5  ffff8a642cb628c0  IN   1.2  607132  26024  dconf worker
+   1493   1167   5  ffff8a64399ba8c0  IN   0.4  394652   8532  gsd-smartcard
+   1494   1167   2  ffff8a64399ca8c0  IN   0.5  327956   9892  gsd-sound
+   1495   1167   4  ffff8a64399cd180  IN   1.1  423436  22748  gsd-wacom
+   1497   1167   3  ffff8a6425c20000  IN   0.4  394652   8532  gmain
+   1498   1167   3  ffff8a641ed50000  IN   0.5  474564  10868  gmain
+   1499   1167   4  ffff8a642cb3a8c0  IN   0.3  466516   7004  gmain
+   1500   1167   4  ffff8a641ed528c0  IN   0.5  474564  10868  dconf worker
+   1502   1167   4  ffff8a6438125180  IN   0.8  384084  16444  gdbus
+   1504   1267   0  ffff8a642cb428c0  IN   3.1  772040  66000  evolution-alarm
+   1505   1167   5  ffff8a64399c8000  IN   1.1  423436  22748  gmain
+   1508   1167   5  ffff8a64399d5180  IN   1.1  423436  22748  dconf worker
+   1509   1167   0  ffff8a642cb65180  IN   1.2  459164  26084  gmain
+   1512   1167   1  ffff8a6425c35180  IN   0.4  394652   8532  gdbus
+   1513   1167   2  ffff8a642cb45180  IN   0.3  466516   7004  gdbus
+   1514   1167   5  ffff8a64399d0000  IN   0.3  244948   6588  gdbus
+   1516   1167   3  ffff8a6439b9a8c0  IN   1.3  872768  27068  gdbus
+   1518   1167   4  ffff8a6439b9d180  IN   0.5  474564  10868  gdbus
+   1520   1167   0  ffff8a642cb75180  IN   0.5  327956   9892  gmain
+   1524   1167   1  ffff8a642cb70000  IN   1.2  459164  26084  dconf worker
+   1525   1167   2  ffff8a6439bd5180  IN   0.5  258516  11456  gdbus
+   1527   1167   2  ffff8a6439bd0000  IN   1.1  349196  22148  gdbus
+   1529   1167   5  ffff8a642cb728c0  IN   1.2  607132  26024  gdbus
+   1537   1267   5  ffff8a642cb4a8c0  IN   0.4  232272   7632  gsd-disk-utilit
+   1545   1451   1  ffff8a6439ba0000  IN   0.6  323964  12292  gmain
+   1546   1167   3  ffff8a6439bd28c0  IN   1.1  423436  22748  gdbus
+   1547   1167   1  ffff8a6439ba28c0  IN   1.2  459164  26084  gdbus
+   1548   1167   4  ffff8a642cb828c0  IN   0.5  327956   9892  gdbus
+   1550   1451   5  ffff8a6439bb5180  IN   0.6  323964  12292  gdbus
+   1558   1267   5  ffff8a642cacd180  IN   0.4  232272   7632  gmain
+   1562   1267   2  ffff8a64381328c0  IN   0.4  232272   7632  gdbus
+   1564   1459   4  ffff8a6439bbd180  IN   0.4  245964   7508  ibus-dconf
+   1567   1459   0  ffff8a6439bb8000  IN   1.3  355804  28040  ibus-extension-
+   1568   1459   4  ffff8a643c07d180  IN   0.4  245964   7508  gmain
+   1570   1167   3  ffff8a6425c30000  IN   0.4  245916   7596  ibus-portal
+   1571   1459   3  ffff8a643c078000  IN   0.4  245964   7508  gdbus
+   1573   1167   3  ffff8a6439bba8c0  IN   0.3  319040   7068  dconf worker
+   1575   1167   1  ffff8a6438135180  IN   0.4  394652   8532  dconf worker
+   1580   1167   4  ffff8a643811a8c0  IN   0.8  384084  16444  dconf worker
+   1581   1167   0  ffff8a6439be5180  IN   0.4  320544   8216  dconf worker
+   1584   1167   5  ffff8a642cb85180  IN   0.5  327956   9892  dconf worker
+   1590   1167   2  ffff8a643812a8c0  IN   0.4  245916   7596  gmain
+   1592   1167   5  ffff8a6438128000  IN   0.4  245916   7596  gdbus
+   1594   1459   3  ffff8a642cb58000  IN   1.3  355804  28040  gmain
+   1597   1459   3  ffff8a643c04d180  IN   1.3  355804  28040  dconf worker
+   1598   1459   0  ffff8a643c0b28c0  IN   1.3  355804  28040  gdbus
+   1599   1459   4  ffff8a643c08a8c0  IN   0.4  245964   7508  dconf worker
+   1602   1267   4  ffff8a642cb8a8c0  IN   3.1  772040  66000  gmain
+   1604   1267   2  ffff8a6425c25180  IN   3.1  772040  66000  dconf worker
+   1605   1267   1  ffff8a643c08d180  IN   3.1  772040  66000  gdbus
+   1606   1298   4  ffff8a643c048000  IN   3.1  207264  64356  Xwayland
+   1613   1167   0  ffff8a643c088000  IN   0.3  171676   6628  gvfsd-metadata
+   1614   1167   1  ffff8a642c9c0000  IN   0.3  171676   6628  gmain
+   1615   1167   0  ffff8a643c040000  IN   0.3  171676   6628  gdbus
+   1629   1167   3  ffff8a6439b98000  IN   0.7  351016  15128  gsd-printer
+   1630   1167   2  ffff8a643c0b5180  IN   0.7  351016  15128  gmain
+   1631   1167   4  ffff8a641aebd180  IN   0.7  351016  15128  gdbus
+   1634   1459   0  ffff8a643c0b8000  IN   0.4  172140   7628  ibus-engine-sim
+   1635   1459   3  ffff8a6438120000  IN   0.4  172140   7628  gmain
+   1636   1459   5  ffff8a6439ba5180  IN   0.4  172140   7628  gdbus
+   1669   1167   0  ffff8a643c0428c0  IN   0.4  620332   7528  xdg-document-po
+   1670   1167   5  ffff8a643c060000  IN   0.4  620332   7528  gmain
+   1671   1167   1  ffff8a643c065180  IN   0.4  620332   7528  gdbus
+   1673   1167   4  ffff8a6416715180  IN   0.4  620332   7528  fuse mainloop
+   1674   1673   4  ffff8a6405040000  IN   0.1    2796   2000  fusermount3
+   1675   1167   3  ffff8a6414458000  IN   0.4  620332   7528  fuse mainloop
+   1676   1167   4  ffff8a640478a8c0  IN   0.4  620332   7528  fuse mainloop
+   1687      1   3  ffff8a640478d180  IN   1.8 1616984  38036  snapd
+   1693      1   1  ffff8a6416608000  IN   0.6  253996  13300  colord
+   1699      1   3  ffff8a643c045180  IN   0.6  253996  13300  gmain
+   1701      1   1  ffff8a64164328c0  IN   0.6  253996  13300  gdbus
+   1702   1267   4  ffff8a643c01d180  IN   3.1  772040  66000  evolution-alarm
+   1703   1167   5  ffff8a64053b5180  IN   0.7  632400  13968  xdg-desktop-por
+   1705   1167   2  ffff8a641ec05180  IN   1.8  656324  37996  tracker-miner-f
+   1706   1167   5  ffff8a641646d180  IN   0.7  632400  13968  gmain
+   1707   1167   3  ffff8a643c020000  IN   0.7  632400  13968  gdbus
+   1709   1167   1  ffff8a6416465180  IN   1.4  671844  29620  xdg-desktop-por
+   1715   1267   0  ffff8a6443fb5180  IN   3.1  772040  66000  evolution-alarm
+   1724   1167   1  ffff8a6416460000  IN   0.4  620332   7528  fuse mainloop
+   1726   1167   2  ffff8a643c0328c0  IN   1.4  671844  29620  gmain
+   1728   1167   3  ffff8a643c035180  IN   1.4  671844  29620  dconf worker
+   1733   1167   1  ffff8a643c025180  IN   1.4  671844  29620  gdbus
+   1745   1167   4  ffff8a6443fb28c0  IN   1.3 2673684  27800  gjs
+   1748   1167   2  ffff8a6443fb8000  IN   1.3 2673684  27800  gmain
+   1749   1167   2  ffff8a6443fba8c0  IN   1.3 2673684  27800  gdbus
+   1750   1167   5  ffff8a643c008000  IN   1.3 2673684  27800  JS Helper
+   1751   1167   3  ffff8a64167128c0  IN   1.3 2673684  27800  JS Helper
+   1752   1167   5  ffff8a642cb3d180  IN   1.3 2673684  27800  JS Helper
+   1753   1167   3  ffff8a642cb38000  IN   1.3 2673684  27800  JS Helper
+   1754   1167   5  ffff8a642cb30000  IN   1.3 2673684  27800  JS Helper
+   1755   1167   2  ffff8a642cb35180  IN   1.3 2673684  27800  JS Helper
+   1773   1167   5  ffff8a643c00d180  IN   3.9  540208  81088  gsd-xsettings
+   1774      1   0  ffff8a6449ffd180  IN   1.8 1616984  38036  snapd
+   1777   1298   1  ffff8a643c0fa8c0  IN   2.7 2934840  56844  gjs
+   1786   1298   2  ffff8a643c00a8c0  IN   2.7 2934840  56844  gmain
+   1788   1298   4  ffff8a6439bcd180  IN   2.7 2934840  56844  gdbus
+   1789   1298   0  ffff8a6443fbd180  IN   2.7 2934840  56844  JS Helper
+   1790   1298   5  ffff8a643c0128c0  IN   2.7 2934840  56844  JS Helper
+   1791   1298   0  ffff8a643c010000  IN   2.7 2934840  56844  JS Helper
+   1792   1298   3  ffff8a643c028000  IN   2.7 2934840  56844  JS Helper
+   1793   1298   2  ffff8a643c02d180  IN   2.7 2934840  56844  JS Helper
+   1794   1298   4  ffff8a643c02a8c0  IN   2.7 2934840  56844  JS Helper
+   1800   1298   5  ffff8a642cb80000  IN   2.7 2934840  56844  dconf worker
+   1803   1167   3  ffff8a643c0f8000  IN   3.9  540208  81088  gmain
+   1804   1167   1  ffff8a643c0fd180  IN   3.9  540208  81088  gdbus
+   1805   1167   3  ffff8a6449fc28c0  IN   3.9  540208  81088  dconf worker
+   1813   1167   5  ffff8a6449fd5180  IN   0.7  632400  13968  dconf worker
+   1817   1167   4  ffff8a6443fca8c0  IN   1.2  352876  25080  xdg-desktop-por
+   1821   1167   3  ffff8a6449fe5180  IN   1.2  352876  25080  gmain
+   1823   1167   4  ffff8a6443fd5180  IN   1.2  352876  25080  gdbus
+   1824   1167   5  ffff8a6449fd0000  IN   1.2  352876  25080  dconf worker
+   1835   1167   1  ffff8a643c03d180  IN   1.2  202748  25048  ibus-x11
+   1837   1167   1  ffff8a643c03a8c0  IN   1.2  202748  25048  gmain
+   1838   1167   2  ffff8a643c038000  IN   1.2  202748  25048  gdbus
+   1839   1177   3  ffff8a642cab8000  IN   1.3  430572  28264  snapd-desktop-i
+   1843   1167   0  ffff8a643c075180  IN  16.2 5509112 338700  threaded-ml
+   1846   1167   3  ffff8a642caba8c0  IN   0.1   28220   1556  VBoxClient
+   1856   1846   3  ffff8a6449ff8000  IN   0.2  227044   4440  VBoxClient
+   1858   1846   2  ffff8a643c0bd180  IN   0.2  227044   4440  VBoxClient
+   1859   1846   3  ffff8a6449fea8c0  IN   0.2  227044   4440  VBoxClient
+   1865   1846   2  ffff8a6449fe8000  IN   0.2  227044   4440  VBoxClient
+   1876   1167   3  ffff8a6415e5d180  IN   0.1   28220   1516  VBoxClient
+   1877   1876   2  ffff8a643c018000  IN   0.2  226700   3612  VBoxClient
+   1878   1876   2  ffff8a6415e58000  IN   0.2  226700   3612  VBoxClient
+   1879   1876   5  ffff8a643c2fa8c0  IN   0.2  226700   3612  VBoxClient
+   1880   1876   2  ffff8a643c2f8000  IN   0.2  226700   3612  VBoxClient
+   1881   1167   1  ffff8a6439bc8000  IN   1.8  656324  37996  gmain
+   1882   1167   2  ffff8a6443fc8000  IN   1.8  656324  37996  gdbus
+   1884   1167   2  ffff8a643c01a8c0  IN   1.8  656324  37996  dconf worker
+   1889   1167   0  ffff8a6416438000  IN   1.8  656324  37996  pool-tracker-mi
+   1897   1177   3  ffff8a6443c128c0  IN   1.3  430572  28264  pool-spawner
+   1898   1177   1  ffff8a6443c15180  IN   1.3  430572  28264  gmain
+   1899   1177   1  ffff8a644e4028c0  IN   1.3  430572  28264  dconf worker
+   1900   1167   0  ffff8a644e4ba8c0  IN   0.7  632400  13968  xdg-desktop-por
+   1901   1177   0  ffff8a6449fca8c0  IN   1.3  430572  28264  gdbus
+   1902   1167   0  ffff8a644e4b8000  IN   0.7  632400  13968  xdg-desktop-por
+   1925   1167   2  ffff8a64399d28c0  IN   1.8  656324  37996  Monitor thread
+   1948      1   1  ffff8a642cb48000  IN   0.5  172060  11440  cups-browsed
+   1951      1   2  ffff8a64442428c0  IN   0.1   13092   2344  kerneloops
+   1953      1   1  ffff8a6444245180  IN   0.1   13092   2300  kerneloops
+   1956      1   5  ffff8a6407b3a8c0  IN   0.5  172060  11440  gmain
+   1957      1   0  ffff8a6407b3d180  IN   0.5  172060  11440  gdbus
+   2059      2   5  ffff8a64166f0000  ID   0.0       0      0  [kworker/u18:4]
+   2060      2   4  ffff8a64166f28c0  ID   0.0       0      0  [kworker/u17:3]
+   2061      2   5  ffff8a6407ff5180  ID   0.0       0      0  [kworker/u18:5]
+   2069   1167   1  ffff8a6404350000  IN   2.4  563608  49848  gnome-terminal-
+   2070   1167   2  ffff8a644e5ca8c0  IN   2.4  563608  49848  gmain
+   2072   1167   2  ffff8a644e5cd180  IN   2.4  563608  49848  dconf worker
+   2073   1167   2  ffff8a6407b38000  IN   2.4  563608  49848  gdbus
+   2095   2069   5  ffff8a644e4da8c0  IN   0.3   20056   5832  bash
+   2119   1167   0  ffff8a644e4dd180  IN  16.2 5509112 338700  threaded-ml
+   2137   1267   4  ffff8a6443cf8000  IN   1.2  426948  25532  update-notifier
+   2143   1267   1  ffff8a6438130000  IN   1.2  426948  25532  gmain
+   2149   1267   0  ffff8a6408520000  IN   1.2  426948  25532  dconf worker
+   2150   1267   4  ffff8a6425c328c0  IN   1.2  426948  25532  gdbus
+   2199   1167   3  ffff8a644e5c8000  IN  16.2 5509112 338700  pool-gnome-shel
+   2214   2095   2  ffff8a641ad7a8c0  IN   0.2   18760   4044  lkm
+   2539   2214   4  ffff8a6407ff0000  IN   0.3   23012   6084  sudo
+   2540   2539   5  ffff8a6425ce5180  IN   0.1   23012   2404  sudo
+>  2541   2540   2  ffff8a643c1e5180  RU   0.2    8592   3356  insmod
+>  2542      1   5  ffff8a643c070000  RU   0.9   48144  19660  journal-offline
+>  2543      1   0  ffff8a643c0728c0  RU   0.9   48144  19660  journal-offline
+>  2544    294   3  ffff8a6425ce0000  RU   0.1   23728   2624  systemd-udevd
+--- dev ---
+CHRDEV    NAME                 CDEV        OPERATIONS      
+   1      mem            ffff8a64022bd180  memory_fops
+   4      /dev/vc/0      ffffffffab7cdba0  console_fops
+   4      tty            ffff8a64023c4b00  tty_fops
+   4      ttyS           ffff8a6401297a80  tty_fops
+   5      /dev/tty       ffffffffab7ccba0  tty_fops
+   5      /dev/console   ffffffffab7ccb20  console_fops
+   5      /dev/ptmx      ffffffffab7ccd20  ptmx_fops
+   5      ttyprintk      ffff8a6401d9a100  tty_fops
+   6      lp             ffff8a6406e9fd80  lp_fops
+ 261      accel          ffff8a64011f2500  accel_stub_fops
+   7      vcs            ffff8a64022bd400  vcs_fops
+  10      misc           ffff8a64022bd800  misc_fops
+  13      input          ffff8a64043623a0  joydev_fops
+  21      sg             ffff8a640125fd00  sg_fops
+  29      fb             ffff8a64022bd500  fb_fops
+  89      i2c            ffff8a64024d1718  i2cdev_fops
+  99      ppdev          ffff8a6406e9ff00  pp_fops
+ 108      ppp            ffff8a64011f2380  ppp_device_fops
+ 116      alsa           ffff8a64011f2700  snd_fops
+ 128      ptm            ffff8a6401297c00  tty_fops
+ 136      pts            ffff8a6401297880  tty_fops
+ 180      usb            ffff8a64022bd000  usb_fops
+ 189      usb_device     ffffffffab7deac0  usbdev_file_operations
+ 202      cpu/msr        ffff8a6406e9fc80  msr_fops
+ 204      ttyMAX              (none)     
+ 226      drm            ffff8a64011f2d00  drm_stub_fops
+ 241      hidraw         ffffffffc0436d20  hidraw_ops
+ 242      ttyDBC              (none)     
+ 243      bsg            ffff8a6403a73308  bsg_fops
+ 244      watchdog            (none)     
+ 245      remoteproc          (none)     
+ 246      ptp                 (none)     
+ 247      pps                 (none)     
+ 248      rtc            ffff8a6406520b38  rtc_dev_fops
+ 249      dma_heap       ffff8a6401dfa1b0  dma_heap_fops
+ 250      dax                 (none)     
+ 251      dimmctl        ffff8a64022bd200  nvdimm_fops
+ 252      ndctl          ffff8a64022bde00  nvdimm_bus_fops
+ 253      tpm                 (none)     
+ 254      gpiochip            (none)     
+
+BLKDEV    NAME                GENDISK      OPERATIONS      
+ 259      blkext              (none)     
+   7      loop           ffff8a6408216800  lo_fops
+   8      sd             ffff8a6406574800  sd_fops
+   9      md                  (none)     
+  11      sr             ffff8a6401364000  sr_bdops
+  65      sd                  (none)     
+  66      sd                  (none)     
+  67      sd                  (none)     
+  68      sd                  (none)     
+  69      sd                  (none)     
+  70      sd                  (none)     
+  71      sd                  (none)     
+ 128      sd                  (none)     
+ 129      sd                  (none)     
+ 130      sd                  (none)     
+ 131      sd                  (none)     
+ 132      sd                  (none)     
+ 133      sd                  (none)     
+ 134      sd                  (none)     
+ 135      sd                  (none)     
+ 252      device-mapper       (none)     
+ 253      virtblk             (none)     
+ 254      mdp                 (none)     
+=== Current Context Info ===
+--- bt -a ---
+PID: 2543   TASK: ffff8a643c0728c0  CPU: 0   COMMAND: "journal-offline"
+ #0 [fffffe251ee82e38] crash_nmi_callback at ffffffffa8c8c5d6
+ #1 [fffffe251ee82e48] nmi_handle at ffffffffa8c4da1f
+ #2 [fffffe251ee82e98] default_do_nmi at ffffffffa9be9c95
+ #3 [fffffe251ee82ec0] exc_nmi at ffffffffa9be9f52
+ #4 [fffffe251ee82ef0] end_repeat_nmi at ffffffffa9e017f1
+    [exception RIP: smp_call_function_many_cond+289]
+    RIP: ffffffffa8deabd1  RSP: ffff9aedc0477508  RFLAGS: 00000202
+    RAX: 0000000000000005  RBX: ffff8a647fa35e00  RCX: 0000000000000001
+    RDX: 0000000000000001  RSI: ffff8a647fcbca40  RDI: 0000000000000000
+    RBP: ffff9aedc0477578   R8: 0000000000000000   R9: 0000000000000000
+    R10: 0000000000000000  R11: 0000000000000000  R12: 0000000000000202
+    R13: ffff8a647fa34440  R14: 0000000000000001  R15: ffff8a647fcbca40
+    ORIG_RAX: ffffffffffffffff  CS: 0010  SS: 0018
+--- <NMI exception stack> ---
+ #5 [ffff9aedc0477508] smp_call_function_many_cond at ffffffffa8deabd1
+ #6 [ffff9aedc0477580] on_each_cpu_cond_mask at ffffffffa8deb084
+ #7 [ffff9aedc0477590] native_flush_tlb_multi at ffffffffa8cb7aaa
+ #8 [ffff9aedc04775b0] flush_tlb_mm_range at ffffffffa8cb7d02
+ #9 [ffff9aedc04775f8] ptep_clear_flush at ffffffffa8fd0b5b
+#10 [ffff9aedc0477610] page_vma_mkclean_one.constprop.0 at ffffffffa8fd2987
+#11 [ffff9aedc0477678] page_mkclean_one at ffffffffa8fd2b99
+#12 [ffff9aedc04776e0] rmap_walk_file at ffffffffa8fd2f88
+#13 [ffff9aedc0477730] folio_mkclean at ffffffffa8fd3125
+#14 [ffff9aedc0477788] folio_clear_dirty_for_io at ffffffffa8f69087
+#15 [ffff9aedc04777d0] mpage_submit_folio at ffffffffa916c808
+#16 [ffff9aedc04777f0] mpage_process_page_bufs at ffffffffa916ca04
+#17 [ffff9aedc0477820] mpage_prepare_extent_to_map at ffffffffa91716f5
+#18 [ffff9aedc0477910] ext4_do_writepages at ffffffffa91743c6
+#19 [ffff9aedc04779d0] ext4_writepages at ffffffffa9174f78
+#20 [ffff9aedc0477a70] do_writepages at ffffffffa8f6bbc0
+#21 [ffff9aedc0477ad8] filemap_fdatawrite_wbc at ffffffffa8f5b441
+#22 [ffff9aedc0477b00] __filemap_fdatawrite_range at ffffffffa8f5f674
+#23 [ffff9aedc0477b80] file_write_and_wait_range at ffffffffa8f5fae0
+#24 [ffff9aedc0477bb8] ext4_sync_file at ffffffffa916183c
+#25 [ffff9aedc0477c00] vfs_fsync_range at ffffffffa90bfa8c
+#26 [ffff9aedc0477c30] __x64_sys_fsync at ffffffffa90bfd98
+#27 [ffff9aedc0477c58] x64_sys_call at ffffffffa8c06de4
+#28 [ffff9aedc0477c68] do_syscall_64 at ffffffffa9be6580
+#29 [ffff9aedc0477f50] entry_SYSCALL_64_after_hwframe at ffffffffa9e00130
+    RIP: 00007d35d631b8ab  RSP: 00007d35d3bffc50  RFLAGS: 00000293
+    RAX: ffffffffffffffda  RBX: 00005e7ab6e1fee0  RCX: 00007d35d631b8ab
+    RDX: 0000000000000000  RSI: 00007d35d684ea34  RDI: 000000000000002f
+    RBP: 00007d35d68502c0   R8: 0000000000000000   R9: 00007fff42479e4f
+    R10: 00007d35d629491a  R11: 0000000000000293  R12: 0000000000000002
+    R13: 0000000000000002  R14: 00007d35d62947d0  R15: 00007fff42479e90
+    ORIG_RAX: 000000000000004a  CS: 0033  SS: 002b
+
+PID: 691    TASK: ffff8a6414460000  CPU: 1   COMMAND: "rs:main Q:Reg"
+ #0 [ffff9aedc0d9fe98] crash_nmi_callback at ffffffffa8c8c5d6
+ #1 [ffff9aedc0d9fea8] nmi_handle at ffffffffa8c4da1f
+ #2 [ffff9aedc0d9fef8] default_do_nmi at ffffffffa9be9c95
+ #3 [ffff9aedc0d9ff20] exc_nmi at ffffffffa9be9f52
+ #4 [ffff9aedc0d9ff50] asm_exc_nmi at ffffffffa9e0173b
+    RIP: 00005dad93e567ca  RSP: 00007402215ff8f0  RFLAGS: 00000246
+    RAX: 0000000000000000  RBX: 000000000000005b  RCX: 00005dad948d77f0
+    RDX: 0000000000000000  RSI: 000074021c0172a6  RDI: 0000000000000001
+    RBP: 0000000000000005   R8: 0000000000000016   R9: 000000000000004b
+    R10: 0000000000000007  R11: dafdfe929c37c0dc  R12: 00005dad948d77d0
+    R13: 000074021c017290  R14: 00005dad93ec54cc  R15: 00005dad948d75e0
+    ORIG_RAX: ffffffffffffffff  CS: 0033  SS: 002b
+
+PID: 2541   TASK: ffff8a643c1e5180  CPU: 2   COMMAND: "insmod"
+ #0 [ffff9aedc013cb60] machine_kexec at ffffffffa8c9ca2d
+ #1 [ffff9aedc013cbc0] __crash_kexec at ffffffffa8df04ef
+ #2 [ffff9aedc013cc88] crash_kexec at ffffffffa8df1b54
+ #3 [ffff9aedc013cc98] oops_end at ffffffffa8c4c920
+ #4 [ffff9aedc013ccc0] page_fault_oops at ffffffffa8cb29fb
+ #5 [ffff9aedc013cd48] kernelmode_fixup_or_oops.constprop.0 at ffffffffa8cb2dab
+ #6 [ffff9aedc013cd70] __bad_area_nosemaphore at ffffffffa8cb2f7b
+ #7 [ffff9aedc013cdb8] bad_area_nosemaphore at ffffffffa8cb3076
+ #8 [ffff9aedc013cdc8] do_kern_addr_fault at ffffffffa8cb311b
+ #9 [ffff9aedc013cdf0] exc_page_fault at ffffffffa9bed332
+#10 [ffff9aedc013ce20] asm_exc_page_fault at ffffffffa9e00bc7
+    [exception RIP: __run_timers+422]
+    RIP: ffffffffa8dc9476  RSP: ffff9aedc013ced0  RFLAGS: 00010082
+    RAX: ffffffffa9e00f0b  RBX: 00000000fffd94c1  RCX: 0000000000000000
+    RDX: ffff9aedc013cee0  RSI: 0000000000000000  RDI: 0000000000000000
+    RBP: ffff9aedc013cf58   R8: 0000000000000000   R9: ffff8a647fb225a8
+    R10: 0000000000000000  R11: 0000000000000000  R12: ffff9aedc2597a30
+    R13: 0000000000000002  R14: ffff9aedc013cee0  R15: ffff8a647fb22580
+    ORIG_RAX: ffffffffffffffff  CS: 0010  SS: 0018
+#11 [ffff9aedc013cee0] asm_sysvec_apic_timer_interrupt at ffffffffa9e00f0b
+#12 [ffff9aedc013cf00] ktime_get at ffffffffa8dce6f2
+#13 [ffff9aedc013cf60] run_timer_softirq at ffffffffa8dc959a
+#14 [ffff9aedc013cf70] handle_softirqs at ffffffffa8ce847d
+#15 [ffff9aedc013cfc8] __irq_exit_rcu at ffffffffa8ce873b
+#16 [ffff9aedc013cfe0] irq_exit_rcu at ffffffffa8ce909e
+#17 [ffff9aedc013cff0] sysvec_apic_timer_interrupt at ffffffffa9bec4be
+--- <IRQ stack> ---
+#18 [ffff9aedc25979f0] sysvec_apic_timer_interrupt at ffffffffa9bec4be
+    RIP: 0000000000000000  RSP: 0000000000000000  RFLAGS: 00000000
+    RAX: 0000000000000000  RBX: 0000000000000000  RCX: ffff8a6407d75da0
+    RDX: ffffffffc07e7040  RSI: ffff9aedc2597ae8  RDI: 0000000000000202
+    RBP: ffffffffa9bec440   R8: ffff9aedc013cee0   R9: ffffffffa9e00f0b
+    R10: ffff9aedc2597a39  R11: 0000000000000000  R12: ffff9aedc2597a28
+    R13: 0000000000000000  R14: ffffffffa8d362de  R15: ffff9aedc2597a50
+    ORIG_RAX: 0000000000000000  CS: 0001  SS: 0000
+WARNING: possibly bogus exception frame
+
+PID: 2544   TASK: ffff8a6425ce0000  CPU: 3   COMMAND: "systemd-udevd"
+ #0 [fffffe07dc4ffe38] crash_nmi_callback at ffffffffa8c8c5d6
+ #1 [fffffe07dc4ffe48] nmi_handle at ffffffffa8c4da1f
+ #2 [fffffe07dc4ffe98] default_do_nmi at ffffffffa9be9c95
+ #3 [fffffe07dc4ffec0] exc_nmi at ffffffffa9be9f52
+ #4 [fffffe07dc4ffef0] end_repeat_nmi at ffffffffa9e017f1
+    [exception RIP: down_read_trylock+25]
+    RIP: ffffffffa8d6dde9  RSP: ffff9aedc1397e70  RFLAGS: 00000283
+    RAX: 0000000000000000  RBX: 0000708886820ae8  RCX: 8000000000000007
+    RDX: 0000000000000000  RSI: 0000000000000000  RDI: ffff8a6462a8a2f8
+    RBP: ffff9aedc1397ed0   R8: 0000000000000000   R9: 0000000000000000
+    R10: 0000000000000000  R11: 0000000000000000  R12: ffff8a6449efa9c0
+    R13: 0000708886820ae8  R14: ffff8a642cab2c00  R15: ffff9aedc1397f58
+    ORIG_RAX: ffffffffffffffff  CS: 0010  SS: 0000
+--- <NMI exception stack> ---
+ #5 [ffff9aedc1397e70] down_read_trylock at ffffffffa8d6dde9
+ #6 [ffff9aedc1397e70] lock_vma_under_rcu at ffffffffa8fb6d46
+ #7 [ffff9aedc1397ed8] do_user_addr_fault at ffffffffa8cb349d
+ #8 [ffff9aedc1397f20] exc_page_fault at ffffffffa9bed2a4
+ #9 [ffff9aedc1397f50] asm_exc_page_fault at ffffffffa9e00bc7
+    RIP: 00007088866ea770  RSP: 00007fff7cd64950  RFLAGS: 00010246
+    RAX: 0000000000000000  RBX: 0000708886918040  RCX: 00007088866eab92
+    RDX: 0000000000000000  RSI: 0000000000000018  RDI: 0000708886831ba0
+    RBP: 0000000000000000   R8: 0000000000000000   R9: 00005d82a0e3b158
+    R10: 0000708886831b90  R11: 0000000000000246  R12: 0000000000000000
+    R13: 00007fff7cd64b20  R14: 0000000000000000  R15: 0000000000000001
+    ORIG_RAX: ffffffffffffffff  CS: 0033  SS: 002b
+
+PID: 0      TASK: ffff8a6401858000  CPU: 4   COMMAND: "swapper/4"
+ #0 [fffffe3d91bf2e38] crash_nmi_callback at ffffffffa8c8c5d6
+ #1 [fffffe3d91bf2e48] nmi_handle at ffffffffa8c4da1f
+ #2 [fffffe3d91bf2e98] default_do_nmi at ffffffffa9be9c95
+ #3 [fffffe3d91bf2ec0] exc_nmi at ffffffffa9be9f52
+ #4 [fffffe3d91bf2ef0] end_repeat_nmi at ffffffffa9e017f1
+    [exception RIP: pv_native_safe_halt+11]
+    RIP: ffffffffa9bec9bb  RSP: ffff9aedc00c3ea0  RFLAGS: 00000246
+    RAX: 0000000000000000  RBX: ffff8a6401858000  RCX: 0000000000000000
+    RDX: 0000000000000000  RSI: 0000000000000000  RDI: 0000000000000000
+    RBP: ffff9aedc00c3ea8   R8: 0000000000000000   R9: 0000000000000000
+    R10: 0000000000000000  R11: 0000000000000000  R12: 0000000000000004
+    R13: 0000000000000000  R14: 0000000000000000  R15: 0000000000000000
+    ORIG_RAX: ffffffffffffffff  CS: 0010  SS: 0018
+--- <NMI exception stack> ---
+ #5 [ffff9aedc00c3ea0] pv_native_safe_halt at ffffffffa9bec9bb
+ #6 [ffff9aedc00c3ea0] default_idle at ffffffffa9beee19
+ #7 [ffff9aedc00c3eb0] arch_cpu_idle at ffffffffa9beeee9
+ #8 [ffff9aedc00c3ec0] default_idle_call at ffffffffa9bef14c
+ #9 [ffff9aedc00c3ed0] do_idle at ffffffffa8d51105
+#10 [ffff9aedc00c3f18] cpu_startup_entry at ffffffffa8d5136d
+#11 [ffff9aedc00c3f30] start_secondary at ffffffffa8c8ea29
+#12 [ffff9aedc00c3f50] secondary_startup_64_no_verify at ffffffffa8c00279
+
+PID: 2542   TASK: ffff8a643c070000  CPU: 5   COMMAND: "journal-offline"
+ #0 [fffffe1169d4ae38] crash_nmi_callback at ffffffffa8c8c5d6
+ #1 [fffffe1169d4ae48] nmi_handle at ffffffffa8c4da1f
+ #2 [fffffe1169d4ae98] default_do_nmi at ffffffffa9be9c95
+ #3 [fffffe1169d4aec0] exc_nmi at ffffffffa9be9f52
+ #4 [fffffe1169d4aef0] end_repeat_nmi at ffffffffa9e017f1
+    [exception RIP: __pv_queued_spin_lock_slowpath+253]
+    RIP: ffffffffa9c061bd  RSP: ffff9aedc259f538  RFLAGS: 00000002
+    RAX: 0000000000000001  RBX: ffff8a647fcb5940  RCX: 0000000000000001
+    RDX: 00000000000079ac  RSI: 0000000000000000  RDI: ffff8a647fb22580
+    RBP: ffff9aedc259f570   R8: 0000000000000000   R9: 0000000000000000
+    R10: 0000000000000000  R11: 0000000000000000  R12: ffff8a647fb22580
+    R13: 0000000000000000  R14: 0000000000000001  R15: 0000000000000100
+    ORIG_RAX: ffffffffffffffff  CS: 0010  SS: 0018
+--- <NMI exception stack> ---
+ #5 [ffff9aedc259f538] __pv_queued_spin_lock_slowpath at ffffffffa9c061bd
+ #6 [ffff9aedc259f578] _raw_spin_lock_irqsave at ffffffffa9c0526c
+ #7 [ffff9aedc259f598] lock_timer_base at ffffffffa8dc6b02
+ #8 [ffff9aedc259f5d8] __mod_timer at ffffffffa8dc9c65
+ #9 [ffff9aedc259f648] mod_timer at ffffffffa8dc9f80
+#10 [ffff9aedc259f658] rwb_arm_timer at ffffffffa935302c
+#11 [ffff9aedc259f670] wbt_wait at ffffffffa935322d
+#12 [ffff9aedc259f6b0] __rq_qos_throttle at ffffffffa9338108
+#13 [ffff9aedc259f6d0] blk_mq_submit_bio at ffffffffa9320a80
+#14 [ffff9aedc259f750] __submit_bio at ffffffffa930eec0
+#15 [ffff9aedc259f778] submit_bio_noacct_nocheck at ffffffffa930f557
+#16 [ffff9aedc259f7d8] submit_bio_noacct at ffffffffa930f7d1
+#17 [ffff9aedc259f818] submit_bio at ffffffffa930fca7
+#18 [ffff9aedc259f830] ext4_bio_write_folio at ffffffffa9195086
+#19 [ffff9aedc259f888] mpage_submit_folio at ffffffffa916c859
+#20 [ffff9aedc259f8a8] mpage_process_page_bufs at ffffffffa916ca04
+#21 [ffff9aedc259f8d8] mpage_prepare_extent_to_map at ffffffffa91716f5
+#22 [ffff9aedc259f9c8] ext4_do_writepages at ffffffffa91743c6
+#23 [ffff9aedc259fa88] ext4_writepages at ffffffffa9174f78
+#24 [ffff9aedc259fb28] do_writepages at ffffffffa8f6bbc0
+#25 [ffff9aedc259fb90] filemap_fdatawrite_wbc at ffffffffa8f5b441
+#26 [ffff9aedc259fbb8] __filemap_fdatawrite_range at ffffffffa8f5f674
+#27 [ffff9aedc259fc38] file_write_and_wait_range at ffffffffa8f5fae0
+#28 [ffff9aedc259fc70] ext4_sync_file at ffffffffa916183c
+#29 [ffff9aedc259fcb8] vfs_fsync_range at ffffffffa90bfa8c
+#30 [ffff9aedc259fce8] __x64_sys_fsync at ffffffffa90bfd98
+#31 [ffff9aedc259fd10] x64_sys_call at ffffffffa8c06de4
+#32 [ffff9aedc259fd20] do_syscall_64 at ffffffffa9be6580
+    RIP: 00007d35d631b8ab  RSP: 00007d35d4dffc50  RFLAGS: 00000293
+    RAX: ffffffffffffffda  RBX: 00005e7ab6e0f970  RCX: 00007d35d631b8ab
+    RDX: 0000000000000000  RSI: 00007d35d684ea34  RDI: 0000000000000018
+    RBP: 00007d35d68502c0   R8: 0000000000000000   R9: 00007fff42479e4f
+    R10: 00007d35d629491a  R11: 0000000000000293  R12: 0000000000000002
+    R13: 0000000000000002  R14: 00007d35d62947d0  R15: 00007fff42479e90
+    ORIG_RAX: 000000000000004a  CS: 0033  SS: 002b
+--- files ---
+PID: 2541   TASK: ffff8a643c1e5180  CPU: 2   COMMAND: "insmod"
+ROOT: /    CWD: /home/trg/kaiwanTECH/L5_kernel_debug/k_oops_warn_panic/lab_oops_hang_panic
+ FD       FILE            DENTRY           INODE       TYPE PATH
+  0 ffff8a6462ab3900 ffff8a6416fcbc00 ffff8a6433acd680 CHR  /dev/pts/1
+  1 ffff8a6462ab3900 ffff8a6416fcbc00 ffff8a6433acd680 CHR  /dev/pts/1
+  2 ffff8a6462ab3900 ffff8a6416fcbc00 ffff8a6433acd680 CHR  /dev/pts/1
+  3 ffff8a641286b700 ffff8a6416fe79c0 ffff8a64162d41e8 REG  /home/trg/kaiwanTECH/L5_kernel_debug/k_oops_warn_panic/lab_oops_hang_panic/hang_panic.ko
+--- vm ---
+PID: 2541   TASK: ffff8a643c1e5180  CPU: 2   COMMAND: "insmod"
+       MM               PGD          RSS    TOTAL_VM
+ffff8a642cb69080  ffff8a6402f6a000  3356k    8592k  
+      VMA           START       END     FLAGS FILE
+ffff8a642c96ad80 59f8ecf28000 59f8ecf2c000 8000071 /usr/bin/kmod
+ffff8a642c96a540 59f8ecf2c000 59f8ecf47000 8000075 /usr/bin/kmod
+ffff8a642c96ae40 59f8ecf47000 59f8ecf50000 8000071 /usr/bin/kmod
+ffff8a642c96a300 59f8ecf50000 59f8ecf52000 8100071 /usr/bin/kmod
+ffff8a640785c000 59f8ecf52000 59f8ecf53000 8100073 /usr/bin/kmod
+ffff8a640785c480 59f8edab4000 59f8edad5000 8100073 
+ffff8a640548d180 70b908c00000 70b908c28000 8000071 /usr/lib/x86_64-linux-gnu/libc.so.6
+ffff8a640548d0c0 70b908c28000 70b908dbd000 8000075 /usr/lib/x86_64-linux-gnu/libc.so.6
+ffff8a640548d840 70b908dbd000 70b908e15000 8000071 /usr/lib/x86_64-linux-gnu/libc.so.6
+ffff8a640548d900 70b908e15000 70b908e16000 8000070 /usr/lib/x86_64-linux-gnu/libc.so.6
+ffff8a640548db40 70b908e16000 70b908e1a000 8100071 /usr/lib/x86_64-linux-gnu/libc.so.6
+ffff8a64035c2a80 70b908e1a000 70b908e1c000 8100073 /usr/lib/x86_64-linux-gnu/libc.so.6
+ffff8a640548d300 70b908e1c000 70b908e29000 8100073 
+ffff8a6401eeea80 70b909000000 70b9090b2000 8000071 /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ffff8a640548dcc0 70b9090b2000 70b909311000 8000075 /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ffff8a640548d480 70b909311000 70b9093e3000 8000071 /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ffff8a640548d3c0 70b9093e3000 70b90943e000 8100071 /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ffff8a6404c65780 70b90943e000 70b909441000 8100073 /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ffff8a640548d9c0 70b909441000 70b909444000 8100073 
+ffff8a640785cd80 70b9094c4000 70b90950f000 8000071 /home/trg/kaiwanTECH/L5_kernel_debug/k_oops_warn_panic/lab_oops_hang_panic/hang_panic.ko
+ffff8a640548d780 70b90950f000 70b909511000 8100073 
+ffff8a6407b5d780 70b909511000 70b909514000 8000071 /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ffff8a6401eee240 70b909514000 70b90952f000 8000075 /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ffff8a6401eee0c0 70b90952f000 70b90953a000 8000071 /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ffff8a6401eeed80 70b90953a000 70b90953b000 8100071 /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ffff8a640785cf00 70b90953b000 70b90953c000 8100073 /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.5
+ffff8a6405493e40 70b90953c000 70b909546000 8000071 /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ffff8a64054930c0 70b909546000 70b9095f8000 8000075 /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ffff8a6405493d80 70b9095f8000 70b909609000 8000071 /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ffff8a6405493240 70b909609000 70b90960a000 8100071 /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ffff8a640785c180 70b90960a000 70b90960b000 8100073 /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8
+ffff8a64054933c0 70b90961b000 70b90961d000 8100073 
+ffff8a642c96aa80 70b90961d000 70b90961f000 8000071 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ffff8a642c96a000 70b90961f000 70b909649000 8000075 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ffff8a642c96a6c0 70b909649000 70b909654000 8000071 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ffff8a642c96a180 70b909655000 70b909657000 8100071 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ffff8a640785cc00 70b909657000 70b909659000 8100073 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ffff8a642c96af00 7ffe91e7d000 7ffe91e9e000 100173 
+ffff8a6405493840 7ffe91f6f000 7ffe91f73000 c044411 
+ffff8a6405493b40 7ffe91f73000 7ffe91f75000 8040075 

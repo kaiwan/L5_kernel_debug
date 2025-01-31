@@ -1,0 +1,214 @@
+#!/bin/bash
+# evtrc
+# An interctive kernel 'events' infrastructure auto-trace helper script
+#
+# Kaiwan NB, kaiwanTECH
+# License: MIT
+
+# Turn on unofficial Bash 'strict mode'! V useful
+# "Convert many kinds of hidden, intermittent, or subtle bugs into immediate, glaringly obvious errors"
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+
+name=$(basename $0)
+
+#----------------------------------------------------------------------
+die()
+{
+echo >&2 "FATAL: $*" ; exit 1
+}
+warn()
+{
+echo >&2 "WARNING: $*"
+}
+
+# runcmd
+# Parameters
+#   $1 ... : params are the command to run
+runcmd()
+{
+	[[ $# -eq 0 ]] && return
+	echo "$@"
+	eval "$@"
+}
+#----------------------------------------------------------------------
+
+SELECTED_TOPLEVEL_ITEM=0
+SELECT_LEVEL2_EVENT=1
+
+trap '[[ ${NUMPARAMS} -eq 1 ]] && {
+  echo "Done"
+  echo 0 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/enable
+  }' INT QUIT EXIT
+
+select_run_level2_event()
+{
+  # First sort all trace-able level 2 events alphabetically
+  local item
+  declare -a menu2_arr_sorted
+
+  for item in $(ls -1 ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/)
+  do
+    [[ -f  ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/${item}/enable ]] && printf "%-10s\n" ${item}
+  done > /tmp/t5
+  sort /tmp/t5 -o /tmp/t6
+
+  # Next, prefix integers (1, 2, 3, ...) to each
+  # Also populate the sorted menu items in another array
+  i=1
+  for item in $(cat /tmp/t6)
+  do
+    printf "%d. %-30s\n" $i ${item}
+    # reset 'enable' to 0
+    [[ -w ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/${item}/enable ]] && echo 0 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/${item}/enable
+    menu2_arr_sorted[$i]=${item}
+    let i=i+1
+  done > /tmp/t7
+  #echo "${menu_arr_sorted[@]}"
+
+  echo ; #echo "${hdr}" ; echo
+  # use pr(1) to display the menu in tabular (col) form!
+  MENU_COLS=2
+  pr -${MENU_COLS} --across --omit-header --omit-pagination /tmp/t7
+  
+  # select item
+  read -p "Enter sub-event number to trace OR 0 for ALL > " SELECTED2
+
+  [[ ${SELECTED2} -eq 0 ]] && return 0
+
+  SELECTED_SUBLEVEL_ITEM=${menu2_arr_sorted[${SELECTED2}]}
+  echo "Selected sub-item #${SELECTED2} is \"${menu2_arr_sorted[${SELECTED2}]}\"
+Logging all trace data for ${DURATION_SHOW_TRACE} now ...
+"
+
+  # Do it! sub-level (2) event
+  # All trace data is sent to stderr
+  echo 1 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/${SELECTED_SUBLEVEL_ITEM}/enable
+  timeout ${DURATION_SHOW_TRACE} cat /sys/kernel/tracing/trace_pipe 1>&2
+  # TODO : ctrl doesn't reach here ?? why?
+  echo 0 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/${SELECTED_SUBLEVEL_ITEM}/enable
+  echo "done 2"
+}
+
+#title="Linux kernel event tracing via evtrc helper"
+select_run_toplevel_ev2trace()
+{
+  SELECTED_TOPLEVEL_ITEM=${menu_arr_sorted[${SELECTED}]}
+  echo "Selected item #${SELECTED} is \"${menu_arr_sorted[${SELECTED}]}\""
+
+  [[ ${SELECT_LEVEL2_EVENT} -eq 1 ]] && {
+     select_run_level2_event
+     stat=$?
+     [[ ${stat} -ne 0 ]] && return
+  }
+  echo "Logging all trace data for ${DURATION_SHOW_TRACE} now ..."
+
+  # Do it! top-level event
+  # All trace data is sent to stderr
+  echo 1 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/enable
+  timeout ${DURATION_SHOW_TRACE} cat /sys/kernel/tracing/trace_pipe 1>&2
+  # TODO : ctrl doesn't reach here ?? why?
+  echo 0 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/enable
+  echo "done"
+}
+
+declare -a menu_arr
+populate_menu()
+{
+  local tmp1=$(mktemp) fulldir dir i=0
+
+  find ${TRCEV_DIR} -maxdepth 1 -type d > ${tmp1}
+  for fulldir in $(cat ${tmp1})
+  do
+    [[ "${fulldir}" = "${TRCEV_DIR}" ]] && continue
+    dir=$(basename ${fulldir})
+    [[ "${dir}" = "tracing" ]] && continue
+    menu_arr[$i]=${dir}
+    let i=i+1
+  done
+
+#  echo "${menu_arr[@]}"
+}
+
+display_menu()
+{
+  local i=0 item
+  #local tmp2=$(mktemp)
+  local hdr="Select an event from all available top-level events:"
+
+  printf "%s: gathering data, pl wait...\r" ${name}
+
+  # First sort all trace-able events alphabetically
+  for item in ${menu_arr[@]}
+  do
+    [[ -f ${TRCEV_DIR}/${item}/enable ]] && printf "%-10s\n" ${item}
+  done > /tmp/t2
+  sort /tmp/t2 -o /tmp/t3
+
+  # Next, prefix integers (1, 2, 3, ...) to each
+  # Also populate the sorted menu items in another array
+  i=0
+  for item in $(cat /tmp/t3)
+  do
+    printf "%d. %-30s\n" $i ${item}
+    # reset 'enable' to 0
+    [[ -w ${TRCEV_DIR}/${item}/enable ]] && echo 0 > ${TRCEV_DIR}/${item}/enable
+    menu_arr_sorted[$i]=${item}
+    let i=i+1
+  done > /tmp/t4
+  #echo "${menu_arr_sorted[@]}"
+
+  echo ; echo "${hdr}" ; echo
+  # use pr(1) to display the menu in tabular (col) form!
+  MENU_COLS=4
+  pr -${MENU_COLS} --across --omit-header --omit-pagination /tmp/t4
+  
+  # select item
+  read -p "Enter event item number to trace > " SELECTED
+  #echo "selected = ${SELECTED} = ${menu_arr_sorted[${SELECTED}]}"
+  echo
+}
+
+fetch_trc_events_dir()
+{
+  TRCEV_DIR=$(mount|grep -w tracefs|head -n1|awk '{print $3}')
+  TRCEV_DIR=${TRCEV_DIR}/events
+  [[ -z "${TRCEV_DIR}" ]] && {
+    TRCEV_DIR=$(mount|grep -w debugfs|awk '{print $3}')
+    TRCEV_DIR=${TRCEV_DIR}/tracing/events
+    [[ -z "${TRCEV_DIR}" ]] && die "couldn't locate the tracefs or debugfs/tracing events dir"
+  }
+  ls -l ${TRCEV_DIR} >/dev/null 2>&1 || die "trace events dir not available or working"
+  echo "[+] tracefs located at ${TRCEV_DIR}"
+}
+
+usage()
+{
+  echo "Usage: ${name} timeout-duration-to-run-trace
+The duration defaults to a seconds value; you can specify the timeout as follows:
+   \"... a floating point number with an optional suffix: s for seconds (the
+   default), m  for  minutes, h for hours or d for days.  A duration of
+   0 disables the associated timeout.\""
+}
+
+
+#-- 'main'
+
+NUMPARAMS=0
+[[ $(id -u) -ne 0 ]] && die "needs root"
+[[ $# -ne 1 ]] && {
+  usage ; exit 1
+}
+
+DURATION_SHOW_TRACE=$1  # seconds by default
+NUMPARAMS=1
+fetch_trc_events_dir
+ACTUAL_USER=$(who am i|awk '{print $1}')
+#echo "ACTUAL_USER = $ACTUAL_USER"
+
+# menu of all available event tracers
+populate_menu
+display_menu
+select_run_toplevel_ev2trace
+
+exit 0
