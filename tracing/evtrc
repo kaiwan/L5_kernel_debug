@@ -35,11 +35,19 @@ runcmd()
 
 SELECTED_TOPLEVEL_ITEM=0
 SELECT_LEVEL2_EVENT=1
+ABORT=0
 
-trap '[[ ${NUMPARAMS} -eq 1 ]] && {
-  echo "Done"
-  echo 0 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/enable
-  }' INT QUIT EXIT
+signal_handler()
+{
+ [[ ${NUMPARAMS} -eq 1 ]] && {
+   [[ ${ABORT} -eq 0 ]] && {
+      echo 0 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/enable
+      echo "
+done, ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM} reset" 
+   } || true
+ }
+}
+trap signal_handler INT QUIT EXIT
 
 select_run_level2_event()
 {
@@ -72,7 +80,11 @@ select_run_level2_event()
   pr -${MENU_COLS} --across --omit-header --omit-pagination /tmp/t7
   
   # select item
-  read -p "Enter sub-event number to trace OR 0 for ALL > " SELECTED2
+  read -p "Enter sub-event number to trace OR 0 for ALL (or -1 to abort) > " SELECTED2
+  [[ ${SELECTED2} -eq -1 ]] && {
+     ABORT=1
+     echo "Aborting!" ; exit 1
+  }
 
   [[ ${SELECTED2} -eq 0 ]] && return 0
 
@@ -86,6 +98,7 @@ Logging all trace data for ${DURATION_SHOW_TRACE} now ...
   echo 1 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/${SELECTED_SUBLEVEL_ITEM}/enable
   timeout ${DURATION_SHOW_TRACE} cat /sys/kernel/tracing/trace_pipe 1>&2
   # TODO : ctrl doesn't reach here ?? why?
+  # Anyway, our 'signal handler' via trap handles the cleanup
   echo 0 > ${TRCEV_DIR}/${SELECTED_TOPLEVEL_ITEM}/${SELECTED_SUBLEVEL_ITEM}/enable
   echo "done 2"
 }
@@ -165,6 +178,10 @@ display_menu()
   
   # select item
   read -p "Enter event item number to trace > " SELECTED
+    [[ ${SELECTED} -eq -1 ]] && {
+       ABORT=1
+       echo "Aborting!" ; exit 1
+    }
   #echo "selected = ${SELECTED} = ${menu_arr_sorted[${SELECTED}]}"
   echo
 }
