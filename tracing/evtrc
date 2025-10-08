@@ -108,6 +108,8 @@ select_run_toplevel_ev2trace()
 {
   SELECTED_TOPLEVEL_ITEM=${menu_arr_sorted[${SELECTED}]}
   echo "Selected item #${SELECTED} is \"${menu_arr_sorted[${SELECTED}]}\""
+  echo "
+${WARNING_MSG}"
 
   [[ ${SELECT_LEVEL2_EVENT} -eq 1 ]] && {
      select_run_level2_event
@@ -143,9 +145,31 @@ populate_menu()
 #  echo "${menu_arr[@]}"
 }
 
-display_menu()
+validate_is_non_negative_integer()
 {
-  local i=0 item
+    local input="$1"
+
+    if [[ -z "${input}" ]]; then
+        echo "Error: No input provided." >&2
+        return 1
+    fi
+    
+
+    [[ "${input}" =~ ^[0-9]+$ ]] && return 0
+    echo "error: '${input}' is not a non-negative integer." >&2
+    return 1
+}
+
+WARNING_MSG="WARNING: This uses dynamic tracing of kernel functions, and could cause kernel
+panics or freezes, depending on the function traced. Test in a lab environment,
+and know  what  you are doing, before use.
+
+WARNING: we now *reset* all toplevel events to 0 (disabled)
+"
+
+display_menu_and_select()
+{
+  local i=0 item total_items
   #local tmp2=$(mktemp)
   local hdr="Select an event from all available top-level events:"
 
@@ -158,6 +182,9 @@ display_menu()
   done > /tmp/t2
   sort /tmp/t2 -o /tmp/t3
 
+  echo "
+${WARNING_MSG}"
+
   # Next, prefix integers (1, 2, 3, ...) to each
   # Also populate the sorted menu items in another array
   i=0
@@ -169,7 +196,8 @@ display_menu()
     menu_arr_sorted[$i]=${item}
     let i=i+1
   done > /tmp/t4
-  #echo "${menu_arr_sorted[@]}"
+  #echo "$i: ${menu_arr_sorted[@]}"
+  total_items=$((i-1))
 
   echo ; echo "${hdr}" ; echo
   # use pr(1) to display the menu in tabular (col) form!
@@ -177,11 +205,21 @@ display_menu()
   pr -${MENU_COLS} --across --omit-header --omit-pagination /tmp/t4
   
   # select item
-  read -p "Enter event item number to trace > " SELECTED
+  while [[ true ]]
+  do
+    read -p "Enter event item number to trace (or -1 to abort) > " SELECTED
     [[ ${SELECTED} -eq -1 ]] && {
        ABORT=1
        echo "Aborting!" ; exit 1
     }
+    [[ -z "${SELECTED}" ]] && continue
+    validate_is_non_negative_integer ${SELECTED} && {
+      [[ ${SELECTED} -gt ${total_items} ]] && {
+        echo "[0 to ${total_items}] only" ; continue
+      }
+      break
+    }
+  done
   #echo "selected = ${SELECTED} = ${menu_arr_sorted[${SELECTED}]}"
   echo
 }
@@ -225,7 +263,7 @@ ACTUAL_USER=$(who am i|awk '{print $1}')
 
 # menu of all available event tracers
 populate_menu
-display_menu
+display_menu_and_select
 select_run_toplevel_ev2trace
 
 exit 0
