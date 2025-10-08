@@ -152,7 +152,7 @@ display_menu()
   do
     printf "%d. %-30s\n" $i ${item}
     # reset 'enable' to 0
-    [[ -w ${TRCEV_DIR}/${item}/enable ]] && echo 0 > ${TRCEV_DIR}/${item}/enable
+    [[ -w ${TRCEV_DIR}/${item}/enable ]] && echo 0 > ${TRCEV_DIR}/${item}/enable || true
     menu_arr_sorted[$i]=${item}
     let i=i+1
   done > /tmp/t4
