@@ -2,8 +2,8 @@
 # evtrc
 # An interctive kernel 'events' infrastructure auto-trace helper script
 #
-# Kaiwan NB, kaiwanTECH
-# License: MIT
+# Kaiwan N Billimoria, kaiwanTECH
+# License: GPL-2.0 / MIT
 
 # Turn on unofficial Bash 'strict mode'! V useful
 # "Convert many kinds of hidden, intermittent, or subtle bugs into immediate, glaringly obvious errors"
@@ -164,6 +164,11 @@ WARNING_MSG="WARNING: This uses dynamic tracing of kernel functions, and could c
 panics or freezes, depending on the function traced. Test in a lab environment,
 and know  what  you are doing, before use.
 
+Also  beware of feedback loops: tracing tcp functions over an ssh session, or
+writing ext4 functions to an ext4 file system. For the former, tcp trace data
+could be redirected to a file (as in the usage message). For the latter, trace
+to the screen or a different file system.
+
 WARNING: we now *reset* all toplevel events to 0 (disabled)
 "
 
@@ -239,11 +244,15 @@ fetch_trc_events_dir()
 
 usage()
 {
-  echo "Usage: ${name} timeout-duration-to-run-trace
+  local USAGE_MSG="
 The duration defaults to a seconds value; you can specify the timeout as follows:
-   \"... a floating point number with an optional suffix: s for seconds (the
-   default), m  for  minutes, h for hours or d for days.  A duration of
-   0 disables the associated timeout.\""
+\"... a floating point number with an optional suffix: s for seconds (the
+default), m  for  minutes, h for hours or d for days.  A duration of 0 disables
+the associated timeout.\"
+ Requires kernel support: CONFIG_FTRACE=y and CONFIG_KPROBES=y
+"
+  echo "Usage: ${name} timeout-duration-to-run-trace
+${USAGE_MSG}"
 }
 
 
