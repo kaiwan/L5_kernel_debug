@@ -11,7 +11,7 @@ We assume we're using kernel ${KVER} here.
    first shut down any other hypervisor instance
 3. Once run, the guest qemu system will *wait* for GDB to connect from the host:
 On the host, do:
-$ cd <...>/${KVER}
+$ cd </path/to/>linux-${KVER}
 $ gdb -q </path/to/>linux-${KVER}/vmlinux
 OR
 $ gdb -q </path/to/>/image/vmlinux
